@@ -1,15 +1,16 @@
 .home-filters {
-    height: 300px;
+    min-height: 300px;
     background: #fff;
     border-radius: 24px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     position: relative;
-    top: 330px;
+    top: 280px;
     padding: 15px;
     transition: all ease .5s;
 }
 .filter-tabs {
     display: flex;
+    flex-wrap: wrap;
     gap: 14px;
 }
 .type-btn {
@@ -25,9 +26,6 @@
     gap: 6px;
     transition: all ease .5s;
 }
-.type-btn:hover {
-    transform: scale(1.05);
-}
 .type-icon {
     color: #0957CBFF;
     font-size: 22px;
@@ -40,9 +38,60 @@
     background: #0957CBFF;
     color: #fff;
 }
-
+.search-inpt {
+    border-radius: 22px;
+    border: none;
+    outline: none;
+    color: #000000;
+    background: #F4F4F4;
+    padding: 15px;
+    width: 100%;
+}
+.price-inpt {
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 22px;
+    color: #000000;
+    background: #F4F4F4;
+}
+.num-inputs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    gap: 10px;
+}
+.more-btn {
+    height: 50px;
+    border: none;
+    border-radius: 22px;
+    padding: 12px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #F4F4F4;
+    cursor: pointer;
+}
+.search-btn {
+    height: 50px;
+    border: none;
+    border-radius: 22px;
+    padding: 12px 25px 12px 25px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #0957CBFF;
+    cursor: pointer;
+}
+.search-btn > .type-icon {
+    color: #fff;
+}
 @media screen and (max-width: 721px){
     .home-filters {
-        top: 240px;
+        top: 140px;
+    }
+    .type-btn:hover {
+        transform: none;
     }
 }
