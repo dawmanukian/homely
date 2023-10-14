@@ -27,6 +27,7 @@ header {
     transition: all ease .5s;
 }
 .header-btn {
+    color: #333;
     padding: 14px;
     border-radius: 22px;
     border: none;
@@ -44,6 +45,7 @@ header {
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: all ease .5s;
+    color: #333;
     outline: none;
     font-size: 14px;
     
@@ -69,8 +71,14 @@ option {
     font-size: 25px;
     border-radius: 10px;
     cursor: pointer;
+    color: #333;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: none;
+}
+.filters-panel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 @media screen and (max-width: 721px){
     header {

@@ -2,6 +2,7 @@ import React from 'react'
 import './header.css'
 import { FaPhone, FaUser } from "react-icons/fa6";
 import { BsList } from "react-icons/bs";
+import HomeFilters from '../home-filters/HomeFilters';
 
 const Header = () => {
   return (
@@ -33,6 +34,9 @@ const Header = () => {
         <button className='drop-menu'>
           <BsList />
         </button>
+      </div>
+      <div className='filters-panel'>
+        <HomeFilters />
       </div>
     </header>
   )
