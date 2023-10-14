@@ -28,14 +28,16 @@ const HomeFilters = () => {
           <input type='number' className='price-inpt' placeholder='Մակերես - սկսած'/>
           <input type='number' className='price-inpt' placeholder='Մակերես - մինչև'/>
         </div>
-        <button className='more-btn'>
-          <AiFillSetting className='type-icon'/>
-          Ավելին
-        </button>
-        <button className='search-btn'>
-          <FaSistrix className='type-icon'/>
-          Որոնել
-        </button>
+        <div className='filter-btns'>
+          <button className='search-btn'>
+            <FaSistrix className='type-icon'/>
+            Որոնել
+          </button>
+          <button className='more-btn'>
+            <AiFillSetting className='type-icon'/>
+            Ավելին
+          </button>
+        </div>
       </div>
     </div>
   )

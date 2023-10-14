@@ -80,6 +80,21 @@ option {
     display: flex;
     justify-content: center;
 }
+.header-inf {
+    padding: 0px 60px 0px 60px;
+    color: #fff;
+    font-size: 30px;
+}
+.droped-menu {
+    border-radius: 22px;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    z-index: 5;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    top: 90px;
+}
 @media screen and (max-width: 721px){
     header {
         height: 50vh;
