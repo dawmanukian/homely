@@ -3,7 +3,7 @@
     border-radius: 24px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     position: relative;
-    top: 280px;
+    top: 180px;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -73,6 +73,7 @@
     gap: 5px;
     background: #F4F4F4;
     cursor: pointer;
+    transition: all ease .5s;
 }
 .search-btn {
     height: 50px;
@@ -97,12 +98,37 @@
 .filter-checks {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
     transition: all ease .5s;
 }
 .filter-btns > .active {
     background: #0957CBFF;
     color: #fff;
+}
+.filter-checks-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.filter-checks-panel > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: gray;
+    cursor: pointer;
+}
+.filter-new {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 12px;
+    background: #F4F4F4;
+    border-radius: 22px;
+    border: none;
+    font-size: 16.5px;
+    cursor: pointer;
 }
 @media screen and (max-width: 721px){
     .home-filters {

@@ -11,9 +11,9 @@ const Header = () => {
   return (
     <header>
       <div className='header-contact'>
-        <a className='header-phone' href='tel:+37499122120'>
+        <a className='header-phone' href='tel:+37455600096'>
           <FaPhone />
-          +37499122120
+          +37455600096
         </a>
         <select className='header-select'>
           <optgroup>
