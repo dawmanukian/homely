@@ -54,7 +54,9 @@ header {
     transform: scale(1.07);
     /* border-radius: 22px 22px 0px 0px; */
 }
-.header-phone:hover, .header-btn:hover, .header-select:hover {
+.header-phone:hover, 
+.header-btn:hover, 
+.header-select:hover {
     transform: scale(1.07);
 }
 option {
@@ -87,19 +89,37 @@ option {
 }
 .droped-menu {
     border-radius: 22px;
+    padding: 10px;
     width: 200px;
-    height: 200px;
     background: #fff;
     z-index: 5;
     position: absolute;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    top: 90px;
+    top: 80px;
+}
+.droped-header-btn {
+    width: 100%;
+    border-radius: 22px 22px 0px 0px;
+    padding: 12px;
+    border: none;
+    background: #F4F4F4;
+}
+.droped-header-select {
+    width: 100%;
+    border: none;
+    background: #F4F4F4;
+    padding: 12px;
+    outline: none;
+}
+.btm {
+    border-radius: 0px 0px 22px 22px;
 }
 @media screen and (max-width: 721px){
     header {
         height: 50vh;
     }
-    .header-btn, .header-select {
+    .header-contact >.header-btn, 
+    .header-contact > .header-select {
         display: none;
     }
     .drop-menu {

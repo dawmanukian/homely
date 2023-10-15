@@ -11,6 +11,10 @@ const Header = () => {
   return (
     <header>
       <div className='header-contact'>
+        <a className='header-phone' href='tel:+37499122120'>
+          <FaPhone />
+          +37499122120
+        </a>
         <select className='header-select'>
           <optgroup>
             <option>ARM</option>
@@ -26,10 +30,6 @@ const Header = () => {
             <option>RUB</option>
           </optgroup>
         </select>
-        <a className='header-phone' href='tel:+37499122120'>
-          <FaPhone />
-          +37499122120
-        </a>
         <button className='header-btn'>
           <FaUser />
           Մուտք / Գրանցվել
@@ -38,25 +38,25 @@ const Header = () => {
           <BsList />
         </button>
         <div className='droped-menu' style={drop ? {display: 'block'} : {display: 'none'}}>
-          <button>
+          <button className='droped-header-btn'>
             <FaUser />
             Մուտք / Գրանցվել
           </button>
-          <select>
-          <optgroup>
-            <option>ARM</option>
-            <option>ENG</option>
-            <option>RU</option>
-          </optgroup>
-        </select>
-        <select>
-          <optgroup>
-            <option>USD</option>
-            <option>AMD</option>
-            <option>EUR</option>
-            <option>RUB</option>
-          </optgroup>
-        </select>
+          <select className='droped-header-select'>
+            <optgroup>
+              <option>ARM</option>
+              <option>ENG</option>
+              <option>RU</option>
+            </optgroup>
+          </select>
+          <select className='droped-header-select btm'>
+            <optgroup>
+              <option>USD</option>
+              <option>AMD</option>
+              <option>EUR</option>
+              <option>RUB</option>
+            </optgroup>
+          </select>
         </div>
       </div>
       <div className='filters-panel'>
