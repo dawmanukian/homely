@@ -5,6 +5,8 @@
     position: relative;
     top: 280px;
     padding: 15px;
+    display: flex;
+    justify-content: space-between;
     transition: all ease .5s;
 }
 .filter-tabs {
@@ -91,6 +93,16 @@
 .filter-btns {
     display: grid;
     gap: 10px;
+}
+.filter-checks {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    transition: all ease .5s;
+}
+.filter-btns > .active {
+    background: #0957CBFF;
+    color: #fff;
 }
 @media screen and (max-width: 721px){
     .home-filters {

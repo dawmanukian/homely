@@ -6,6 +6,7 @@ import { FaSistrix } from "react-icons/fa6";
 
 const HomeFilters = () => {
 
+  const [showMore, setShowMore] = useState(false)
   const [type, setType] = useState(0);
   const [price, setPrice] = useState(0);
   console.log(price)
@@ -33,10 +34,69 @@ const HomeFilters = () => {
             <FaSistrix className='type-icon'/>
             Որոնել
           </button>
-          <button className='more-btn'>
+          <button className={`more-btn ${showMore ? 'active' : null}`} onClick={() => setShowMore(!showMore)}>
             <AiFillSetting className='type-icon'/>
             Ավելին
           </button>
+        </div>
+        <div className='filter-checks' style={showMore ? {display: 'flex'} : {display: 'none'}}>
+          <div>
+            <h4>Գույքի տիպը</h4>
+            <div>
+              <input type='checkbox'/>
+              <label>Բնակարան</label>
+            </div>
+            <div>
+              <input type='checkbox'/>
+              <label>Հողատարածք</label>
+            </div>
+            <div>
+              <input type='checkbox'/>
+              <label>Կոմերցիոն</label>
+            </div>
+            <div>
+              <input type='checkbox'/>
+              <label>Առանձնատուն</label>
+            </div>
+          </div>
+          <div>
+            <h4>Սենյակներ</h4>
+            <div>
+              <input type='checkbox'/>
+              <label>1</label>
+            </div>
+            <div>
+              <input type='checkbox'/>
+              <label>2</label>
+            </div>
+            <div>
+              <input type='checkbox'/>
+              <label>3</label>
+            </div>
+            <div>
+              <input type='checkbox'/>
+              <label>4+</label>
+            </div>
+          </div>
+          <div>
+            <h4>Շենքի տիպ</h4>
+            <div>
+              <input type='checkbox'/>
+              <label>Պանելային</label>
+            </div>
+            <div>
+              <input type='checkbox'/>
+              <label>Քարե</label>
+            </div>
+            <div>
+              <input type='checkbox'/>
+              <label>Նորակառույց</label>
+            </div>
+            <div>
+              <input type='checkbox'/>
+              <label>Այլ</label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
