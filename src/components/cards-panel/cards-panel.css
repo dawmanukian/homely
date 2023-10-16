@@ -1,0 +1,15 @@
+.cards-panel {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background: #F4F4F4FF;
+    padding: 30px 0px 30px 0px;
+    gap: 20px;
+}
+@media screen and (max-width: 721px){
+    .cards-panel {
+        position: relative;
+        z-index: -1;
+        top: 220px;
+    }
+}

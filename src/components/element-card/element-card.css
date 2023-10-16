@@ -1,14 +1,52 @@
 .el-card {
-    min-width: 320px;
-    height: 340px;
+    width: 280px;
+    min-width: 270px;
+    min-height: 320px;
     background: #fff;
-    border-radius: 25px;
+    border-radius: 17px;
     cursor: pointer;
-    transition: all ease 0.7s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* transition: all ease 0.7s; */
 }
 .el-card:hover {
     opacity: 60%;
 }
 .card-img {
-    border-radius: 25px 25px 0px 0px;
+    border-radius: 17px 17px 0px 0px;
+}
+.card-like-icon {
+    font-size: 22px;
+    color: rgb(211, 211, 211);
+    transition: all ease .5s;
+}
+.card-data {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding: 13px;
+}
+.card-address {
+    color: gray;
+}
+.card-price {
+    font-size: 22px;
+}
+.card-head {
+    position: relative;
+}
+.card-id {
+    background: #F4F4F4;
+    border-radius: 7px;
+    padding: 5px;
+    width: 50%;
+}
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+@media screen and (max-width: 540px){
+    .el-card {
+        width: 90%;
+        min-width: none;
+    }
 }
