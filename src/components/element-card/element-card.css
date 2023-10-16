@@ -1,0 +1,14 @@
+.el-card {
+    min-width: 320px;
+    height: 340px;
+    background: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all ease 0.7s;
+}
+.el-card:hover {
+    opacity: 60%;
+}
+.card-img {
+    border-radius: 25px 25px 0px 0px;
+}

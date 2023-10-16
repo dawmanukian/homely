@@ -121,6 +121,7 @@
 }
 .filter-new {
     display: flex;
+    color: #000000;
     align-items: center;
     gap: 7px;
     padding: 12px;
