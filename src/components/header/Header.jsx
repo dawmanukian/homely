@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './header.css'
-import { FaPhone, FaUser } from "react-icons/fa6";
+import { FaPhone, FaUser, FaHeart } from "react-icons/fa6";
 import { BsList } from "react-icons/bs";
 import HomeFilters from '../home-filters/HomeFilters';
 import logo from '../../img/logo.jpg';
@@ -14,6 +14,10 @@ const Header = () => {
       <div className='header-menu'>
         <h1 className='header-logo'>Homely</h1>
         <div className='header-contact'>
+          <div className='liked-num'>
+            <FaHeart className='like-icon'/>
+            <span>0</span>
+          </div>
           <a className='header-phone' href='tel:+37455600096'>
             <FaPhone />
             +37455600096

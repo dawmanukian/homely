@@ -134,6 +134,20 @@ option {
     cursor: pointer;
     font-size: 50px;
 }
+.liked-num {
+    background: #fff;
+    padding: 12px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+    color: #333;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.like-icon {
+    color: rgb(245, 81, 81);
+}
 @media screen and (max-width: 721px){
     header {
         height: 50vh;
