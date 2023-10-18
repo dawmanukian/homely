@@ -1,11 +1,11 @@
 .el-card {
-    width: 280px;
-    min-width: 270px;
+    width: 23%;
+    /* min-width: 250px; */
     min-height: 320px;
     background: #fff;
     border-radius: 17px;
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     /* transition: all ease 0.7s; */
 }
 .el-card:hover {
@@ -44,9 +44,13 @@
     display: flex;
     justify-content: space-between;
 }
-@media screen and (max-width: 540px){
+@media screen and (max-width: 1356px){
     .el-card {
-        width: 90%;
-        min-width: none;
+        min-width: 50%;
+    }
+}
+@media screen and (max-width: 721px){
+    .el-card {
+        min-width: 100%;
     }
 }
