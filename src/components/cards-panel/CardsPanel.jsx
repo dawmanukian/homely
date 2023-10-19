@@ -20,10 +20,10 @@ const CardsPanel = () => {
       <div className='slide-panel'>
         <div className='slide' style={{left: `${slideLeft}%`}}>
           <div className='lot-cards'>
-            <ElementCard />
-            <ElementCard />
-            <ElementCard />
-            <ElementCard />
+            <ElementCard title={'b1'}/>
+            <ElementCard title={'b2'}/>
+            <ElementCard title={'b3'}/>
+            <ElementCard title={'b4'}/>
           </div>
           <div className='lot-cards'>
             <ElementCard />

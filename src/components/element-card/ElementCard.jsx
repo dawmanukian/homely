@@ -10,7 +10,7 @@ const ElementCard = ({img, title, address, price}) => {
           <img src={'https://d28pk2nlhhgcne.cloudfront.net/assets/app/uploads/sites/3/2021/08/homebyme-homepage-gallery-6.jpg'} width={'100%'} className='card-img'/>
         </div>
         <div className='card-data'>
-          <b className='card-title'>Երևան Անտառային փող․123/3</b>
+          <b className='card-title'>{title}</b>
           <p className='card-address'>Անտառային փող, Կենտրոն, Երևան</p>
           <b className='card-price'>$ 201,000</b>
           <div className='card-footer'>

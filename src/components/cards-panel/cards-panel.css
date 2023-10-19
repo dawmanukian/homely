@@ -6,7 +6,7 @@
     background: #F0F2F5FF;
     margin: 30px 0px 0px 0px;
     padding: 24px 0px 24px 0px;
-    border-radius: 22px;
+    border-radius: 30px;
 }
 .lot-cards {
     min-width: 100%;
@@ -15,8 +15,9 @@
     /* overflow-x: hidden; */
 }
 .slide {
-    width: 100%;
+    min-width: 100%;
     display: flex;
+    justify-content: flex-start;
     position: relative;
     transition: all ease 0.6s;
 }
@@ -38,7 +39,7 @@
 }
 @media screen and (max-width: 721px){
     .cards {
-        top: 200px;
+        top: 230px;
         z-index: 1;
     }
 }
