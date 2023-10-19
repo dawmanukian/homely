@@ -1,15 +1,9 @@
 .el-card {
     width: 100%;
-    /* min-width: 250px; */
     min-height: 320px;
     background: #fff;
     border-radius: 17px;
     cursor: pointer;
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-    /* transition: all ease 0.7s; */
-}
-.el-card:hover {
-    opacity: 60%;
 }
 .card-img {
     border-radius: 17px 17px 0px 0px;
@@ -17,7 +11,7 @@
 .card-like-icon {
     font-size: 22px;
     color: rgb(211, 211, 211);
-    transition: all ease .5s;
+    transition: all ease .4s;
 }
 .card-data {
     display: flex;
