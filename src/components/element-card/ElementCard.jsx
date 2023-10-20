@@ -3,7 +3,10 @@ import './element-card.css'
 import { FaThumbsUp } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 
-const ElementCard = ({img, title, address, price, id, isLiked, like}) => {
+const ElementCard = ({img, title, address, price, id, like}) => {
+  
+  const liked = localStorage.getItem('liked')
+
   return (
     <div className='el-card'>
         <div className='card-head'>
@@ -15,7 +18,7 @@ const ElementCard = ({img, title, address, price, id, isLiked, like}) => {
           <b className='card-price'>$ {price}</b>
           <div className='card-footer'>
             <div className='card-id'>ID {id}</div>
-            <FaHeart className='card-like-icon' style={{color: isLiked ? 'rgb(245, 81, 81)' : 'gray'}} onClick={() => like(id)}/>
+            <FaHeart className='card-like-icon' style={{color: liked.includes(id) ? 'rgb(245, 81, 81)' : 'gray'}} onClick={() => like(id)}/>
           </div>
         </div>
     </div>

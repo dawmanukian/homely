@@ -1,22 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './header.css'
 import { FaPhone, FaUser, FaHeart } from "react-icons/fa6";
 import { BsList } from "react-icons/bs";
 import HomeFilters from '../home-filters/HomeFilters';
 import logo from '../../img/logo.jpg';
+import LikedCards from '../liked-cards/LikedCards';
 
 const Header = () => {
-
+  
+  useEffect(() => {
+    setLikedNumber(JSON.parse(localStorage.getItem('liked')).length)
+  }, [localStorage.getItem('liked')])
   const [drop, setDrop] = useState(false)
+  const [likedNumber, setLikedNumber] = useState(JSON.parse(localStorage.getItem('liked')).length)
+  const [showLikedCards, setShowLikedCards] = useState(false)
+
 
   return (
     <header>
       <div className='header-menu'>
+        {showLikedCards && <LikedCards />}
         <h1 className='header-logo'>Homely</h1>
         <div className='header-contact'>
-          <div className='liked-num'>
+          <div className='liked-num' onClick={() => setShowLikedCards(!showLikedCards)}>
             <FaHeart className='like-icon'/>
-            <span>0</span>
+            <span>{likedNumber}</span>
           </div>
           <a className='header-phone' href='tel:+37455600096'>
             <FaPhone />
