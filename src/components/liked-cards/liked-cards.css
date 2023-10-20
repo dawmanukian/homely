@@ -1,10 +1,24 @@
 .liked-cards {
-    max-height: 40vh;
     width: 90%;
-    background: #fff;
-    position:absolute;
+    max-height: 80vh;
+    background: #F0F2F5FF;
+    position:fixed;
     top: 100px;
     z-index: 6;
     border-radius: 22px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 25px;
+}
+.l-card {
+    width: 300px;
+}
+@media screen and (max-width: 501px){
+    .l-card {
+        width: 100%;
+    }
 }
