@@ -79,7 +79,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-        {showLikedCards && <div className='liked-panel'><LikedCards /></div>}
+        {showLikedCards && <div className='liked-panel'><LikedCards onClose={() => setShowLikedCards(false)}/></div>}
         <div className='filters-panel'>
           <HomeFilters />
         </div>

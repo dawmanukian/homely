@@ -1,4 +1,4 @@
-.liked-cards {
+.liked-cards-panel {
     width: 90%;
     max-height: 80vh;
     background: #F0F2F5FF;
@@ -8,14 +8,31 @@
     border-radius: 22px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     overflow-y: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     gap: 30px;
     padding: 25px;
 }
 .l-card {
     width: 300px;
+}
+.liked-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.close-btn {
+    color: #fff;
+    border: none;
+    background: #F55151FF;
+    font-size: 22px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    margin: 0px 0px 10px 0px;
 }
 @media screen and (max-width: 501px){
     .l-card {

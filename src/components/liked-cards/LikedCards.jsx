@@ -1,8 +1,9 @@
 import {React, useState} from 'react'
 import './liked-cards.css'
 import ElementCard from '../element-card/ElementCard'
+import { RiCloseFill } from "react-icons/ri";
 
-const LikedCards = () => {
+const LikedCards = ({onClose}) => {
 
   const [cards, setCards] = useState([
     {
@@ -53,7 +54,9 @@ const LikedCards = () => {
   const liked_cards = cards.filter(el => liked.includes(el.id))
 
   return (
-    <div className='liked-cards'>
+    <div className='liked-cards-panel'>
+      <button className='close-btn' onClick={() => onClose()}><RiCloseFill /></button>
+      <div className='liked-cards'>
         {
           liked_cards.map(el => {
             return (
@@ -70,6 +73,7 @@ const LikedCards = () => {
             )
           })
         }
+      </div>
     </div>
   )
 }

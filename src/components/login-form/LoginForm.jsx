@@ -26,7 +26,6 @@ const LoginForm = ({switchForm}) => {
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
                     }
                 })}
-                style={errors.email && {border: '1px solid #E64646FF', outline: 'none', background: '#faebeb'}}
                 />
             </div>
             <div className='lg-inpt'>
@@ -41,10 +40,11 @@ const LoginForm = ({switchForm}) => {
             <div className='social-links'>
                 <div className='social-link'>
                     <FcGoogle />
+                    <span>Gmail</span>
                 </div>
-                <div className='social-link fa'>
+                {/* <div className='social-link fa'>
                     <FaFacebook />
-                </div>
+                </div> */}
             </div>
             <div>
                 <span style={{color: '#9E9E9EFF'}}>Դեռ չունեք օգտանուն ? <span style={{color: '#246BFDFF', cursor: 'pointer'}} onClick={() => switchForm()}>Գրանցվել</span></span>

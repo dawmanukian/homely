@@ -39,7 +39,8 @@ form {
 }
 .social-link {
     height: 60px;
-    width: 75px;
+    gap: 10px;
+    /* width: 75px; */
     display: flex;
     justify-content: center;
     align-items: center;

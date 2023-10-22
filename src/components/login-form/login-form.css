@@ -50,7 +50,7 @@ form {
 }
 .social-link {
     height: 60px;
-    width: 75px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,6 +58,10 @@ form {
     border: 1px solid #F0F0F0FF;
     border-radius: 20px;
     cursor: pointer;
+}
+.social-link > span {
+    font-size: 16px;
+    
 }
 .fa {
     color: #246BFDFF;
