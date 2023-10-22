@@ -4,7 +4,7 @@ import { FaFacebook, FaLock } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { IoMail } from "react-icons/io5";
 
-const LoginForm = () => {
+const LoginForm = ({switchForm}) => {
   return (
     <div className='login-form'>
         <form>
@@ -28,7 +28,7 @@ const LoginForm = () => {
                 </div>
             </div>
             <div>
-                <span style={{color: '#9E9E9EFF'}}>Դեռ չունեք օգտանուն ? <span style={{color: '#246BFDFF', cursor: 'pointer'}}>Գրանցվել</span></span>
+                <span style={{color: '#9E9E9EFF'}}>Դեռ չունեք օգտանուն ? <span style={{color: '#246BFDFF', cursor: 'pointer'}} onClick={() => switchForm()}>Գրանցվել</span></span>
             </div>
         </form>
     </div>
