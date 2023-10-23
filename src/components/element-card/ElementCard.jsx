@@ -8,9 +8,9 @@ const ElementCard = ({img, title, address, price, id, like}) => {
   
   const liked = localStorage.getItem('liked')
 
-  return (
-    <Link to={`/item/${id}`}>    
+  return (    
       <div className='el-card'>
+        <Link to={`/item/${id}`} div className='el-card-link'>
           <div className='card-head'>
             <img src={img} width={'100%'} className='card-img'/>
           </div>
@@ -18,13 +18,13 @@ const ElementCard = ({img, title, address, price, id, like}) => {
             <b className='card-title'>{title}</b>
             <p className='card-address'>{address}</p>
             <b className='card-price'>$ {price}</b>
-            <div className='card-footer'>
-              <div className='card-id'>ID {id}</div>
-              <FaHeart className='card-like-icon' style={{color: liked.includes(id) ? 'rgb(245, 81, 81)' : 'gray'}} onClick={() => like(id)}/>
-            </div>
+          </div>
+        </Link>
+          <div className='card-footer'>
+            <div className='card-id'>ID {id}</div>
+            <FaHeart className='card-like-icon' style={{color: liked.includes(id) ? 'rgb(245, 81, 81)' : 'gray'}} onClick={() => like(id)}/>
           </div>
       </div>
-    </Link>
   )
 }
 

@@ -2,11 +2,14 @@
     width: 100%;
     min-height: 320px;
     background: #fff;
+    color: #333;
     border-radius: 17px;
     cursor: pointer;
 }
 .card-img {
     border-radius: 17px 17px 0px 0px;
+    height: 270px;
+    object-fit: cover;
 }
 .card-like-icon {
     font-size: 22px;
@@ -37,6 +40,11 @@
 .card-footer {
     display: flex;
     justify-content: space-between;
+    padding: 10px 13px 13px 13px;
+}
+.el-card-link {
+    text-decoration: none;
+    color: #333;
 }
 @media screen and (max-width: 1356px){
     .el-card {
