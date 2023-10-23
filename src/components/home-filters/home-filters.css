@@ -30,7 +30,7 @@
     transition: all ease .5s;
 }
 .type-icon {
-    color: #0957CBFF;
+    color: #246BFDFF;
     font-size: 22px;
 }
 .active > .type-icon {
@@ -38,7 +38,7 @@
 }
 .filter-tabs > .active {
     transition: all ease .5s;
-    background: #0957CBFF;
+    background: #246BFDFF;
     color: #fff;
 }
 .search-inpt {
@@ -85,7 +85,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    background: #0957CBFF;
+    background: #246BFDFF;
     cursor: pointer;
     
 }

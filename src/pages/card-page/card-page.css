@@ -2,10 +2,30 @@
     display: flex;
     justify-content: center;
     padding: 20px;
-    background: #F0F2F5FF;
+
 }
 .card-page .container {
     width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.price {
+    background: #F4F4F4;
+    width: 120px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+.card-data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.address {
+    color: gray;
 }
 @media screen and (max-width: 991px){
     .card-page {
