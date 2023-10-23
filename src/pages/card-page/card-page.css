@@ -1,0 +1,17 @@
+.card-page {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: #F0F2F5FF;
+}
+.card-page .container {
+    width: 70%;
+}
+@media screen and (max-width: 991px){
+    .card-page {
+        padding: 10px;
+    }
+    .card-page .container {
+        width: 100%;
+    }
+}

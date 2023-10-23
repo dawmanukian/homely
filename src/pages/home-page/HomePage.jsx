@@ -5,14 +5,10 @@ import Header from '../../components/header/Header'
 
 const HomePage = () => {
 
-  const MyContext = React.createContext('')
-
   return (
     <>
       <Header />
-      <MyContext.Provider value={'mher'}>
-        <CardsSwiper />
-      </MyContext.Provider>
+      <CardsSwiper />
     </>
   )
 }

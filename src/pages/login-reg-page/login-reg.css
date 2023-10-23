@@ -12,7 +12,8 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .back-btn {
-    height: 45px;
+    height: 55px;
+    width: 55px;
     left: 30px;
     top: 30px;
     border: none;
@@ -20,8 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    border-radius: 22px;
+    border-radius: 50%;
     cursor: pointer;
     background: #246BFDFF;
     color: #fff;
