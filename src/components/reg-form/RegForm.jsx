@@ -61,9 +61,7 @@ const RegForm = ({switchForm}) => {
         <div className='social-links'>
           <div className='social-link'>
             <FcGoogle />
-          </div>
-          <div className='social-link fa'>
-            <FaFacebook />
+            <span>Gmail</span>
           </div>
         </div>
         <div>

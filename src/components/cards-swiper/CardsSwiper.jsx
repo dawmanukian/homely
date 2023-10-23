@@ -8,6 +8,7 @@ import ElementCard from '../element-card/ElementCard';
 import './cards-swiper.css'
 import { useEffect, useState } from 'react';
 import { json } from 'react-router-dom';
+import { useContext } from 'react';
 
 const CardsSwiper = () => {
 
