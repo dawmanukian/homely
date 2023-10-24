@@ -27,6 +27,26 @@
 .address {
     color: gray;
 }
+.description {
+    background: #F4F4F4;
+    padding: 20px;
+    border-radius: 22px;
+    width: 50%;
+    font-size: 17px;
+    
+}
+.data {
+    display: flex;
+    justify-content: space-between;
+}
+@media screen and (max-width: 721px){
+    .description {
+        width: 100%;
+    }
+    .data {
+        flex-direction: column;
+    }
+}
 @media screen and (max-width: 991px){
     .card-page {
         padding: 10px;
