@@ -24,7 +24,11 @@
 }
 .card-address {
     color: gray;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
+
 .card-price {
     font-size: 22px;
 }

@@ -18,7 +18,7 @@ const ImagesSwiper = ({images}) => {
             {
                 images.map(el => {
                     return (
-                        <SwiperSlide>
+                        <SwiperSlide key={Math.random()}>
                             <img src={el} className='card-swiper-img'/>
                         </SwiperSlide>
                     )

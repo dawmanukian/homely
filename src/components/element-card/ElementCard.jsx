@@ -1,10 +1,10 @@
 import React from 'react'
 import './element-card.css'
 import { FaThumbsUp } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa6";
+import { FaHeart, FaLocationDot } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
-const ElementCard = ({img, title, address, price, id, like}) => {
+const ElementCard = ({img, title, address, price, id, like}) => { 
   
   const liked = localStorage.getItem('liked')
 
@@ -16,7 +16,7 @@ const ElementCard = ({img, title, address, price, id, like}) => {
           </div>
           <div className='card-data'>
             <b className='card-title'>{title}</b>
-            <p className='card-address'>{address}</p>
+            <p className='card-address'><FaLocationDot /> {address}</p>
             <b className='card-price'>$ {price}</b>
           </div>
         </Link>
