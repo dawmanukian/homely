@@ -12,17 +12,20 @@
 }
 .price {
     background: #F4F4F4;
-    width: 120px;
-    height: 60px;
+    width: 50%;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
+    font-size: 17px;
 }
-.card-data {
+.card-info {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    /* justify-content: space-between; */
+    padding: 0px 0px 20px;
+    gap: 30px;
 }
 .address {
     color: gray;
@@ -39,6 +42,7 @@
     display: flex;
     justify-content: space-between;
 }
+
 @media screen and (max-width: 721px){
     .description {
         width: 100%;
