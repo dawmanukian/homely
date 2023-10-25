@@ -33,6 +33,7 @@ const Footer = () => {
         </div>
         <hr style={{width: '100%', backgroundColor: '#D5D9E1FF', border: 'none', height: '1px'}}/>
         <p className='all-rights-reserved'>© 2023 Homely. All Rights Reserved.</p>
+        <p className='created-by'>Created by Magical</p>
     </footer>
   )
 }

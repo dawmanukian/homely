@@ -36,6 +36,11 @@ footer {
 .all-rights-reserved {
     padding: 30px 0px 30px 0px;
 }
+.created-by {
+    text-align: center;
+    padding: 20px 0px 30px 0px;
+    color: rgb(177, 178, 179);
+}
 @media screen and (max-width: 500px){
     .footer-social {
         width: 128px;
