@@ -1,8 +1,7 @@
 footer {
     position: relative;
-    top: 220px;
     margin-top: 25px;
-    min-height: 250px;
+    min-height: 320px;
     width: 100%;
     padding: 0px 60px 0px 60px;
     background: #F0F2F5FF;
@@ -40,5 +39,10 @@ footer {
 @media screen and (max-width: 550px){
     footer {
         padding: 0px 20px 0px 20px;
+    }
+}
+@media screen and (max-width: 721px){
+    footer {
+        top: 230px;
     }
 }

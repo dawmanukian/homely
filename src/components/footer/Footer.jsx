@@ -31,7 +31,7 @@ const Footer = () => {
                 <img src={logo} height={'110px'} style={{borderRadius: '22px'}} />
             </div>
         </div>
-        <hr style={{width: '100%', backgroundColor: 'gray', border: 'none', height: '1px'}}/>
+        <hr style={{width: '100%', backgroundColor: '#D5D9E1FF', border: 'none', height: '1px'}}/>
         <p className='all-rights-reserved'>© 2023 Homely. All Rights Reserved.</p>
     </footer>
   )
