@@ -36,6 +36,14 @@ footer {
 .all-rights-reserved {
     padding: 30px 0px 30px 0px;
 }
+@media screen and (max-width: 500px){
+    .footer-social {
+        width: 128px;
+    }
+    .footer-data {
+        flex-direction: column-reverse;
+    }
+}
 @media screen and (max-width: 550px){
     footer {
         padding: 0px 20px 0px 20px;

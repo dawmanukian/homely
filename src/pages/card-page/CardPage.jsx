@@ -3,6 +3,7 @@ import './card-page.css'
 import { Link, useParams } from 'react-router-dom'
 import ImagesSwiper from '../../components/images-swiper/ImagesSwiper'
 import { FaArrowLeftLong, FaLocationDot } from "react-icons/fa6";
+import Footer from '../../components/footer/Footer';
 
 const CardPage = () => {
 
@@ -46,42 +47,45 @@ const CardPage = () => {
   const cardData = data.filter(el => el.id === Number(itemId))
 
   return (
-    <div className='card-page'>
-      <Link to={'/'}>
-        <button className='back-btn' style={{zIndex: '2'}}><FaArrowLeftLong /></button>
-      </Link>
-        {
-          cardData.map(el => {
-            return (
-              <div className='container' key={el.id}>
-                <div>
-                  <div style={{width: '100%'}}>
-                    <ImagesSwiper images={el.img}/>
-                  </div>
-                  <div className="data">
-                    <div className='card-info'>
-                      <h2>{el.title}</h2>
-                      <div className='address'>
-                        <FaLocationDot />
-                        <b>{el.address}</b>
-                      </div>
-                      <div style={{display: 'flex', gap: '20px', justifyContent: 'space-between', width: '100%'}}>
-                        <h3 className='price'>$ {el.price}</h3>
-                        <h3 className='price'>ID {el.id}</h3>
-                      </div>
+    <div>
+      <div className='card-page'>
+        <Link to={'/'}>
+          <button className='back-btn' style={{zIndex: '2'}}><FaArrowLeftLong /></button>
+        </Link>
+          {
+            cardData.map(el => {
+              return (
+                <div className='container' key={el.id}>
+                  <div>
+                    <div style={{width: '100%'}}>
+                      <ImagesSwiper images={el.img}/>
                     </div>
-                    <div className='description'>
-                      <p>
-                        Արաբկիրի Սևաստոպոլյան փողոցում՝ նորակառույց տների հարևանությամբ, վաճառվում է երկհարկանի առանձնատուն, որի ընդհանուր մակերեսը կազմում է 350քմ, որից բնակելի մակերեսը՝ 221քմ։ Առանձնատունն ունի ավտոհանգրվան, լողավազան և այգի դեկորատիվ ծառերով։ Ինչպես նաև 5 ընդարձակ ննջարաններ, աշխատասենյակ, բաց պատշգամբ, և նկուղ։ Տեղադրված է անհատական ջեռուցման համակարգ։ Առանձնատան տարածքը պարսպապատ է։
-                      </p>
+                    <div className="data">
+                      <div className='card-info'>
+                        <h2>{el.title}</h2>
+                        <div className='address'>
+                          <FaLocationDot />
+                          <b>{el.address}</b>
+                        </div>
+                        <div style={{display: 'flex', gap: '20px', justifyContent: 'space-between', width: '100%'}}>
+                          <h3 className='price'>$ {el.price}</h3>
+                          <h3 className='price'>ID {el.id}</h3>
+                        </div>
+                      </div>
+                      <div className='description'>
+                        <p>
+                          Արաբկիրի Սևաստոպոլյան փողոցում՝ նորակառույց տների հարևանությամբ, վաճառվում է երկհարկանի առանձնատուն, որի ընդհանուր մակերեսը կազմում է 350քմ, որից բնակելի մակերեսը՝ 221քմ։ Առանձնատունն ունի ավտոհանգրվան, լողավազան և այգի դեկորատիվ ծառերով։ Ինչպես նաև 5 ընդարձակ ննջարաններ, աշխատասենյակ, բաց պատշգամբ, և նկուղ։ Տեղադրված է անհատական ջեռուցման համակարգ։ Առանձնատան տարածքը պարսպապատ է։
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            )
-          })
-        }
-      </div>
+              )
+            })
+          }
+        </div>
+        <Footer />
+    </div>
   )
 }
 

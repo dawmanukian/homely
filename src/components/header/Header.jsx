@@ -20,7 +20,7 @@ const Header = () => {
     <div>
       <header>
         <div className='header-menu'>
-        <img src={logo} height={'120px'} style={{borderRadius: '22px'}} className='header-logo'/>
+        <img src={logo} height={'110px'} style={{borderRadius: '22px'}} className='header-logo'/>
           <div className='header-contact'>
             <div className='liked-num' onClick={() => setShowLikedCards(!showLikedCards)}>
               <FaHeart className='like-icon'/>

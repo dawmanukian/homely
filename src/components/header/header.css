@@ -134,7 +134,8 @@ option {
 .header-logo {
     color: #fff;
     cursor: pointer;
-    font-size: 50px;
+    position: relative;
+    top: 20px;
 }
 .header-btn-link {
     text-decoration: none;
