@@ -9,7 +9,9 @@ const HomePage = () => {
   return (
     <>
       <Header />
-      <CardsSwiper />
+      <CardsSwiper status={1}/>
+      <CardsSwiper status={0}/>
+      <CardsSwiper status={null}/>
       <Footer />
     </>
   )

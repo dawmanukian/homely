@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 import { json } from 'react-router-dom';
 import { useContext } from 'react';
 
-const CardsSwiper = () => {
+const CardsSwiper = ({status}) => {
 
     const [likedCards, setLikedCards] = useState(localStorage.getItem('liked'))
 
@@ -92,6 +92,7 @@ const CardsSwiper = () => {
                                 img={el.img}
                                 address={el.address}
                                 title={el.title}
+                                status={status}
                             />
                         </SwiperSlide>
                     )

@@ -50,6 +50,20 @@
     text-decoration: none;
     color: #333;
 }
+.card-type {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    gap: 5px;
+    padding: 8px;
+    border-radius: 7px;
+}
+.ex {
+    background: #4A9EE4FF;
+}
+.dis {
+    background: #F55151FF;
+}
 @media screen and (max-width: 1356px){
     .el-card {
         min-width: 50%;
