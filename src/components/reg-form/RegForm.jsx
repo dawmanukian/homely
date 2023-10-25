@@ -58,12 +58,6 @@ const RegForm = ({switchForm}) => {
           />
         </div>
         <button className='reg-btn' type='submit'>Գրանցվել</button>
-        <div className='social-links'>
-          <div className='social-link'>
-            <FcGoogle />
-            <span>Gmail</span>
-          </div>
-        </div>
         <div>
             <span style={{color: '#9E9E9EFF'}}>Արդեն գրանցվել եք ? <span style={{color: '#246BFDFF', cursor: 'pointer'}} onClick={() => switchForm()}>Մուտք</span></span>
         </div>

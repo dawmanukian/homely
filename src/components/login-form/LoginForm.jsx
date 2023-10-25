@@ -37,15 +37,6 @@ const LoginForm = ({switchForm}) => {
             </div>
             <button className='login-btn' type='submit'>Մուտք</button>
             <span className='forgot-password'>Մոռացել եմ գաղտնաբառը</span>
-            <div className='social-links'>
-                <div className='social-link'>
-                    <FcGoogle />
-                    <span>Gmail</span>
-                </div>
-                {/* <div className='social-link fa'>
-                    <FaFacebook />
-                </div> */}
-            </div>
             <div>
                 <span style={{color: '#9E9E9EFF'}}>Դեռ չունեք օգտանուն ? <span style={{color: '#246BFDFF', cursor: 'pointer'}} onClick={() => switchForm()}>Գրանցվել</span></span>
             </div>
