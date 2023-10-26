@@ -44,6 +44,11 @@
   flex-direction: column;
   gap: 15px;
 }
+.card-add-date {
+  color: gray;
+  font-size: 14px;
+  text-align: end;
+}
 @media screen and (max-width: 991px) {
   .container {
     width: 95%;

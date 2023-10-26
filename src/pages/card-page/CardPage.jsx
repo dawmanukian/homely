@@ -4,7 +4,9 @@ import { Link, useParams } from "react-router-dom";
 import ImagesSwiper from "../../components/images-swiper/ImagesSwiper";
 import { FaArrowLeftLong, FaHeart, FaLocationDot } from "react-icons/fa6";
 import Footer from "../../components/footer/Footer";
+import { FaCalendarAlt } from "react-icons/fa";
 import CardsSwiper from "../../components/cards-swiper/CardsSwiper";
+import { PiFireBold } from "react-icons/pi";
 
 const CardPage = () => {
   const liked = localStorage.getItem("liked");
@@ -66,10 +68,15 @@ const CardPage = () => {
           return (
             <div className="card-page-data">
               <ImagesSwiper images={el.img} />
+              <span className="card-add-date">
+                Ավելացվել է 27․01․2023 <FaCalendarAlt />
+              </span>
               <div className="card-title-panel">
                 <div className="card-header">
                   <p className="card-title">{el.title}</p>
-                  <p className="card-address"><FaLocationDot /> {el.address}</p>
+                  <p className="card-address">
+                    <FaLocationDot /> {el.address}
+                  </p>
                 </div>
                 <div className="card-like">
                   <FaHeart
@@ -82,7 +89,14 @@ const CardPage = () => {
                   />
                 </div>
               </div>
-              <b className="card-price">$ {el.price}</b>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "17px" }}
+              >
+                <b className="card-price">$ {el.price}</b>
+                <div className="card-type dis">
+                  <PiFireBold /> Իջեցված գին
+                </div>
+              </div>
               <div className="card-id">
                 <p>ID {el.id}</p>
               </div>
