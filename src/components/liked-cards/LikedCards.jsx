@@ -51,6 +51,7 @@ const LikedCards = ({ onClose }) => {
 
   const liked = JSON.parse(localStorage.getItem("liked"));
   const liked_cards = cards.filter((el) => liked.includes(el.id));
+  console.log(liked);
 
   return (
     <div className="liked-cards-panel">
@@ -58,20 +59,22 @@ const LikedCards = ({ onClose }) => {
         <RiCloseFill />
       </button>
       <div className="liked-cards">
-        {liked_cards.map((el) => {
-          return (
-            <div className="l-card" key={el.id}>
-              <ElementCard
-                // like={like}
-                price={el.price}
-                id={el.id}
-                img={el.img}
-                address={el.address}
-                title={el.title}
-              />
-            </div>
-          );
-        })}
+        {liked.length == 0
+          ? <p style={{color: 'gray'}}>Չկա պահպանված գույք</p>
+          : liked_cards.map((el) => {
+              return (
+                <div className="l-card" key={el.id}>
+                  <ElementCard
+                    // like={like}
+                    price={el.price}
+                    id={el.id}
+                    img={el.img}
+                    address={el.address}
+                    title={el.title}
+                  />
+                </div>
+              );
+            })}
       </div>
     </div>
   );

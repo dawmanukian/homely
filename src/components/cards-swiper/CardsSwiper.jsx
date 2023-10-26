@@ -46,6 +46,20 @@ const CardsSwiper = ({ status }) => {
     },
   ]);
 
+  const like = (id) => {
+    const liked = JSON.parse(localStorage.getItem("liked"));
+    cards.forEach((el) => {
+      if (el.id === id) {
+        if (liked.includes(id)) {
+          const filtered_liked = liked.filter((el) => el !== id);
+          localStorage.setItem("liked", JSON.stringify(filtered_liked));
+        } else {
+          localStorage.setItem("liked", JSON.stringify([...liked, id]));
+        }
+      }
+    });
+    setLikedCards(() => localStorage.getItem("liked"));
+  };
 
   return (
     <div className="cards-swiper-panel">
@@ -68,6 +82,7 @@ const CardsSwiper = ({ status }) => {
           return (
             <SwiperSlide key={el.id}>
               <ElementCard
+                like={like}
                 price={el.price}
                 id={el.id}
                 img={el.img}
