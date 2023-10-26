@@ -1,15 +1,15 @@
 .cards-swiper-panel {
-    padding: 25px;
-    background: #F0F2F5FF;
-    border-radius: 25px;
-    margin: 35px;
-    transition: all ease .5s;
+  padding: 25px;
+  background: #f0f2f5ff;
+  border-radius: 25px;
+  margin: 35px;
+  transition: all ease 0.5s;
 }
-@media screen and (max-width: 721px){
-    .cards-swiper-panel {
-        position: relative;
-        top: 220px;
-        margin: 0px;
-        padding: 15px;
-    }
+@media screen and (max-width: 721px) {
+  .cards-swiper-panel {
+    position: relative;
+    top: 220px;
+    margin: 0px;
+    padding: 15px;
+  }
 }

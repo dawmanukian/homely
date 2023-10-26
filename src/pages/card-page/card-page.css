@@ -1,61 +1,51 @@
 .card-page {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.card-page .container {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.container {
+  width: 70%;
 }
-.price {
-    background: #F4F4F4;
-    width: 50%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    font-size: 17px;
+.card-title {
+  font-size: 27px;
 }
-.card-info {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    padding: 0px 0px 20px;
-    gap: 30px;
+.card-page-data {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.address {
-    color: gray;
+.card-description {
+  color: #333;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 20px;
 }
-.description {
-    background: #F4F4F4;
-    padding: 20px;
-    border-radius: 22px;
-    width: 50%;
-    font-size: 17px;
-    
+.card-title-panel {
+  display: flex;
 }
-.data {
-    display: flex;
-    justify-content: space-between;
+.card-like {
+  border-radius: 10px;
+  height: 37px;
+  width: 37px;
+  margin: 0px 0px 0px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f4;
 }
-
-@media screen and (max-width: 721px){
-    .description {
-        width: 100%;
-    }
-    .data {
-        flex-direction: column;
-    }
+.card-price {
+  font-size: 22px;
 }
-@media screen and (max-width: 991px){
-    .card-page {
-        padding: 10px;
-    }
-    .card-page .container {
-        width: 100%;
-    }
+.card-id {
+  font-weight: 900;
+}
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+@media screen and (max-width: 991px) {
+  .container {
+    width: 95%;
+  }
 }

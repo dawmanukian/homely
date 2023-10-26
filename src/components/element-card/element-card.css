@@ -1,81 +1,82 @@
 .el-card {
-    width: 100%;
-    min-height: 320px;
-    background: #fff;
-    color: #333;
-    border-radius: 17px;
-    cursor: pointer;
+  width: 100%;
+  min-height: 320px;
+  background: #fff;
+  color: #333;
+  border-radius: 17px;
+  cursor: pointer;
 }
 .card-img {
-    border-radius: 17px 17px 0px 0px;
-    height: 270px;
-    object-fit: cover;
+  border-radius: 17px 17px 0px 0px;
+  height: 270px;
+  object-fit: cover;
 }
 .card-like-icon {
-    font-size: 22px;
-    color: rgb(211, 211, 211);
-    transition: all ease .4s;
+  font-size: 22px;
+  color: rgb(211, 211, 211);
+  cursor: pointer;
+  transition: all ease 0.4s;
 }
 .card-data {
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
-    padding: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 13px;
 }
 .card-address {
-    color: gray;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  color: gray;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .card-price {
-    font-size: 22px;
+  font-size: 22px;
 }
 .card-head {
-    position: relative;
+  position: relative;
 }
 .card-id {
-    background: #F4F4F4;
-    border-radius: 7px;
-    padding: 5px;
-    height: 37px;
-    width: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: #f4f4f4;
+  border-radius: 7px;
+  padding: 5px;
+  height: 37px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 13px 13px 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 13px 13px 13px;
 }
 .el-card-link {
-    text-decoration: none;
-    color: #333;
+  text-decoration: none;
+  color: #333;
 }
 .card-type {
-    display: flex;
-    align-items: center;
-    color: #fff;
-    gap: 5px;
-    padding: 8px;
-    border-radius: 7px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  gap: 5px;
+  padding: 8px;
+  border-radius: 7px;
 }
 .ex {
-    background: #4A9EE4FF;
+  background: #4a9ee4ff;
 }
 .dis {
-    background: #F55151FF;
+  background: #f55151ff;
 }
-@media screen and (max-width: 1356px){
-    .el-card {
-        min-width: 50%;
-    }
+@media screen and (max-width: 1356px) {
+  .el-card {
+    min-width: 50%;
+  }
 }
-@media screen and (max-width: 721px){
-    .el-card {
-        min-width: 100%;
-    }
+@media screen and (max-width: 721px) {
+  .el-card {
+    min-width: 100%;
+  }
 }
