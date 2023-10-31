@@ -3,6 +3,7 @@ import "./reg-form.css";
 import { IoMail } from "react-icons/io5";
 import { FaUserAlt, FaPhoneAlt, FaClipboardList } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+import SuccessNotification from "../success-notification/SuccessNotification";
 
 const RegForm = ({ switchForm }) => {
   const {
@@ -87,6 +88,7 @@ const RegForm = ({ switchForm }) => {
             </span>
           </span>
         </div>
+        <SuccessNotification message={'Ձեր հայտը հաջողությամբ ուղարկվեց'}/>
       </form>
     </div>
   );

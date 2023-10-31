@@ -8,6 +8,7 @@ const HomeFilters = () => {
   const [newBuilding, setNewBuilding] = useState(false);
   const [showMore, setShowMore] = useState(false);
   const [type, setType] = useState(0);
+  const [administrativeRegion, setAdministrativeRegion] = useState('0');
 
   return (
     <div className="home-filters">
@@ -75,6 +76,94 @@ const HomeFilters = () => {
           className="filter-checks"
           style={showMore ? { display: "flex" } : { display: "none" }}
         >
+          <div className="filter-selects">
+            <div className="select-region-panel">
+              <b>Մարզ</b>
+              <select
+                className="select-region"
+                onChange={(evn) => setAdministrativeRegion(evn.target.value)}
+              >
+                <option value={0}>Երևան</option>
+                <option value={1}>Արագածոտն</option>
+                <option value={2}>Արարատ</option>
+                <option value={3}>Արմավիր</option>
+                <option value={4}>Գեղարքունիք</option>
+                <option value={5}>Կոտայք</option>
+                <option value={6}>Լոռի</option>
+                <option value={7}>Շիրակ</option>
+                <option value={8}>Սյունիք</option>
+                <option value={9}>Տավուշ</option>
+                <option value={10}>Վայոց ձոր</option>
+              </select>
+            </div>
+            {administrativeRegion === "0" && (
+              <div className="filter-checks-panel">
+                <b>Շրջան</b>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <div className="adm-region">
+                    <div>
+                      <input type="checkbox" />
+                      <label>Աջափնյակ</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" />
+                      <label>Ավան</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" />
+                      <label>Արաբկիր</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" />
+                      <label>Դավթաշեն</label>
+                    </div>
+                  </div>
+                  <div className="adm-region">
+                    <div>
+                      <input type="checkbox" />
+                      <label>Էրեբունի</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" />
+                      <label>Կենտրոն</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" />
+                      <label>Մալաթիա-Սեբաստիա</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" />
+                      <label>Նոր Նորք</label>
+                    </div>
+                  </div>
+                  <div className="adm-region">
+                    <div>
+                      <input type="checkbox" />
+                      <label>Նորք-Մարաշ</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" />
+                      <label>Նուբարաշեն</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" />
+                      <label>Շենգավիթ</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" />
+                      <label>Քանաքեռ-Զեյթուն</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
           <div className="filter-checks-panel">
             <b>Գույքի տիպը</b>
             <div>

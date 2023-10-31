@@ -26,7 +26,7 @@
 .card-like {
   border-radius: 10px;
   height: 37px;
-  width: 37px;
+  min-width: 37px;
   margin: 0px 0px 0px 15px;
   display: flex;
   align-items: center;
@@ -48,6 +48,77 @@
   color: gray;
   font-size: 14px;
   text-align: end;
+}
+.card-title-pg {
+  font-size: 27px;
+}
+.send-req {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  gap: 20px;
+}
+.send-req-btn {
+  border-radius: 10px;
+  height: 40px;
+  width: 200px;
+  border: none;
+  background: #0957cbff;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.send-icon {
+  font-size: 19px;
+}
+.card-check {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.check-icon {
+  color: green
+}
+.share-link-btn {
+  display: flex;
+  align-items:center;
+  gap: 5px;
+  border: none;
+  color: #333;
+  border-radius: 10px;
+  height: 40px;
+  background: #f4f4f4;
+  cursor: pointer;
+  padding: 12px;
+}
+.share-link-panel {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 50px;
+  background: #f4f4f4;
+  padding: 15px;
+  position: absolute;
+  z-index: 2;
+  top: 65px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  animation: share-link 0.5s;
+}
+@keyframes share-link {
+  from {
+    transform: scale(0.7);
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+.share-link-icon {
+  font-size: 27px;
 }
 @media screen and (max-width: 991px) {
   .container {

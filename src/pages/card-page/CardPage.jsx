@@ -6,9 +6,17 @@ import { FaArrowLeftLong, FaHeart, FaLocationDot } from "react-icons/fa6";
 import Footer from "../../components/footer/Footer";
 import { FaCalendarAlt } from "react-icons/fa";
 import CardsSwiper from "../../components/cards-swiper/CardsSwiper";
-import { PiFireBold } from "react-icons/pi";
+import { PiFireBold, PiShareNetworkBold } from "react-icons/pi";
+import { ImBubble, ImCheckmark } from "react-icons/im";
+import {
+  FacebookShareButton,
+  TelegramShareButton,
+  TwitterShareButton,
+} from "react-share";
+import { FaFacebook, FaTelegram,  FaSquareXTwitter } from "react-icons/fa6";
 
 const CardPage = () => {
+  const [showShareLink, setShowShareLink] = useState(false);
   const liked = localStorage.getItem("liked");
   const [data, setData] = useState([
     {
@@ -71,9 +79,41 @@ const CardPage = () => {
               <span className="card-add-date">
                 Ավելացվել է 27․01․2023 <FaCalendarAlt />
               </span>
+              <div className="send-req">
+                <button
+                  className="share-link-btn"
+                  onClick={() => setShowShareLink(!showShareLink)}
+                >
+                  <PiShareNetworkBold style={{ fontSize: "20px" }} />
+                  <b>Կիսվել հղումով</b>
+                </button>
+                <button className="send-req-btn">
+                  <span>Ուղարկել հայտ</span>
+                  <ImBubble className="send-icon" />
+                </button>
+                {showShareLink && (
+                  <div className="share-link-panel">
+                    <FacebookShareButton
+                      url={`https://homely-sigma.vercel.app/item/${itemId}`}
+                    >
+                      <FaFacebook className="share-link-icon" style={{color: '#0866FFFF'}}/>
+                    </FacebookShareButton>
+                    <TelegramShareButton
+                      url={`https://homely-sigma.vercel.app/item/${itemId}`}
+                    >
+                      <FaTelegram className="share-link-icon" style={{color: '#259CD8FF'}}/>
+                    </TelegramShareButton>
+                    <TwitterShareButton
+                      url={`https://homely-sigma.vercel.app/item/${itemId}`}
+                    >
+                      <FaSquareXTwitter className="share-link-icon"/>
+                    </TwitterShareButton>
+                  </div>
+                )}
+              </div>
               <div className="card-title-panel">
                 <div className="card-header">
-                  <p className="card-title">{el.title}</p>
+                  <p className="card-title-pg">{el.title}</p>
                   <p className="card-address">
                     <FaLocationDot /> {el.address}
                   </p>
@@ -110,6 +150,76 @@ const CardPage = () => {
                   հագեցած է անհրաժեշտ սանտեխնիկայով: Տեղադրված են անհատական
                   ջեռուցման և օդափոխության համակարգեր:
                 </p>
+              </div>
+              <div className="card-description">
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-around",
+                    flexWrap: "wrap",
+                    gap: "7px",
+                  }}
+                >
+                  <div className="card-check">
+                    <b>Գազ</b>
+                    <ImCheckmark className="check-icon" />
+                  </div>
+                  <div className="card-check">
+                    <b>Տաք ջուր</b>
+                    <ImCheckmark className="check-icon" />
+                  </div>
+                  <div className="card-check">
+                    <b>Կայանատեղի</b>
+                    <ImCheckmark className="check-icon" />
+                  </div>
+                  <div className="card-check">
+                    <b>Գազ</b>
+                    <ImCheckmark className="check-icon" />
+                  </div>
+                  <div className="card-check">
+                    <b>Տաք ջուր</b>
+                    <ImCheckmark className="check-icon" />
+                  </div>
+                  <div className="card-check">
+                    <b>Կայանատեղի</b>
+                    <ImCheckmark className="check-icon" />
+                  </div>
+                  <div className="card-check">
+                    <b>Գազ</b>
+                    <ImCheckmark className="check-icon" />
+                  </div>
+                  <div className="card-check">
+                    <b>Տաք ջուր</b>
+                    <ImCheckmark className="check-icon" />
+                  </div>
+                  <div className="card-check">
+                    <b>Կայանատեղի</b>
+                    <ImCheckmark className="check-icon" />
+                  </div>
+                </div>
+              </div>
+              <div className="card-description">
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-evenly",
+                    flexWrap: "wrap",
+                    gap: "7px",
+                  }}
+                >
+                  <div className="card-check">
+                    <b>#Գազ</b>
+                  </div>
+                  <div className="card-check">
+                    <b>#Տաք ջուր</b>
+                  </div>
+                  <div className="card-check">
+                    <b>#Կայանատեղի</b>
+                  </div>
+                  <div className="card-check">
+                    <b>#Գազ</b>
+                  </div>
+                </div>
               </div>
             </div>
           );

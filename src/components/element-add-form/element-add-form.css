@@ -1,0 +1,9 @@
+.add-input {
+    width: 500px;
+    height: 60px;
+    padding: 12px;
+    border-radius: 15px;
+    border: none;
+    background: #F4F4F4FF;
+    outline: none;
+}
