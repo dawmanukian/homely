@@ -13,7 +13,7 @@ import {
   TelegramShareButton,
   TwitterShareButton,
 } from "react-share";
-import { FaFacebook, FaTelegram,  FaSquareXTwitter } from "react-icons/fa6";
+import { FaFacebook, FaTelegram, FaSquareXTwitter } from "react-icons/fa6";
 
 const CardPage = () => {
   const [showShareLink, setShowShareLink] = useState(false);
@@ -74,7 +74,7 @@ const CardPage = () => {
         </Link>
         {cardData.map((el) => {
           return (
-            <div className="card-page-data">
+            <div className="card-page-data" key={el.id}>
               <ImagesSwiper images={el.img} />
               <span className="card-add-date">
                 Ավելացվել է 27․01․2023 <FaCalendarAlt />
@@ -96,17 +96,23 @@ const CardPage = () => {
                     <FacebookShareButton
                       url={`https://homely-sigma.vercel.app/item/${itemId}`}
                     >
-                      <FaFacebook className="share-link-icon" style={{color: '#0866FFFF'}}/>
+                      <FaFacebook
+                        className="share-link-icon"
+                        style={{ color: "#0866FFFF" }}
+                      />
                     </FacebookShareButton>
                     <TelegramShareButton
                       url={`https://homely-sigma.vercel.app/item/${itemId}`}
                     >
-                      <FaTelegram className="share-link-icon" style={{color: '#259CD8FF'}}/>
+                      <FaTelegram
+                        className="share-link-icon"
+                        style={{ color: "#259CD8FF" }}
+                      />
                     </TelegramShareButton>
                     <TwitterShareButton
                       url={`https://homely-sigma.vercel.app/item/${itemId}`}
                     >
-                      <FaSquareXTwitter className="share-link-icon"/>
+                      <FaSquareXTwitter className="share-link-icon" />
                     </TwitterShareButton>
                   </div>
                 )}

@@ -1,19 +1,52 @@
 .account-header {
-    height: 70px;
-    display: flex;
-    align-items: center;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 20px 0px 0px 40px;
 }
 .account-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 5px;
-    background: #f4f4f4;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: #f4f4f4;
+  border-radius: 20px;
+  cursor: pointer;
 }
 .account-img {
-    object-fit: cover;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.signout-btn {
+  color: #fff;
+  background: red;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.settings-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  background: rgb(26, 26, 121);
+  padding: 8px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+.settings-icon {
+  font-size: 18px;
+}
+.account-drop-panel {
+  position: absolute;
+  gap: 10px;
+  top: 90px;
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 20px;
+  display: grid;
 }
