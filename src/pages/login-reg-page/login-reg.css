@@ -3,36 +3,3 @@
   justify-content: space-between;
   height: 100vh;
 }
-.page-img {
-  height: 100%;
-  width: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(../../img/minh-pham-OtXADkUh3-I-unsplash.jpg);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.back-btn {
-  height: 45px;
-  width: 45px;
-  left: 30px;
-  top: 30px;
-  border: none;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  cursor: pointer;
-  background: #246bfdff;
-  color: #fff;
-  font-size: 18px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-@media screen and (max-width: 800px) {
-  .page-img {
-    display: none;
-  }
-  .back-btn {
-    box-shadow: none;
-  }
-}

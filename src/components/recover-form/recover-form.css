@@ -1,0 +1,52 @@
+.recover-form {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    text-align: center;
+  }
+  .recover-inpt {
+    height: 60px;
+    width: 365px;
+    border: none;
+    background: #f4f4f4;
+    padding: 12px 12px 12px 50px;
+    border-radius: 15px;
+  }
+  .recover-btn {
+    height: 53px;
+    border-radius: 15px;
+    border: none;
+    color: #fff;
+    background: #246bfdff;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .recover-inpt:focus {
+    outline: 1px solid #246bfdff;
+    background: #eef4ffff;
+    border-radius: 15px;
+  }
+  .rec-inpt {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .email-icon {
+    color: #9e9e9eff;
+    position: absolute;
+    left: 16px;
+    font-size: 18px;
+  }
+  @media screen and (max-width: 800px) {
+    .recover-form {
+      width: 100%;
+    }
+  }
+  
