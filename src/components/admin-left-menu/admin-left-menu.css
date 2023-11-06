@@ -1,7 +1,8 @@
 .left-menu {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   padding: 20px 0px 0px 40px;
 }
 .left-menu-item {
@@ -16,5 +17,6 @@
   transition: all ease 0.5s;
 }
 .left-menu .active {
-  background: #b1afaf;
+  background: #246bfdff;
+  color: #fff;
 }
