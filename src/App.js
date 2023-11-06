@@ -4,18 +4,20 @@ import HomePage from "./pages/home-page/HomePage";
 import LoginRegPage from "./pages/login-reg-page/LoginRegPage";
 import CardPage from "./pages/card-page/CardPage";
 import AccountPage from "./pages/account-page/AccountPage";
-import PrivateRoute from "./util/private-route/PrivateRoute";
 import "bootstrap/dist/css/bootstrap.min.css";
+import RecoverPage from "./pages/recover-page/RecoverPage";
+
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path={"/"} element={<HomePage />} exact/>
-          <Route path={"/auth"} element={<LoginRegPage />} exact/>
-          <Route path={"/item/:itemId"} element={<CardPage />} exact/>
-          <Route path={"/account"} component={<AccountPage />}/>
+          <Route path={"/"} element={<HomePage />} />
+          <Route path={"/auth"} element={<LoginRegPage />} />
+          <Route path={'/account'} element={<AccountPage />} />
+          <Route path={'/auth/recover'} element={<RecoverPage />}/>
+          <Route path={"/item/:itemId"} element={<CardPage />} />
         </Routes>
       </Router>
     </>

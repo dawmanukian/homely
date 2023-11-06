@@ -3,6 +3,7 @@ import "./login-form.css";
 import { FaLock } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const LoginForm = ({ switchForm }) => {
   const {
@@ -52,7 +53,7 @@ const LoginForm = ({ switchForm }) => {
         <button className="login-btn" type="submit">
           Մուտք
         </button>
-        <span className="forgot-password">Մոռացել եմ գաղտնաբառը</span>
+        <Link className="forgot-password" to={'./recover'}>Մոռացել եմ գաղտնաբառը</Link>
         <div>
           <span style={{ color: "#9E9E9EFF" }}>
             Դեռ չունեք օգտանուն ?{" "}
