@@ -4,9 +4,7 @@ import HomePage from "./pages/home-page/HomePage";
 import LoginRegPage from "./pages/login-reg-page/LoginRegPage";
 import CardPage from "./pages/card-page/CardPage";
 import AccountPage from "./pages/account-page/AccountPage";
-import "bootstrap/dist/css/bootstrap.min.css";
 import RecoverPage from "./pages/recover-page/RecoverPage";
-
 
 function App() {
   return (

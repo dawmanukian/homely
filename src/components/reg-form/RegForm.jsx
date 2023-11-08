@@ -77,18 +77,6 @@ const RegForm = ({ switchForm }) => {
         <button className="reg-btn" type="submit">
           Գրանցվել
         </button>
-        <div>
-          <span style={{ color: "#9E9E9EFF" }}>
-            Արդեն գրանցվել եք ?{" "}
-            <span
-              style={{ color: "#246BFDFF", cursor: "pointer" }}
-              onClick={() => switchForm()}
-            >
-              Մուտք
-            </span>
-          </span>
-        </div>
-        <SuccessNotification message={'Ձեր հայտը հաջողությամբ ուղարկվեց'}/>
       </form>
     </div>
   );
