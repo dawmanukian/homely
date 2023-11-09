@@ -10,7 +10,8 @@ const AccountPage = () => {
   return (
     <>
       <AccountHeader />
-      <AdminPage />
+      {/* <AdminPage /> */}
+      <ElementAddForm />
     </>
   );
 };
