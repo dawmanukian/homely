@@ -5,7 +5,7 @@ import { IoMail } from "react-icons/io5";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-const LoginForm = ({ switchForm }) => {
+const LoginForm = () => {
   const {
     register,
     handleSubmit,
@@ -54,17 +54,6 @@ const LoginForm = ({ switchForm }) => {
           Մուտք
         </button>
         <Link className="forgot-password" to={'./recover'}>Մոռացել եմ գաղտնաբառը</Link>
-        <div>
-          <span style={{ color: "#9E9E9EFF" }}>
-            Դեռ չունեք օգտանուն ?{" "}
-            <span
-              style={{ color: "#246BFDFF", cursor: "pointer" }}
-              onClick={() => switchForm()}
-            >
-              Գրանցվել
-            </span>
-          </span>
-        </div>
       </form>
     </div>
   );

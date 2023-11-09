@@ -5,6 +5,22 @@
   margin: 35px;
   transition: all ease 0.5s;
 }
+@media screen and (max-height: 680px){
+  .cards-swiper-panel {
+    position: relative;
+    top: 300px;
+    margin: 0px;
+    padding: 15px;
+  }
+}
+@media screen and (max-height: 800px){
+  .cards-swiper-panel {
+    position: relative;
+    top: 100px;
+    margin: 0px;
+    padding: 15px;
+  }
+}
 @media screen and (max-width: 721px) {
   .cards-swiper-panel {
     position: relative;
