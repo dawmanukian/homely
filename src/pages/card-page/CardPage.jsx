@@ -14,8 +14,10 @@ import {
   TwitterShareButton,
 } from "react-share";
 import { FaFacebook, FaTelegram, FaSquareXTwitter } from "react-icons/fa6";
+import SendRequest from "../../components/send-request/SendRequest";
 
 const CardPage = () => {
+  const [showReqPanel, setShowReqPanel] = useState(false)
   const [showShareLink, setShowShareLink] = useState(false);
   const liked = localStorage.getItem("liked");
   const [data, setData] = useState([
@@ -66,6 +68,7 @@ const CardPage = () => {
 
   return (
     <div className="card-page">
+      {showReqPanel && <SendRequest onClose={() => setShowReqPanel(false)}/>}
       <div className="container">
         <Link to={"/"}>
           <button className="back-btn" style={{ zIndex: "2" }}>
@@ -87,7 +90,7 @@ const CardPage = () => {
                   <PiShareNetworkBold style={{ fontSize: "20px" }} />
                   <b>Կիսվել հղումով</b>
                 </button>
-                <button className="send-req-btn">
+                <button className="send-req-btn" onClick={() => setShowReqPanel(true)}>
                   <span>Ուղարկել հայտ</span>
                   <ImBubble className="send-icon" />
                 </button>
