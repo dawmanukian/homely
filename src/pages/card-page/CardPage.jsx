@@ -231,6 +231,10 @@ const CardPage = () => {
           );
         })}
       </div>
+      <div style={{width: '100%'}}>
+        <h2 className="card-page-title">Նման հայտարարություններ</h2>
+        <CardsSwiper /> 
+      </div>
       <Footer />
     </div>
   );
