@@ -4,8 +4,10 @@ import { FaLock } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { useCookies } from 'react-cookie';
 
 const LoginForm = () => {
+  const [cookies, setCookie] = useCookies(['token']);
   const {
     register,
     handleSubmit,
@@ -13,7 +15,8 @@ const LoginForm = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    setCookie('token', 'mher', { path: '/', maxAge: 3600 });
+    window.location = 'http://localhost:3001'
   };
 
   return (

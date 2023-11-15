@@ -19,6 +19,11 @@ const Header = () => {
 
   return (
     <div>
+      {showLikedCards && (
+        <div className="liked-panel">
+          <LikedCards onClose={() => setShowLikedCards(false)} />
+        </div>
+      )}
       <header>
         <div className="header-menu">
           <img
@@ -57,7 +62,7 @@ const Header = () => {
             <Link to={"/auth"} className="header-btn-link">
               <button className="header-btn">
                 <FaUser />
-                Մուտք / Գրանցվել
+                Մուտք
               </button>
             </Link>
             <button className="drop-menu" onClick={() => setDrop(!drop)}>
@@ -70,7 +75,7 @@ const Header = () => {
               <Link to={"/auth"}>
                 <button className="droped-header-btn">
                   <FaUser />
-                  Մուտք / Գրանցվել
+                  Մուտք
                 </button>
               </Link>
               <select className="droped-header-select">
@@ -91,11 +96,6 @@ const Header = () => {
             </div>
           </div>
         </div>
-        {showLikedCards && (
-          <div className="liked-panel">
-            <LikedCards onClose={() => setShowLikedCards(false)} />
-          </div>
-        )}
         <div className="filters-panel">
           <HomeFilters />
         </div>

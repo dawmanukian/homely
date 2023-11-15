@@ -54,29 +54,35 @@ const LikedCards = ({ onClose }) => {
   console.log(liked);
 
   return (
-    <div className="liked-cards-panel">
-      <button className="close-btn" onClick={() => onClose()}>
-        <RiCloseFill />
-      </button>
-      <div className="liked-cards">
-        {liked.length == 0 ? (
-          <p style={{ color: "gray" }}>Չկա պահպանված գույք</p>
-        ) : (
-          liked_cards.map((el) => {
-            return (
-              <div className="l-card" key={el.id}>
-                <ElementCard
-                  // like={like}
-                  price={el.price}
-                  id={el.id}
-                  img={el.img}
-                  address={el.address}
-                  title={el.title}
-                />
-              </div>
-            );
-          })
-        )}
+    <div className="liked-cards-section">
+      <div
+        style={{ width: "100%", height: "100%" }}
+        onClick={() => onClose()}
+      ></div>
+      <div className="liked-cards-panel">
+        <button className="close-btn" onClick={() => onClose()}>
+          <RiCloseFill />
+        </button>
+        <div className="liked-cards">
+          {liked.length == 0 ? (
+            <p style={{ color: "gray" }}>Չկա պահպանված գույք</p>
+          ) : (
+            liked_cards.map((el) => {
+              return (
+                <div className="l-card" key={el.id}>
+                  <ElementCard
+                    // like={like}
+                    price={el.price}
+                    id={el.id}
+                    img={el.img}
+                    address={el.address}
+                    title={el.title}
+                  />
+                </div>
+              );
+            })
+          )}
+        </div>
       </div>
     </div>
   );

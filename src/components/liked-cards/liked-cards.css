@@ -10,9 +10,25 @@
   overflow-y: auto;
   gap: 30px;
   padding: 25px;
+  animation: liked-cards 0.7s;
+}
+@keyframes liked-cards {
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.liked-cards-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.7);
 }
 .l-card {
-  width: 300px;
+  width: 400px;
 }
 .liked-cards {
   display: flex;

@@ -15,7 +15,7 @@ const RecoverForm = () => {
   return (
     <div className='recover-form'>
         <form onSubmit={handleSubmit(onSubmit)}>
-            <h3>Վերականգնել օգտանունը</h3>
+            <h2>Վերականգնել օգտանունը</h2>
             <div className="rec-inpt">
                 <IoMail className="email-icon" />
                 <input placeholder='Էլ․ հասցե' {...register('recover-email', {required: true})} className='recover-inpt'/>

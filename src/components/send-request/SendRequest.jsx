@@ -16,6 +16,10 @@ const SendRequest = ({ onClose }) => {
 
   return (
     <div className="send-req-panel">
+      <div
+        style={{ width: "100%", height: "100%" }}
+        onClick={() => onClose()}
+      ></div>
       <form className="send-req-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="close">
           <div onClick={() => onClose()}>
@@ -23,8 +27,22 @@ const SendRequest = ({ onClose }) => {
           </div>
         </div>
         <input
+          placeholder="Անուն"
+          {...register("userName", { required: true })}
+          style={
+            errors.userName && {
+              border: "1px solid #ff0000c9",
+            }
+          }
+        />
+        <input
           placeholder="Հեռախոսահամար"
           {...register("userPhone", { required: true })}
+          style={
+            errors.userPhone && {
+              border: "1px solid #ff0000c9",
+            }
+          }
         />
         <textarea
           {...register("message")}
