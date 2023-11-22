@@ -16,7 +16,7 @@ const LoginForm = () => {
 
   const onSubmit = (data) => {
     setCookie('token', 'mher', { path: '/', maxAge: 3600 });
-    window.location = 'http://localhost:3001'
+    window.location = 'https://homely-managment.vercel.app'
   };
 
   return (

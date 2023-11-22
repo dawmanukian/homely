@@ -110,7 +110,6 @@
 .filter-checks-panel {
   display: flex;
   flex-direction: column;
-  gap: 5px;
 }
 .filter-checks-panel > div {
   display: flex;
@@ -156,11 +155,11 @@
 .adm-region {
   display: flex;
   flex-direction: column;
-  gap: 5px;
 }
 .adm-region > div{
   display: flex;
-  gap: 10px;
+  gap: 8px;
+  align-items: center;
 }
 @media screen and (max-width: 721px) {
   .home-filters {
