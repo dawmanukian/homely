@@ -13,6 +13,7 @@
   min-width: 780px;
   display: grid;
   gap: 10px;
+  z-index: 5;
 }
 .rent-or-sell {
   height: 65px;
@@ -53,12 +54,13 @@
 }
 .search-btn {
   height: 45px;
-  width: 100px;
+  width: 130px;
+  font-size: 16px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   color: #fff;
-  background: #0f5bedff;
+  background: green;
 }
 .all-types {
   position: absolute;
@@ -146,6 +148,14 @@ input[type="checkbox"]:checked + label {
 
 .regions::-webkit-scrollbar-track {
   background-color: #f1f1f1;
+}
+.fill-icon {
+  font-size: 20px;
+}
+.fill-name {
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
 @media screen and (max-width: 790px) {
   .search-btn {

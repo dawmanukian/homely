@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./home-filters.css";
 import { useForm } from "react-hook-form";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaBed } from "react-icons/fa6";
+import { FaBuilding } from "react-icons/fa6";
+import { FaCoins } from "react-icons/fa6";
 
 const HomeFilters = () => {
   const {
@@ -50,7 +54,10 @@ const HomeFilters = () => {
           </div>
           <div className="all-filters">
             <div className="fill-div" onClick={() => setOpenPanelNum(1)}>
-              <div>Համայնք</div>
+              <div className="fill-name">
+                <FaLocationDot className="fill-icon" />
+                Համայնք
+              </div>
               <div
                 className={`filter-panel regions ${
                   openPanelNum === 1 && "active"
@@ -105,8 +112,15 @@ const HomeFilters = () => {
               </div>
             </div>
             <div className="fill-div" onClick={() => setOpenPanelNum(2)}>
-              <div>Սենյակներ</div>
-              <div className={`filter-panel ${openPanelNum === 2 && "active"}`}>
+              <div className="fill-name">
+                <FaBed className="fill-icon" />
+                Սենյակներ
+              </div>
+              <div
+                className={`filter-panel regions ${
+                  openPanelNum === 2 && "active"
+                }`}
+              >
                 <div>
                   <input type="checkbox" id="flat" />
                   <label className="filter-check" htmlFor="flat">
@@ -140,7 +154,10 @@ const HomeFilters = () => {
               </div>
             </div>
             <div className="fill-div">
-              <div>Գույքի տիպը</div>
+              <div className="fill-name">
+                <FaBuilding className="fill-icon" />
+                Գույքի տիպը
+              </div>
               {/* {openPanelNum === 0 && (
               <div className="filter-panel">
                 <div>
@@ -160,9 +177,13 @@ const HomeFilters = () => {
               </div>
             )} */}
             </div>
-            <div className="fill-div">
-              <div onClick={() => setOpenPanelNum(0)}>Գույքի տիպը</div>
-              {/* {openPanelNum === 0 && (
+            <input
+              className="fill-div"
+              onClick={() => setOpenPanelNum(0)}
+              type="number"
+              placeholder={`Արժեքը մաքս․ - $`}
+            />
+            {/* {openPanelNum === 0 && (
               <div className="filter-panel">
                 <div>
                   <input type="checkbox" id="flat" />
@@ -180,7 +201,7 @@ const HomeFilters = () => {
                 </div>
               </div>
             )} */}
-            </div>
+
             <button className="search-btn" type="submit">
               Որոնել
             </button>
