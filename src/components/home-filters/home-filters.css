@@ -132,7 +132,8 @@ input[type="checkbox"] {
   display: none;
 }
 input[type="checkbox"]:checked + label {
-  background-color: #f0f2f5ff;
+  background-color: green;
+  color: #fff;
 }
 .regions {
   height: 350px;
