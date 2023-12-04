@@ -153,13 +153,12 @@ const HomeFilters = () => {
                 </div>
               </div>
             </div>
-            <div className="fill-div">
+            <div className="fill-div" onClick={() => setOpenPanelNum(3)}>
               <div className="fill-name">
                 <FaBuilding className="fill-icon" />
                 Գույքի տիպը
               </div>
-              {/* {openPanelNum === 0 && (
-              <div className="filter-panel">
+              <div className={`filter-panel ${openPanelNum === 3 && "active"}`}>
                 <div>
                   <input type="checkbox" id="flat" />
                   <label className="filter-check" htmlFor="flat">
@@ -173,9 +172,12 @@ const HomeFilters = () => {
                   <label className="filter-check" htmlFor="commercion">
                     <span>Կոմերցիոն</span>
                   </label>
+                  <input type="checkbox" id="flat" />
+                  <label className="filter-check" htmlFor="flat">
+                    <span>Հողատարածք</span>
+                  </label>
                 </div>
               </div>
-            )} */}
             </div>
             <input
               className="fill-div"
@@ -183,25 +185,6 @@ const HomeFilters = () => {
               type="number"
               placeholder={`Արժեքը մաքս․ - $`}
             />
-            {/* {openPanelNum === 0 && (
-              <div className="filter-panel">
-                <div>
-                  <input type="checkbox" id="flat" />
-                  <label className="filter-check" htmlFor="flat">
-                    <span>Բնակարան</span>
-                  </label>
-                  <input type="checkbox" id="hause" />
-                  <label className="filter-check" htmlFor="hause">
-                    <span>Առանձնատուն</span>
-                  </label>
-                  <input type="checkbox" id="commercion" />
-                  <label className="filter-check" htmlFor="commercion">
-                    <span>Կոմերցիոն</span>
-                  </label>
-                </div>
-              </div>
-            )} */}
-
             <button className="search-btn" type="submit">
               Որոնել
             </button>
