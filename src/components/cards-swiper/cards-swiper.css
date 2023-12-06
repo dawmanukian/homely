@@ -13,18 +13,10 @@
     padding: 15px;
   }
 }
-@media screen and (max-height: 800px){
+@media screen and (max-width: 790px) {
   .cards-swiper-panel {
     position: relative;
     top: 100px;
-    margin: 0px;
-    padding: 15px;
-  }
-}
-@media screen and (max-width: 721px) {
-  .cards-swiper-panel {
-    position: relative;
-    top: 220px;
     margin: 0px;
     padding: 15px;
   }

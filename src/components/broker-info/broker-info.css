@@ -26,6 +26,10 @@
     gap: 10px;
     margin: 15px 0px 15px 0px;
 }
+.contact-link{
+    text-decoration: none;
+    color: #333;
+}
 .item_information {
     display: flex;
     gap: 20px;

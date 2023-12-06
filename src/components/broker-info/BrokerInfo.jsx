@@ -20,11 +20,11 @@ const BrokerInfo = () => {
       <div className="broker-contact">
         <p>
           <BsTelephone className="broker-contact-icon"/>
-          +37494673735
+          <a href="tel:+37494673735" className="contact-link">+37494673735</a>
         </p>
         <p>
           <GoMail className="broker-contact-icon"/>
-          info.homely@gmail.com
+          <a href="mailto:info.homely@gmail.com" className="contact-link">info.homely@gmail.com</a>
         </p>
       </div>
     </div>

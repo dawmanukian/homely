@@ -8,9 +8,9 @@ import Loading from "./components/loading/Loading";
 import { useState } from "react";
 
 function App() {
-  const [showLoading, setShowLoading] = useState(false);
+  const [showLoading, setShowLoading] = useState(true);
 
-  // setTimeout(() => setShowLoading(false), "3000");
+  setTimeout(() => setShowLoading(false), "3000");
 
   return (
     <>

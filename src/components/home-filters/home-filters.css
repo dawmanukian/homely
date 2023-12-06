@@ -182,9 +182,3 @@ input[type="checkbox"]:checked + label {
     min-width: 90%;
   }
 }
-@media screen and (max-height: 780px) {
-  .home-filters {
-    position: relative;
-    bottom: 100px;
-  }
-}
