@@ -15,9 +15,10 @@ import {
 } from "react-share";
 import { FaFacebook, FaTelegram, FaSquareXTwitter } from "react-icons/fa6";
 import SendRequest from "../../components/send-request/SendRequest";
+import BrokerInfo from "../../components/broker-info/BrokerInfo";
 
 const CardPage = () => {
-  const [showReqPanel, setShowReqPanel] = useState(false)
+  const [showReqPanel, setShowReqPanel] = useState(false);
   const [showShareLink, setShowShareLink] = useState(false);
   const liked = localStorage.getItem("liked");
   const [data, setData] = useState([
@@ -68,7 +69,7 @@ const CardPage = () => {
 
   return (
     <div className="card-page">
-      {showReqPanel && <SendRequest onClose={() => setShowReqPanel(false)}/>}
+      {showReqPanel && <SendRequest onClose={() => setShowReqPanel(false)} />}
       <div className="container">
         <Link to={"/"}>
           <button className="back-btn" style={{ zIndex: "2" }}>
@@ -90,7 +91,10 @@ const CardPage = () => {
                   <PiShareNetworkBold style={{ fontSize: "20px" }} />
                   <b>Կիսվել հղումով</b>
                 </button>
-                <button className="send-req-btn" onClick={() => setShowReqPanel(true)}>
+                <button
+                  className="send-req-btn"
+                  onClick={() => setShowReqPanel(true)}
+                >
                   <span>Ուղարկել հայտ</span>
                   <ImBubble className="send-icon" />
                 </button>
@@ -120,123 +124,135 @@ const CardPage = () => {
                   </div>
                 )}
               </div>
-              <div className="card-title-panel">
-                <div className="card-header">
-                  <p className="card-title-pg">{el.title}</p>
-                  <p className="card-address">
-                    <FaLocationDot /> {el.address}
-                  </p>
-                </div>
-                <div className="card-like">
-                  <FaHeart
-                    className="card-like-icon"
+              <div style={{ display: "flex", gap: "20px" }}>
+                <div>
+                  <div className="card-title-panel">
+                    <div className="card-header">
+                      <p className="card-title-pg">{el.title}</p>
+                      <p className="card-address">
+                        <FaLocationDot /> {el.address}
+                      </p>
+                    </div>
+                    <div className="card-like">
+                      <FaHeart
+                        className="card-like-icon"
+                        style={{
+                          color: liked.includes(el.id)
+                            ? "rgb(245, 81, 81)"
+                            : "gray",
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <div
                     style={{
-                      color: liked.includes(el.id)
-                        ? "rgb(245, 81, 81)"
-                        : "gray",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "17px",
                     }}
-                  />
+                  >
+                    <b className="card-price">$ {el.price}</b>
+                    <div className="card-type dis">
+                      <PiFireBold /> Իջեցված գին
+                    </div>
+                  </div>
+                  <div className="card-id">
+                    <p>ID {el.id}</p>
+                  </div>
+                  <h2>Նկարագրություն</h2>
+                  <div className="card-description">
+                    <p>
+                      Վաճառվում է 3 սենյականոց ինքնատիպ ոճով վերանորոգված և
+                      կահավորված բնակարան նորակառույց շենքում: Մուտքի դուռը
+                      երկաթյա է, պատուհանները եվրոպական արտադրության են, հատակը
+                      ծածկված է լամինատով: Սանհանգույցները երեսպատված է
+                      բարձրորակ սալիկներով և հագեցած է անհրաժեշտ սանտեխնիկայով:
+                      Տեղադրված են անհատական ջեռուցման և օդափոխության
+                      համակարգեր:
+                    </p>
+                  </div>
+                  <div className="card-description">
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-around",
+                        flexWrap: "wrap",
+                        gap: "7px",
+                      }}
+                    >
+                      <div className="card-check">
+                        <b>Գազ</b>
+                        <ImCheckmark className="check-icon" />
+                      </div>
+                      <div className="card-check">
+                        <b>Տաք ջուր</b>
+                        <ImCheckmark className="check-icon" />
+                      </div>
+                      <div className="card-check">
+                        <b>Կայանատեղի</b>
+                        <ImCheckmark className="check-icon" />
+                      </div>
+                      <div className="card-check">
+                        <b>Գազ</b>
+                        <ImCheckmark className="check-icon" />
+                      </div>
+                      <div className="card-check">
+                        <b>Տաք ջուր</b>
+                        <ImCheckmark className="check-icon" />
+                      </div>
+                      <div className="card-check">
+                        <b>Կայանատեղի</b>
+                        <ImCheckmark className="check-icon" />
+                      </div>
+                      <div className="card-check">
+                        <b>Գազ</b>
+                        <ImCheckmark className="check-icon" />
+                      </div>
+                      <div className="card-check">
+                        <b>Տաք ջուր</b>
+                        <ImCheckmark className="check-icon" />
+                      </div>
+                      <div className="card-check">
+                        <b>Կայանատեղի</b>
+                        <ImCheckmark className="check-icon" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-description">
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-evenly",
+                        flexWrap: "wrap",
+                        gap: "7px",
+                      }}
+                    >
+                      <div className="card-check">
+                        <b>#Գազ</b>
+                      </div>
+                      <div className="card-check">
+                        <b>#Տաք ջուր</b>
+                      </div>
+                      <div className="card-check">
+                        <b>#Կայանատեղի</b>
+                      </div>
+                      <div className="card-check">
+                        <b>#Գազ</b>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div
-                style={{ display: "flex", alignItems: "center", gap: "17px" }}
-              >
-                <b className="card-price">$ {el.price}</b>
-                <div className="card-type dis">
-                  <PiFireBold /> Իջեցված գին
-                </div>
-              </div>
-              <div className="card-id">
-                <p>ID {el.id}</p>
-              </div>
-              <h2>Նկարագրություն</h2>
-              <div className="card-description">
-                <p>
-                  Վաճառվում է 3 սենյականոց ինքնատիպ ոճով վերանորոգված և
-                  կահավորված բնակարան նորակառույց շենքում: Մուտքի դուռը երկաթյա
-                  է, պատուհանները եվրոպական արտադրության են, հատակը ծածկված է
-                  լամինատով: Սանհանգույցները երեսպատված է բարձրորակ սալիկներով և
-                  հագեցած է անհրաժեշտ սանտեխնիկայով: Տեղադրված են անհատական
-                  ջեռուցման և օդափոխության համակարգեր:
-                </p>
-              </div>
-              <div className="card-description">
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-around",
-                    flexWrap: "wrap",
-                    gap: "7px",
-                  }}
-                >
-                  <div className="card-check">
-                    <b>Գազ</b>
-                    <ImCheckmark className="check-icon" />
-                  </div>
-                  <div className="card-check">
-                    <b>Տաք ջուր</b>
-                    <ImCheckmark className="check-icon" />
-                  </div>
-                  <div className="card-check">
-                    <b>Կայանատեղի</b>
-                    <ImCheckmark className="check-icon" />
-                  </div>
-                  <div className="card-check">
-                    <b>Գազ</b>
-                    <ImCheckmark className="check-icon" />
-                  </div>
-                  <div className="card-check">
-                    <b>Տաք ջուր</b>
-                    <ImCheckmark className="check-icon" />
-                  </div>
-                  <div className="card-check">
-                    <b>Կայանատեղի</b>
-                    <ImCheckmark className="check-icon" />
-                  </div>
-                  <div className="card-check">
-                    <b>Գազ</b>
-                    <ImCheckmark className="check-icon" />
-                  </div>
-                  <div className="card-check">
-                    <b>Տաք ջուր</b>
-                    <ImCheckmark className="check-icon" />
-                  </div>
-                  <div className="card-check">
-                    <b>Կայանատեղի</b>
-                    <ImCheckmark className="check-icon" />
-                  </div>
-                </div>
-              </div>
-              <div className="card-description">
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-evenly",
-                    flexWrap: "wrap",
-                    gap: "7px",
-                  }}
-                >
-                  <div className="card-check">
-                    <b>#Գազ</b>
-                  </div>
-                  <div className="card-check">
-                    <b>#Տաք ջուր</b>
-                  </div>
-                  <div className="card-check">
-                    <b>#Կայանատեղի</b>
-                  </div>
-                  <div className="card-check">
-                    <b>#Գազ</b>
-                  </div>
+                <div>
+                  <BrokerInfo />
                 </div>
               </div>
             </div>
           );
         })}
       </div>
-      <div style={{width: '100%'}}>
+      <div style={{ width: "100%" }}>
         <h2 className="card-page-title">Նման հայտարարություններ</h2>
-        <CardsSwiper /> 
+        <CardsSwiper />
       </div>
       <Footer />
     </div>

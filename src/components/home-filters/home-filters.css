@@ -62,6 +62,10 @@
   cursor: pointer;
   color: #fff;
   background: green;
+  transition: all ease .3s;
+}
+.search-btn:hover {
+  opacity: 70%;
 }
 .all-types {
   position: absolute;
@@ -132,7 +136,7 @@ input[type="checkbox"] {
   display: none;
 }
 input[type="checkbox"]:checked + label {
-  background-color: green;
+  background-color: #0f5bedff;
   color: #fff;
 }
 .regions {

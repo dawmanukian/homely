@@ -64,47 +64,102 @@ const HomeFilters = () => {
                 }`}
               >
                 <div>
-                  <input type="checkbox" id="arabkir" />
+                  <input
+                    type="checkbox"
+                    id="arabkir"
+                    value={"arabkir"}
+                    {...register("regions")}
+                  />
                   <label className="filter-check" htmlFor="arabkir">
                     <span>Արաբկիր</span>
                   </label>
-                  <input type="checkbox" id="avan" />
+                  <input
+                    type="checkbox"
+                    id="avan"
+                    value={"avan"}
+                    {...register("regions")}
+                  />
                   <label className="filter-check" htmlFor="avan">
                     <span>Ավան</span>
                   </label>
-                  <input type="checkbox" id="davtashen" />
+                  <input
+                    type="checkbox"
+                    id="davtashen"
+                    value={"davtashen"}
+                    {...register("regions")}
+                  />
                   <label className="filter-check" htmlFor="davtashen">
                     <span>Դավթաշեն</span>
                   </label>
-                  <input type="checkbox" id="zeytun" />
+                  <input
+                    type="checkbox"
+                    id="zeytun"
+                    value={"zeytun"}
+                    {...register("regions")}
+                  />
                   <label className="filter-check" htmlFor="zeytun">
                     <span>Քանաքեռ-Զեյթուն</span>
                   </label>
-                  <input type="checkbox" id="kentron" />
+                  <input
+                    type="checkbox"
+                    id="kentron"
+                    value={"kentron"}
+                    {...register("regions")}
+                  />
                   <label className="filter-check" htmlFor="kentron">
                     <span>Կենտրոն</span>
                   </label>
-                  <input type="checkbox" id="shengavit" />
+                  <input
+                    type="checkbox"
+                    id="shengavit"
+                    value={"shengavit"}
+                    {...register("regions")}
+                  />
                   <label className="filter-check" htmlFor="shengavit">
                     <span>Շենգավիթ</span>
                   </label>
-                  <input type="checkbox" id="nork-marash" />
+                  <input
+                    type="checkbox"
+                    id="nork-marash"
+                    value={"nork-marash"}
+                    {...register("regions")}
+                  />
                   <label className="filter-check" htmlFor="nork-marash">
                     <span>Նորք-Մարաշ</span>
                   </label>
-                  <input type="checkbox" id="nor-nork" />
+                  <input
+                    type="checkbox"
+                    id="nor-nork"
+                    value={"nor-nork"}
+                    {...register("regions")}
+                  />
                   <label className="filter-check" htmlFor="nor-nork">
                     <span>Նոր-Նորք</span>
                   </label>
-                  <input type="checkbox" id="nubarashen" />
+                  <input
+                    type="checkbox"
+                    id="nubarashen"
+                    value={"nubarashen"}
+                    {...register("regions")}
+                  />
                   <label className="filter-check" htmlFor="nubarashen">
                     <span>Նուբարաշեն</span>
                   </label>
-                  <input type="checkbox" id="erebuni" />
+                  <input
+                    type="checkbox"
+                    id="erebuni"
+                    value={"erebuni"}
+                    {...register("regions")}
+                  />
                   <label className="filter-check" htmlFor="erebuni">
                     <span>Էրեբունի</span>
                   </label>
-                  <input type="checkbox" id="malatia-sebastia" />
+                  <input
+                    type="checkbox"
+                    id="malatia-sebastia"
+                    value={"malatia-sebastia"}
+                    {...register("regions")}
+                  />
                   <label className="filter-check" htmlFor="malatia-sebastia">
                     <span>Մալաթիա-Սեբաստիա</span>
                   </label>
@@ -122,32 +177,67 @@ const HomeFilters = () => {
                 }`}
               >
                 <div>
-                  <input type="checkbox" id="flat" />
-                  <label className="filter-check" htmlFor="flat">
+                  <input
+                    type="checkbox"
+                    id="rooms_1"
+                    value={"1"}
+                    {...register("roomsNumber")}
+                  />
+                  <label className="filter-check" htmlFor="rooms_1">
                     <span>1</span>
                   </label>
-                  <input type="checkbox" id="hause" />
-                  <label className="filter-check" htmlFor="hause">
+                  <input
+                    type="checkbox"
+                    id="rooms_2"
+                    value={"2"}
+                    {...register("roomsNumber")}
+                  />
+                  <label className="filter-check" htmlFor="rooms_2">
                     <span>2</span>
                   </label>
-                  <input type="checkbox" id="commercion" />
-                  <label className="filter-check" htmlFor="commercion">
+                  <input
+                    type="checkbox"
+                    id="rooms_3"
+                    value={"3"}
+                    {...register("roomsNumber")}
+                  />
+                  <label className="filter-check" htmlFor="rooms_3">
                     <span>3</span>
                   </label>
-                  <input type="checkbox" id="flat" />
-                  <label className="filter-check" htmlFor="flat">
+                  <input
+                    type="checkbox"
+                    id="rooms_4"
+                    value={"4"}
+                    {...register("roomsNumber")}
+                  />
+                  <label className="filter-check" htmlFor="rooms_4">
                     <span>4</span>
                   </label>
-                  <input type="checkbox" id="hause" />
-                  <label className="filter-check" htmlFor="hause">
+                  <input
+                    type="checkbox"
+                    id="rooms_5"
+                    value={"5"}
+                    {...register("roomsNumber")}
+                  />
+                  <label className="filter-check" htmlFor="rooms_5">
                     <span>5</span>
                   </label>
-                  <input type="checkbox" id="commercion" />
-                  <label className="filter-check" htmlFor="commercion">
+                  <input
+                    type="checkbox"
+                    id="rooms_6"
+                    value={"6"}
+                    {...register("roomsNumber")}
+                  />
+                  <label className="filter-check" htmlFor="rooms_6">
                     <span>6</span>
                   </label>
-                  <input type="checkbox" id="commercion" />
-                  <label className="filter-check" htmlFor="commercion">
+                  <input
+                    type="checkbox"
+                    id="rooms_7"
+                    value={"7"}
+                    {...register("roomsNumber")}
+                  />
+                  <label className="filter-check" htmlFor="rooms_7">
                     <span>7+</span>
                   </label>
                 </div>
@@ -160,30 +250,33 @@ const HomeFilters = () => {
               </div>
               <div className={`filter-panel ${openPanelNum === 3 && "active"}`}>
                 <div>
-                  <input type="checkbox" id="flat" />
+                  <input type="checkbox" id="flat" value={"flat"} />
                   <label className="filter-check" htmlFor="flat">
                     <span>Բնակարան</span>
                   </label>
-                  <input type="checkbox" id="hause" />
+                  <input type="checkbox" id="hause" value={"hause"} />
                   <label className="filter-check" htmlFor="hause">
                     <span>Առանձնատուն</span>
                   </label>
-                  <input type="checkbox" id="commercion" />
+                  <input type="checkbox" id="commercion" value={"commercion"} />
                   <label className="filter-check" htmlFor="commercion">
                     <span>Կոմերցիոն</span>
                   </label>
-                  <input type="checkbox" id="flat" />
-                  <label className="filter-check" htmlFor="flat">
+                  <input type="checkbox" id="land_plot" value={"landPlot"} />
+                  <label className="filter-check" htmlFor="land_plot">
                     <span>Հողատարածք</span>
                   </label>
                 </div>
               </div>
             </div>
             <input
+              onClick={() => setOpenPanelNum(null)}
               className="fill-div"
-              onClick={() => setOpenPanelNum(0)}
               type="number"
               placeholder={`Արժեքը մաքս․ - $`}
+              step={"10000"}
+              max={"2000000"}
+              {...register("price")}
             />
             <button className="search-btn" type="submit">
               Որոնել
