@@ -16,6 +16,7 @@ import {
 import { FaFacebook, FaTelegram, FaSquareXTwitter } from "react-icons/fa6";
 import SendRequest from "../../components/send-request/SendRequest";
 import BrokerInfo from "../../components/broker-info/BrokerInfo";
+import { FaImage } from "react-icons/fa6";
 
 const CardPage = () => {
   const [showReqPanel, setShowReqPanel] = useState(false);
@@ -79,7 +80,40 @@ const CardPage = () => {
         {cardData.map((el) => {
           return (
             <div className="card-page-data" key={el.id}>
-              <ImagesSwiper images={el.img} />
+              {/* <ImagesSwiper images={el.img} /> */}
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  gap: "13px",
+                  width: "100%",
+                  position: "relative",
+                }}
+              >
+                <img
+                  src="https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2015/5/0/Julie-Dodson_Dephino_Living-Room_Beauty.jpg.rend.hgtvcom.616.462.suffix/1420492278316.jpeg"
+                  height={"413px"}
+                  width={"60%"}
+                  className="itm-img"
+                />
+                <div className="an-images">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMhpq-Wp0JhwFHrDxsYCBZP0D_rO8wwe5KEOZSYwICmnRGrs5_rR9s-qz5EP1BGXe9Tec&usqp=CAU"
+                    height={"200px"}
+                    width={"100%"}
+                    className="itm-img"
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=1980&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    height={"200px"}
+                    width={"100%"}
+                    className="itm-img"
+                  />
+                </div>
+                <button className="view-all-images">
+                  <b>Բոլոր նկարները</b> <FaImage className="img-icon" />
+                </button>
+              </div>
               <span className="card-add-date">
                 Ավելացվել է 27․01․2023 <FaCalendarAlt />
               </span>

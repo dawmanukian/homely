@@ -1,8 +1,8 @@
 .broker-info-panel {
-    padding: 15px;
+    padding: 17px;
     min-width: 360px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .broker-info-panel img {
     border: 3px solid #0F5BEDFF;

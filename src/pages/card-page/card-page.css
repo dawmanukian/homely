@@ -114,6 +114,11 @@
 .card-page-title {
   padding: 10px 0px 0px 40px;
 }
+.itm-img {
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
 @keyframes share-link {
   from {
     transform: scale(0.7);
@@ -125,6 +130,43 @@
 }
 .share-link-icon {
   font-size: 27px;
+}
+.an-images {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  gap: 13px;
+}
+.view-all-images {
+  height: 47px;
+  width: 250px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  bottom: 0px;
+  z-index: 2;
+  margin: 17px;
+  border: none;
+  cursor: pointer;
+  color: gray;
+  font-size: 16px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: #fff;
+  font-weight: bold;
+}
+.img-icon {
+  font-size: 20px;
+}
+@media screen and (max-width: 520px) {
+  .itm-img {
+    width: 100%;
+  }
+  .an-images {
+    display: none;
+  }
 }
 @media screen and (max-width: 991px) {
   .container {
