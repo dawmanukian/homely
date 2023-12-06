@@ -55,7 +55,7 @@
 }
 .search-btn {
   height: 45px;
-  width: 170px;
+  min-width: 170px;
   font-size: 16px;
   border: none;
   border-radius: 10px;
