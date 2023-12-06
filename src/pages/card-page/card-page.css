@@ -53,6 +53,7 @@
   font-size: 27px;
 }
 .send-req {
+  margin-top: 25px;
   display: flex;
   justify-content: flex-end;
   position: relative;
@@ -85,9 +86,11 @@
 .share-link-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 5px;
   border: none;
   color: #333;
+  width: 180px;
   border-radius: 10px;
   height: 40px;
   background: #f4f4f4;

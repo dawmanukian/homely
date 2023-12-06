@@ -83,49 +83,8 @@ const CardPage = () => {
               <span className="card-add-date">
                 Ավելացվել է 27․01․2023 <FaCalendarAlt />
               </span>
-              <div className="send-req">
-                <button
-                  className="share-link-btn"
-                  onClick={() => setShowShareLink(!showShareLink)}
-                >
-                  <PiShareNetworkBold style={{ fontSize: "20px" }} />
-                  <b>Կիսվել հղումով</b>
-                </button>
-                <button
-                  className="send-req-btn"
-                  onClick={() => setShowReqPanel(true)}
-                >
-                  <span>Ուղարկել հայտ</span>
-                  <ImBubble className="send-icon" />
-                </button>
-                {showShareLink && (
-                  <div className="share-link-panel">
-                    <FacebookShareButton
-                      url={`https://homely-sigma.vercel.app/item/${itemId}`}
-                    >
-                      <FaFacebook
-                        className="share-link-icon"
-                        style={{ color: "#0866FFFF" }}
-                      />
-                    </FacebookShareButton>
-                    <TelegramShareButton
-                      url={`https://homely-sigma.vercel.app/item/${itemId}`}
-                    >
-                      <FaTelegram
-                        className="share-link-icon"
-                        style={{ color: "#259CD8FF" }}
-                      />
-                    </TelegramShareButton>
-                    <TwitterShareButton
-                      url={`https://homely-sigma.vercel.app/item/${itemId}`}
-                    >
-                      <FaSquareXTwitter className="share-link-icon" />
-                    </TwitterShareButton>
-                  </div>
-                )}
-              </div>
-              <div style={{ display: "flex", gap: "20px" }}>
-                <div>
+              <div className="item_information">
+                <div style={{ display: "grid", gap: "20px" }}>
                   <div className="card-title-panel">
                     <div className="card-header">
                       <p className="card-title-pg">{el.title}</p>
@@ -244,16 +203,57 @@ const CardPage = () => {
                 </div>
                 <div>
                   <BrokerInfo />
+                  <div className="send-req">
+                    <button
+                      className="share-link-btn"
+                      onClick={() => setShowShareLink(!showShareLink)}
+                    >
+                      <PiShareNetworkBold style={{ fontSize: "20px" }} />
+                      <b>Կիսվել հղումով</b>
+                    </button>
+                    <button
+                      className="send-req-btn"
+                      onClick={() => setShowReqPanel(true)}
+                    >
+                      <span>Ուղարկել հայտ</span>
+                      <ImBubble className="send-icon" />
+                    </button>
+                    {showShareLink && (
+                      <div className="share-link-panel">
+                        <FacebookShareButton
+                          url={`https://homely-sigma.vercel.app/item/${itemId}`}
+                        >
+                          <FaFacebook
+                            className="share-link-icon"
+                            style={{ color: "#0866FFFF" }}
+                          />
+                        </FacebookShareButton>
+                        <TelegramShareButton
+                          url={`https://homely-sigma.vercel.app/item/${itemId}`}
+                        >
+                          <FaTelegram
+                            className="share-link-icon"
+                            style={{ color: "#259CD8FF" }}
+                          />
+                        </TelegramShareButton>
+                        <TwitterShareButton
+                          url={`https://homely-sigma.vercel.app/item/${itemId}`}
+                        >
+                          <FaSquareXTwitter className="share-link-icon" />
+                        </TwitterShareButton>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
           );
         })}
       </div>
-      <div style={{ width: "100%" }}>
+      {/* <div style={{ width: "100%" }}>
         <h2 className="card-page-title">Նման հայտարարություններ</h2>
         <CardsSwiper />
-      </div>
+      </div> */}
       <Footer />
     </div>
   );

@@ -1,5 +1,7 @@
 import React from "react";
 import "./broker-info.css";
+import { BsTelephone } from "react-icons/bs";
+import { GoMail } from "react-icons/go";
 
 const BrokerInfo = () => {
   return (
@@ -10,14 +12,20 @@ const BrokerInfo = () => {
           height={"85px"}
           width={"85px"}
         />
-        <div className="broker-contact">
+        <div className="broker-data-info">
           <b>Համլետ Խաչատրյան</b>
           <p>Գործակալ</p>
         </div>
       </div>
-      <div>
-        <p>+37494673735</p>
-        <p>info.homely@gmail.com</p>
+      <div className="broker-contact">
+        <p>
+          <BsTelephone className="broker-contact-icon"/>
+          +37494673735
+        </p>
+        <p>
+          <GoMail className="broker-contact-icon"/>
+          info.homely@gmail.com
+        </p>
       </div>
     </div>
   );

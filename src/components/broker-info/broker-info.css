@@ -1,6 +1,6 @@
 .broker-info-panel {
     padding: 15px;
-    width: 360px;
+    min-width: 360px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 10px;
 }
@@ -14,6 +14,27 @@
     display: flex;
     gap: 10px;
 }
-.broker-contact p{
+.broker-data-info p{
     color: gray;
+}
+.broker-contact-icon {
+    font-size: 21px;
+    color: #0F5BEDFF;
+}
+.broker-contact p{
+    display: flex;
+    gap: 10px;
+    margin: 15px 0px 15px 0px;
+}
+.item_information {
+    display: flex;
+    gap: 20px;
+}
+@media screen and (max-width: 991px){
+    .broker-info-panel {
+        min-width: auto;
+    }
+    .item_information {
+        flex-direction: column;
+    }
 }
