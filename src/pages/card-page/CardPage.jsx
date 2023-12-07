@@ -17,7 +17,9 @@ import { FaFacebook, FaTelegram, FaSquareXTwitter } from "react-icons/fa6";
 import SendRequest from "../../components/send-request/SendRequest";
 import BrokerInfo from "../../components/broker-info/BrokerInfo";
 import { FaImage } from "react-icons/fa6";
+// import { YMaps } from "react-yandex-maps";
 import { AiOutlineClose } from "react-icons/ai";
+import YaMap from "../../components/ya-map/YaMap";
 
 const CardPage = () => {
   const [showSwiper, setShowSwiper] = useState(false);
@@ -308,6 +310,9 @@ const CardPage = () => {
               </div>
             );
           })}
+          <div className="maps">
+            <YaMap />
+          </div>
         </div>
         {/* <div style={{ width: "100%" }}>
         <h2 className="card-page-title">Նման հայտարարություններ</h2>
