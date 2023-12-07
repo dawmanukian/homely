@@ -1,12 +1,6 @@
 .card-swiper-img {
-  width: 100%;
+  width: 85%;
   height: 500px;
   border-radius: 22px;
-  object-fit: cover;
-}
-
-@media screen and (max-width: 991px) {
-  .card-swiper-img {
-    height: 350px;
-  }
+  object-fit: contain;
 }

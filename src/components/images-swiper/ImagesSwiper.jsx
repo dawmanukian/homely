@@ -9,7 +9,7 @@ import "swiper/css/scrollbar";
 
 const ImagesSwiper = ({ images }) => {
   return (
-    <div>
+    <div style={{height: '100vh', display: 'flex', alignItems: 'center'}}>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         slidesPerView={1}
@@ -18,7 +18,15 @@ const ImagesSwiper = ({ images }) => {
         {images.map((el) => {
           return (
             <SwiperSlide key={Math.random()}>
-              <img src={el} className="card-swiper-img" />
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <img src={el} className="card-swiper-img" />
+              </div>
             </SwiperSlide>
           );
         })}

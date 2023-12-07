@@ -160,6 +160,28 @@
 .img-icon {
   font-size: 20px;
 }
+.img-swiper-panel {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.647);
+  z-index: 5;
+}
+.close-swiper-btn {
+  position: absolute;
+  cursor: pointer;
+  margin: 30px;
+  height: 50px;
+  width: 50px;
+  background: rgb(255, 73, 73);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
 @media screen and (max-width: 520px) {
   .itm-img {
     width: 100%;
