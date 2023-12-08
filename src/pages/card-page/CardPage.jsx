@@ -311,7 +311,7 @@ const CardPage = () => {
             );
           })}
           <div className="maps">
-            <YaMap />
+            {/* <YaMap /> */}
           </div>
         </div>
         {/* <div style={{ width: "100%" }}>
