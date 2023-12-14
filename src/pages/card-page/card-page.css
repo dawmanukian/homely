@@ -182,6 +182,10 @@
   justify-content: center;
   font-size: 22px;
 }
+.btn-div {
+  display: flex;
+  justify-content: end;
+}
 @media screen and (max-width: 520px) {
   .itm-img {
     width: 100%;

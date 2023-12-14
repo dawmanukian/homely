@@ -76,12 +76,14 @@ const CardPage = () => {
     <>
       {showSwiper && (
         <div className="img-swiper-panel">
-          <button
-            className="close-swiper-btn"
-            onClick={() => setShowSwiper(false)}
-          >
-            <AiOutlineClose />
-          </button>
+          <div className="btn-div">
+            <button
+              className="close-swiper-btn"
+              onClick={() => setShowSwiper(false)}
+            >
+              <AiOutlineClose />
+            </button>
+          </div>
           <div style={{ zIndex: "10", width: "100%" }}>
             <ImagesSwiper
               images={[
@@ -310,9 +312,7 @@ const CardPage = () => {
               </div>
             );
           })}
-          <div className="maps">
-            {/* <YaMap /> */}
-          </div>
+          <div className="maps">{/* <YaMap /> */}</div>
         </div>
         {/* <div style={{ width: "100%" }}>
         <h2 className="card-page-title">Նման հայտարարություններ</h2>
