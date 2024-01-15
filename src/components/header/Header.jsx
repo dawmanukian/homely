@@ -6,6 +6,9 @@ import HomeFilters from "../home-filters/HomeFilters";
 import logo from "../../img/logo.jpg";
 import LikedCards from "../liked-cards/LikedCards";
 import { Link } from "react-router-dom";
+import am_flag from "../../img/flag/AM.png";
+import ru_flag from "../../img/flag/RU.png";
+import us_flag from "../../img/flag/US.png";
 
 const Header = () => {
   useEffect(() => {
@@ -16,7 +19,8 @@ const Header = () => {
     JSON.parse(localStorage.getItem("liked")).length
   );
   const [showLikedCards, setShowLikedCards] = useState(false);
-
+  const [showLangPanel, setShowLangPanel] = useState(false);
+  const [flag, setFlag] = useState(am_flag)
   return (
     <div>
       {showLikedCards && (
@@ -44,13 +48,21 @@ const Header = () => {
               <FaPhone />
               +37455600096
             </a>
-            <select className="header-select">
-              <optgroup>
-                <option>ARM</option>
-                <option>ENG</option>
-                <option>RU</option>
-              </optgroup>
-            </select>
+            <div>
+              <div
+                className="lang_panel"
+                onClick={() => setShowLangPanel(!showLangPanel)}
+              >
+                <img src={flag} width={"30px"} height={"20px"} />
+              </div>
+              {showLangPanel && (
+                <div className="select_lang" onClick={() => setShowLangPanel(false)}>
+                  <img src={am_flag} width={"30px"} height={"20px"} onClick={() => setFlag(am_flag)}/>
+                  <img src={ru_flag} width={"30px"} height={"20px"} onClick={() => setFlag(ru_flag)}/>
+                  <img src={us_flag} width={"30px"} height={"20px"} onClick={() => setFlag(us_flag)}/>
+                </div>
+              )}
+            </div>
             <select className="header-select">
               <optgroup>
                 <option>USD</option>

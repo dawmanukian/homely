@@ -161,6 +161,27 @@ option {
   justify-content: center;
   z-index: 6;
 }
+.select_lang {
+  position: absolute;
+  margin-top: 10px;
+  display: grid;
+  gap: 10px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+.lang_panel {
+  display: grid;
+  background: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+.select_lang > img,
+.lang_panel > img {
+  cursor: pointer;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
 @media screen and (max-width: 721px) {
   .header-contact > .header-btn-link,
   .header-contact > .header-select {
