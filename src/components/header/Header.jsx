@@ -20,7 +20,7 @@ const Header = () => {
   );
   const [showLikedCards, setShowLikedCards] = useState(false);
   const [showLangPanel, setShowLangPanel] = useState(false);
-  const [flag, setFlag] = useState(am_flag)
+  const [flag, setFlag] = useState(am_flag);
   return (
     <div>
       {showLikedCards && (
@@ -56,10 +56,28 @@ const Header = () => {
                 <img src={flag} width={"30px"} height={"20px"} />
               </div>
               {showLangPanel && (
-                <div className="select_lang" onClick={() => setShowLangPanel(false)}>
-                  <img src={am_flag} width={"30px"} height={"20px"} onClick={() => setFlag(am_flag)}/>
-                  <img src={ru_flag} width={"30px"} height={"20px"} onClick={() => setFlag(ru_flag)}/>
-                  <img src={us_flag} width={"30px"} height={"20px"} onClick={() => setFlag(us_flag)}/>
+                <div
+                  className="select_lang"
+                  onClick={() => setShowLangPanel(false)}
+                >
+                  <img
+                    src={am_flag}
+                    width={"30px"}
+                    height={"20px"}
+                    onClick={() => setFlag(am_flag)}
+                  />
+                  <img
+                    src={ru_flag}
+                    width={"30px"}
+                    height={"20px"}
+                    onClick={() => setFlag(ru_flag)}
+                  />
+                  <img
+                    src={us_flag}
+                    width={"30px"}
+                    height={"20px"}
+                    onClick={() => setFlag(us_flag)}
+                  />
                 </div>
               )}
             </div>
