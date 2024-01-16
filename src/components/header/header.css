@@ -1,12 +1,11 @@
 header {
   height: 60vh;
-  min-height: 520px;
+  min-height: 700px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-image: url(../../img/viber_image_2023-11-09_19-49-30-292.jpg);
-  margin: 0px 0px 50px 0px;
 }
 .header-contact {
   padding: 0px 60px 0px 60px;
@@ -21,7 +20,7 @@ header {
   text-decoration: none;
   background: #0957cbff;
   padding: 12px;
-  border-radius: 22px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -143,7 +142,7 @@ option {
 .liked-num {
   background: #fff;
   padding: 12px;
-  border-radius: 22px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -173,7 +172,7 @@ option {
 .lang_panel {
   display: grid;
   background: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
 }
 .select_lang > img,

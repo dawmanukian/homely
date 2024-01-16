@@ -36,21 +36,23 @@ const HomeFilters = () => {
       )}
       <div className="home-filters">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="rent-or-sell">
-            <input
-              type="radio"
-              value="sell"
-              id="radio-sell"
-              {...register("rentOrSell")}
-            />
-            <label htmlFor="radio-sell">Վաճառք</label>
-            <input
-              type="radio"
-              value="rent"
-              id="radio-rent"
-              {...register("rentOrSell")}
-            />
-            <label htmlFor="radio-rent">Վարձակալություն</label>
+          <div className="rent-or-sell-panel">
+            <div className="rent-or-sell">
+              <input
+                type="radio"
+                value="sell"
+                id="radio-sell"
+                {...register("rentOrSell")}
+              />
+              <label htmlFor="radio-sell">Վաճառք</label>
+              <input
+                type="radio"
+                value="rent"
+                id="radio-rent"
+                {...register("rentOrSell")}
+              />
+              <label htmlFor="radio-rent">Վարձակալություն</label>
+            </div>
           </div>
           <div className="all-filters">
             <div className="fill-div" onClick={() => setOpenPanelNum(1)}>
