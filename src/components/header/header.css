@@ -193,6 +193,12 @@ option {
   .header-contact {
     padding: 0px 20px 0px 20px;
   }
+  header {
+    background: none;
+  }
+  .lang_panel {
+    display: none;
+  }
 }
 @media screen and (max-width: 991px) {
   .header-logo {

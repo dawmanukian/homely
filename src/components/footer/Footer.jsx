@@ -25,9 +25,9 @@ const Footer = () => {
             </a>
           </div>
           <div className="footer-contact">
-            <FaFacebook className="footer-icon" />
-            <FaInstagram className="footer-icon" />
-            <FaTelegram className="footer-icon" />
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=61551599789842" className="footer-icon"><FaFacebook className="footer-icon" /></a>
+            <a target="_blank" href="https://www.instagram.com/homely.am/" className="footer-icon"><FaInstagram className="footer-icon" /></a>
+            <a target="_blank" href="" className="footer-icon"><FaTelegram className="footer-icon" /></a>
           </div>
         </div>
         <div className="footer-social">
