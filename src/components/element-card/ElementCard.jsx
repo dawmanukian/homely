@@ -35,7 +35,6 @@ const ElementCard = ({ img, title, address, price, id, like, status }) => {
             </div>
             <div className="icon-div">
               <FaBed />
-
               <span>2</span>
             </div>
           </div>

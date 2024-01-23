@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import am_flag from "../../img/flag/AM.png";
 import ru_flag from "../../img/flag/RU.png";
 import us_flag from "../../img/flag/US.png";
+import { FaChevronDown } from "react-icons/fa6";
 
 const Header = () => {
   useEffect(() => {
@@ -32,7 +33,7 @@ const Header = () => {
         <div className="header-menu">
           <img
             src={logo}
-            height={"110px"}
+            height={"80px"}
             style={{ borderRadius: "22px" }}
             className="header-logo"
           />
@@ -49,13 +50,13 @@ const Header = () => {
               +37455600096
             </a>
             <div>
-              <div
+              {/* <div
                 className="lang_panel"
                 onClick={() => setShowLangPanel(!showLangPanel)}
               >
                 <img src={flag} width={"30px"} height={"20px"} />
-              </div>
-              {showLangPanel && (
+              </div> */}
+              {/* {showLangPanel && (
                 <div
                   className="select_lang"
                   onClick={() => setShowLangPanel(false)}
@@ -79,16 +80,16 @@ const Header = () => {
                     onClick={() => setFlag(us_flag)}
                   />
                 </div>
-              )}
+              )} */}
             </div>
-            <select className="header-select">
-              <optgroup>
-                <option>USD</option>
-                <option>AMD</option>
-                <option>EUR</option>
-                <option>RUB</option>
-              </optgroup>
-            </select>
+            <div className="header-select">
+              <b>ARM</b>
+              <FaChevronDown />
+            </div>
+            <div className="header-select">
+              <b>USD</b>
+              <FaChevronDown />
+            </div>
             <Link to={"/auth"} className="header-btn-link">
               <button className="header-btn">
                 <FaUser />

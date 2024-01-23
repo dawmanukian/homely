@@ -1,6 +1,7 @@
 .el-card {
   width: 100%;
-  min-height: 320px;
+  height: 470px;
+  max-height: 470px;
   background: #fff;
   color: #333;
   border-radius: 17px;

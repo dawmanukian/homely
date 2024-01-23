@@ -1,50 +1,51 @@
 header {
-  height: 60vh;
-  min-height: 700px;
+  height: 40vh;
+  min-height: 600px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url(../../img/viber_image_2023-11-09_19-49-30-292.jpg);
+  background-image: url(../../img/baee9c3ef7d4f0bfda2c0e34e8647008.jpg);
 }
 .header-contact {
   padding: 0px 60px 0px 60px;
-  height: 100px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 25px;
+  gap: 20px;
 }
 .header-phone {
   color: #fff;
   text-decoration: none;
-  background: #0957cbff;
+  background: #1C1E2BFF;
   padding: 12px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   gap: 5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: all ease 0.5s;
 }
 .header-btn {
-  color: #333;
+  color: #fff;
   padding: 14px;
-  border-radius: 22px;
+  border-radius: 12px;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: #1C1E2BFF;
   transition: all ease 0.5s;
 }
 .header-select {
   padding: 12px 20px 12px 12px;
   border: none;
-  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 12px;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: #F0F2F5FF;
   transition: all ease 0.5s;
   color: #333;
   outline: none;
@@ -68,6 +69,7 @@ option {
 }
 .drop-menu {
   height: 40px;
+  width: 100%;
   padding: 12px;
   border: none;
   font-size: 25px;
@@ -88,7 +90,7 @@ option {
   font-size: 30px;
 }
 .droped-menu {
-  border-radius: 22px;
+  border-radius: 12px;
   padding: 10px;
   width: 200px;
   background: #fff;
@@ -124,23 +126,27 @@ option {
   border: none;
 }
 .header-menu {
+  width: 100%;
+  position: fixed;
+  z-index: 15;
+  height: 80px;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0px 0px 0px 60px;
-  z-index: 10;
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
 }
 .header-logo {
   color: #fff;
   cursor: pointer;
   position: relative;
-  top: 20px;
 }
 .header-btn-link {
   text-decoration: none;
 }
 .liked-num {
-  background: #fff;
+  background: #F0F2F5FF;
   padding: 12px;
   border-radius: 12px;
   display: flex;
@@ -148,7 +154,6 @@ option {
   cursor: pointer;
   gap: 5px;
   color: #333;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .like-icon {
   color: rgb(245, 81, 81);
