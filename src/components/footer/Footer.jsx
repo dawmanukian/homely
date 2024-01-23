@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="footer-contact">
             <a target="_blank" href="https://www.facebook.com/profile.php?id=61551599789842" className="footer-icon"><FaFacebook className="footer-icon" /></a>
             <a target="_blank" href="https://www.instagram.com/homely.am/" className="footer-icon"><FaInstagram className="footer-icon" /></a>
-            <a target="_blank" href="" className="footer-icon"><FaTelegram className="footer-icon" /></a>
+            <a target="_blank" href="https://t.me/realestateagencyhomely" className="footer-icon"><FaTelegram className="footer-icon" /></a>
           </div>
         </div>
         <div className="footer-social">
@@ -42,7 +42,7 @@ const Footer = () => {
           height: "1px",
         }}
       />
-      <p className="all-rights-reserved">© 2023 Homely. All Rights Reserved.</p>
+      <p className="all-rights-reserved">© 2024 Homely. All Rights Reserved.</p>
       <p className="created-by">Created by Magical</p>
     </footer>
   );

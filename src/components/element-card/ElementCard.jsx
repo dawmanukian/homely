@@ -4,6 +4,10 @@ import { FaThumbsUp, FaStar } from "react-icons/fa";
 import { FaHeart, FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { PiFireBold } from "react-icons/pi";
+import { TbStairsUp } from "react-icons/tb";
+import { TbDimensions } from "react-icons/tb";
+import { FaShower } from "react-icons/fa";
+import { FaBed } from "react-icons/fa6";
 
 const ElementCard = ({ img, title, address, price, id, like, status }) => {
   const liked = localStorage.getItem("liked");
@@ -16,9 +20,25 @@ const ElementCard = ({ img, title, address, price, id, like, status }) => {
         </div>
         <div className="card-data">
           <b className="card-title">{title}</b>
-          <p className="card-address">
-            <FaLocationDot /> {address}
-          </p>
+          <div style={{ display: "flex", gap: "15px", flexWrap: "wrap" }}>
+            <div className="icon-div">
+              <TbStairsUp />
+              <span>3</span>
+            </div>
+            <div className="icon-div">
+              <TbDimensions />
+              <span>70 ք․մ</span>
+            </div>
+            <div className="icon-div">
+              <FaShower />
+              <span>2</span>
+            </div>
+            <div className="icon-div">
+              <FaBed />
+
+              <span>2</span>
+            </div>
+          </div>
           <b className="card-price">$ {price}</b>
         </div>
       </Link>
