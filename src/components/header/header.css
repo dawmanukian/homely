@@ -1,11 +1,11 @@
 header {
   height: 40vh;
-  min-height: 600px;
+  min-height: 540px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  background-image: url(../../img/baee9c3ef7d4f0bfda2c0e34e8647008.jpg);
+  background-position: bottom;
+  background: #1C1E2BFF;
 }
 .header-contact {
   padding: 0px 60px 0px 60px;
@@ -76,7 +76,6 @@ option {
   border-radius: 10px;
   cursor: pointer;
   color: #333;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: none;
 }
 .filters-panel {
