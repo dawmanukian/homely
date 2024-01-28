@@ -4,8 +4,7 @@ import { useForm } from "react-hook-form";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaBed } from "react-icons/fa6";
 import { FaBuilding } from "react-icons/fa6";
-import { FaCoins } from "react-icons/fa6";
-
+import { FaChevronDown } from "react-icons/fa6";
 const HomeFilters = () => {
   const {
     register,
@@ -271,15 +270,9 @@ const HomeFilters = () => {
                 </div>
               </div>
             </div>
-            <input
-              onClick={() => setOpenPanelNum(null)}
-              className="fill-div"
-              type="number"
-              placeholder={`Արժեքը մաքս․ - $`}
-              step={"10000"}
-              max={"2000000"}
-              {...register("price")}
-            />
+            <div className="fill-div">
+              Տեսնել ավելին <FaChevronDown style={{marginLeft: '10px'}}/>
+            </div>
             <button className="search-btn" type="submit">
               Որոնել
             </button>

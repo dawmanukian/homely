@@ -16,11 +16,11 @@
   z-index: 5;
 }
 .rent-or-sell {
-  height: 65px;
+  height: 70px;
   background: #fff;
   width: 330px;
-  border-radius: 10px;
-  color: gray;
+  border-radius: 20px;
+  color: #333;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   font-weight: bold;
 }
@@ -29,7 +29,7 @@
   height: 80px;
   background: #fff;
   padding: 13px;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   align-items: center;
@@ -44,21 +44,21 @@
   justify-content: space-around;
 }
 .rent-or-sell label {
-  background: #f0f2f5ff;
-  height: 100%;
+  background: #F0F2F5FF;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 12px;
+  height: 40px;
   cursor: pointer;
 }
 .search-btn {
-  height: 45px;
+  height: 42px;
   min-width: 170px;
   font-size: 16px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   color: #fff;
   background: green;
@@ -81,7 +81,6 @@
 .select-container {
   max-width: 300px;
   margin: 20px auto;
-  font-family: "Arial", sans-serif;
 }
 input[type="radio"] {
   display: none;
@@ -92,27 +91,27 @@ input[type="radio"] {
 }
 .fill-div {
   width: 19%;
-  height: 45px;
+  height: 42px;
   min-width: 140px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f0f2f5ff;
+  background: #F0F2F5FF;
   padding: 17px;
   cursor: pointer;
-  border-radius: 10px;
-  color: gray;
+  border-radius: 12px;
+  color: #333;
   font-weight: bold;
 }
 .filter-panel {
   position: absolute;
   display: none;
   top: 160px;
-  z-index: 10;
+  z-index: 1;
   padding: 15px;
   width: 200px;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .active {
@@ -169,7 +168,7 @@ input[type="checkbox"]:checked + label {
   }
   .fill-div {
     width: auto;
-    height: 50px;
+    height: 43px;
   }
   .all-filters {
     padding: 20px;

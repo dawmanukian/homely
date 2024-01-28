@@ -38,7 +38,7 @@ const ElementCard = ({ img, title, address, price, id, like, status }) => {
               <span>2</span>
             </div>
           </div>
-          <b className="card-price">$ {price}</b>
+          <span className="card-price">$ {price}</span>
         </div>
       </Link>
       <div className="card-footer">

@@ -6,9 +6,6 @@ import HomeFilters from "../home-filters/HomeFilters";
 import logo from "../../img/logo.jpg";
 import LikedCards from "../liked-cards/LikedCards";
 import { Link } from "react-router-dom";
-import am_flag from "../../img/flag/AM.png";
-import ru_flag from "../../img/flag/RU.png";
-import us_flag from "../../img/flag/US.png";
 import { FaChevronDown } from "react-icons/fa6";
 
 const Header = () => {
@@ -21,7 +18,6 @@ const Header = () => {
   );
   const [showLikedCards, setShowLikedCards] = useState(false);
   const [showLangPanel, setShowLangPanel] = useState(false);
-  const [flag, setFlag] = useState(am_flag);
   return (
     <div>
       {showLikedCards && (
@@ -34,7 +30,6 @@ const Header = () => {
           <img
             src={logo}
             height={"80px"}
-            style={{ borderRadius: "22px" }}
             className="header-logo"
           />
           <div className="header-contact">
@@ -99,32 +94,24 @@ const Header = () => {
             <button className="drop-menu" onClick={() => setDrop(!drop)}>
               <BsList />
             </button>
-            <div
-              className="droped-menu"
-              style={drop ? { display: "block" } : { display: "none" }}
-            >
-              <Link to={"/auth"}>
-                <button className="droped-header-btn">
-                  <FaUser />
-                  Մուտք
-                </button>
-              </Link>
-              <select className="droped-header-select">
-                <optgroup>
-                  <option>ARM</option>
-                  <option>ENG</option>
-                  <option>RU</option>
-                </optgroup>
-              </select>
-              <select className="droped-header-select btm">
-                <optgroup>
-                  <option>USD</option>
-                  <option>AMD</option>
-                  <option>EUR</option>
-                  <option>RUB</option>
-                </optgroup>
-              </select>
-            </div>
+            {drop && (
+              <div className="droped-menu">
+                <Link to={"/auth"} className="header-btn-link">
+                  <button className="droped-header-btn">
+                    <FaUser />
+                    Մուտք
+                  </button>
+                </Link>
+                <div className="droped-header-select">
+                  <b>ARM</b>
+                  <FaChevronDown />
+                </div>
+                <div className="droped-header-select">
+                  <b>USD</b>
+                  <FaChevronDown />
+                </div>
+              </div>
+            )}
           </div>
         </div>
         <div className="filters-panel">

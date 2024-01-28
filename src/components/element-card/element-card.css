@@ -1,15 +1,16 @@
 .el-card {
   width: 100%;
-  height: 470px;
-  max-height: 470px;
+  height: 500px;
+  max-height: 500px;
   background: #fff;
   color: #333;
   border-radius: 17px;
   cursor: pointer;
+  position: relative;
 }
 .card-img {
   border-radius: 17px 17px 0px 0px;
-  height: 270px;
+  height: 295px;
   object-fit: cover;
 }
 .card-like-icon {
@@ -24,15 +25,9 @@
   gap: 13px;
   padding: 13px;
 }
-.card-address {
-  color: gray;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
 .card-price {
-  font-size: 22px;
+  font-weight: 700;
+  font-size: 25px;
 }
 .card-head {
   position: relative;
@@ -42,7 +37,7 @@
   border-radius: 7px;
   padding: 5px;
   height: 37px;
-  width: 80px;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,21 +47,27 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 13px 13px 13px;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
 }
 .el-card-link {
   text-decoration: none;
   color: #333;
+}
+.card-title {
+  font-size: 18px;
 }
 .card-type {
   display: flex;
   align-items: center;
   color: #fff;
   gap: 5px;
-  padding: 8px;
-  border-radius: 7px;
+  padding: 9px;
+  border-radius: 12px;
 }
 .ex {
-  background: #4a9ee4ff;
+  background: #1C1E2BFF;
 }
 .dis {
   background: rgb(69, 72, 139);

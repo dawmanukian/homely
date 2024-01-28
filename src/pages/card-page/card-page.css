@@ -51,6 +51,7 @@
 }
 .card-title-pg {
   font-size: 27px;
+  font-weight: bold;
 }
 .send-req {
   margin-top: 25px;
@@ -184,7 +185,7 @@
 }
 .btn-div {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 @media screen and (max-width: 520px) {
   .itm-img {

@@ -28,7 +28,7 @@ const CardPage = () => {
   const liked = localStorage.getItem("liked");
   const [data, setData] = useState([
     {
-      id: 1,
+      id: 11654,
       img: [
         "https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2015/5/0/Julie-Dodson_Dephino_Living-Room_Beauty.jpg.rend.hgtvcom.616.462.suffix/1420492278316.jpeg",
       ],
@@ -37,7 +37,7 @@ const CardPage = () => {
       price: "195,000",
     },
     {
-      id: 2,
+      id: 11655,
       img: [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMhpq-Wp0JhwFHrDxsYCBZP0D_rO8wwe5KEOZSYwICmnRGrs5_rR9s-qz5EP1BGXe9Tec&usqp=CAU",
         "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=2158&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -47,7 +47,7 @@ const CardPage = () => {
       price: "89,000",
     },
     {
-      id: 3,
+      id: 11656,
       img: [
         "https://img.staticmb.com/mbcontent/images/uploads/2023/2/home-interior-colour-combination.jpg",
         "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -58,7 +58,7 @@ const CardPage = () => {
       price: "130,000",
     },
     {
-      id: 4,
+      id: 11657,
       img: [
         "https://media.designcafe.com/wp-content/uploads/2023/01/31151510/contemporary-interior-design-ideas-for-your-home.jpg",
       ],
