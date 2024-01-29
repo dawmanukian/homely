@@ -7,6 +7,7 @@ import logo from "../../img/logo.jpg";
 import LikedCards from "../liked-cards/LikedCards";
 import { Link } from "react-router-dom";
 import { FaChevronDown } from "react-icons/fa6";
+import Selects from "../selects/Selects";
 
 const Header = () => {
   useEffect(() => {
@@ -18,8 +19,20 @@ const Header = () => {
   );
   const [showLikedCards, setShowLikedCards] = useState(false);
   const [showLangPanel, setShowLangPanel] = useState(false);
+  const [openSelectPanel, setOpenSelectPanel] = useState(null);
   return (
     <div>
+      {openSelectPanel != null && (
+        <div
+          style={{
+            width: "100%",
+            height: "100vh",
+            position: "fixed",
+            zIndex: "10 ",
+          }}
+          onClick={() => setOpenSelectPanel(null)}
+        ></div>
+      )}
       {showLikedCards && (
         <div className="liked-panel">
           <LikedCards onClose={() => setShowLikedCards(false)} />
@@ -27,11 +40,7 @@ const Header = () => {
       )}
       <header>
         <div className="header-menu">
-          <img
-            src={logo}
-            height={"80px"}
-            className="header-logo"
-          />
+          <img src={logo} height={"80px"} className="header-logo" />
           <div className="header-contact">
             <div
               className="liked-num"
@@ -45,45 +54,47 @@ const Header = () => {
               +37455600096
             </a>
             <div>
-              {/* <div
-                className="lang_panel"
-                onClick={() => setShowLangPanel(!showLangPanel)}
+              <div
+                className="header-select"
+                onClick={() => setOpenSelectPanel(1)}
               >
-                <img src={flag} width={"30px"} height={"20px"} />
-              </div> */}
-              {/* {showLangPanel && (
-                <div
-                  className="select_lang"
-                  onClick={() => setShowLangPanel(false)}
-                >
-                  <img
-                    src={am_flag}
-                    width={"30px"}
-                    height={"20px"}
-                    onClick={() => setFlag(am_flag)}
-                  />
-                  <img
-                    src={ru_flag}
-                    width={"30px"}
-                    height={"20px"}
-                    onClick={() => setFlag(ru_flag)}
-                  />
-                  <img
-                    src={us_flag}
-                    width={"30px"}
-                    height={"20px"}
-                    onClick={() => setFlag(us_flag)}
-                  />
+                <b>ARM</b>
+                <FaChevronDown />
+              </div>
+              {openSelectPanel === 1 && (
+                <div className="selects">
+                  <div className="select-p">
+                    <b>ARM</b>
+                  </div>
+                  <div className="select-p">
+                    <b>ENG</b>
+                  </div>
+                  <div className="select-p">
+                    <b>RUS</b>
+                  </div>
                 </div>
-              )} */}
+              )}
             </div>
-            <div className="header-select">
-              <b>ARM</b>
-              <FaChevronDown />
-            </div>
-            <div className="header-select">
-              <b>USD</b>
-              <FaChevronDown />
+            <div>
+              <div
+                className="header-select"
+                onClick={() => setOpenSelectPanel(2)}
+              >
+                <b>USD</b>
+                <FaChevronDown />
+              </div>
+              {openSelectPanel === 2 && (
+                <>
+                  <div className="selects">
+                    <div className="select-p">
+                      <b>USD</b>
+                    </div>
+                    <div className="select-p">
+                      <b>AMD</b>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
             <Link to={"/auth"} className="header-btn-link">
               <button className="header-btn">

@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaBed } from "react-icons/fa6";
 import { FaBuilding } from "react-icons/fa6";
-import { FaChevronDown } from "react-icons/fa6";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
 const HomeFilters = () => {
   const {
     register,
@@ -15,24 +15,13 @@ const HomeFilters = () => {
 
   const [rentOrSell, setRentOrSell] = useState("rent");
   const [openPanelNum, setOpenPanelNum] = useState(null);
-
+  const [showMorePanel, setShowMorePanel] = useState(false);
   const onSubmit = (data) => {
     console.log(data);
   };
 
   return (
     <>
-      {openPanelNum && (
-        <div
-          onClick={() => setOpenPanelNum(null)}
-          style={{
-            height: "100%",
-            width: "100%",
-            position: "fixed",
-            zIndex: "2",
-          }}
-        ></div>
-      )}
       <div className="home-filters">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="rent-or-sell-panel">
@@ -54,6 +43,17 @@ const HomeFilters = () => {
             </div>
           </div>
           <div className="all-filters">
+            {openPanelNum && (
+              <div
+                onClick={() => setOpenPanelNum(null)}
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  position: "fixed",
+                  zIndex: "6",
+                }}
+              ></div>
+            )}
             <div className="fill-div" onClick={() => setOpenPanelNum(1)}>
               <div className="fill-name">
                 <FaLocationDot className="fill-icon" />
@@ -270,13 +270,22 @@ const HomeFilters = () => {
                 </div>
               </div>
             </div>
-            <div className="fill-div">
-              Տեսնել ավելին <FaChevronDown style={{marginLeft: '10px'}}/>
+            <div
+              className={`fill-div ${showMorePanel && 'opened'}`}
+              onClick={() => setShowMorePanel(!showMorePanel)}
+            >
+              Տեսնել ավելին{" "}
+              {showMorePanel ? (
+                <FaChevronUp style={{ marginLeft: "10px" }} />
+              ) : (
+                <FaChevronDown style={{ marginLeft: "10px" }} />
+              )}
             </div>
             <button className="search-btn" type="submit">
               Որոնել
             </button>
           </div>
+          {showMorePanel && <div className="more-panel"></div>}
         </form>
       </div>
     </>
