@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all ease .5s;
+  transition: all ease 0.5s;
 }
 .home-filters form {
   position: relative;
@@ -35,7 +35,7 @@
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  transition: all ease .5s;
+  transition: all ease 0.5s;
 }
 .rent-or-sell {
   padding: 10px;
@@ -44,7 +44,7 @@
   justify-content: space-around;
 }
 .rent-or-sell label {
-  background: #F0F2F5FF;
+  background: #f0f2f5ff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,7 +62,7 @@
   cursor: pointer;
   color: #fff;
   background: green;
-  transition: all ease .3s;
+  transition: all ease 0.3s;
 }
 .search-btn:hover {
   opacity: 70%;
@@ -86,7 +86,7 @@ input[type="radio"] {
   display: none;
 }
 .rent-or-sell input[type="radio"]:checked + label {
-  background-color: #1C1E2BFF;
+  background-color: #1c1e2bff;
   color: #fff;
 }
 .fill-div {
@@ -96,7 +96,7 @@ input[type="radio"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #F0F2F5FF;
+  background: #f0f2f5ff;
   padding: 17px;
   cursor: pointer;
   border-radius: 12px;
@@ -127,6 +127,7 @@ input[type="radio"] {
   cursor: pointer;
   border-radius: 12px;
   margin-bottom: 7px;
+  background: #f0f2f5ff;
 }
 .filter-check:hover {
   border-radius: 7px;
@@ -135,7 +136,7 @@ input[type="checkbox"] {
   display: none;
 }
 input[type="checkbox"]:checked + label {
-  background-color: #1C1E2BFF;
+  background-color: #1c1e2bff;
   color: #fff;
 }
 .regions {
@@ -163,14 +164,61 @@ input[type="checkbox"]:checked + label {
   gap: 7px;
 }
 .more-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
   background: #fff;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  height: 250px;
 }
 .opened {
   color: #fff;
-  background: #1C1E2BFF;
+  background: #1c1e2bff;
+}
+.search-id {
+  height: 43px;
+  max-width: 450px;
+  font-size: 15px;
+  width: 100%;
+  background: #f0f2f5ff;
+  color: #333;
+  border-radius: 12px;
+  font-weight: bold;
+}
+.search-id::placeholder,
+.search-floor::placeholder {
+  color: #636363;
+  font-weight: bold;
+}
+.search-floor {
+  height: 43px;
+  font-size: 15px;
+  width: 100%;
+  background: #f0f2f5ff;
+  color: #333;
+  border-radius: 12px;
+  font-weight: bold;
+}
+.floor-data {
+  display: flex;
+  gap: 10px;
+}
+.first-panel {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+.first-panel > .fill-div {
+  max-width: 450px;
+  width: 100%;
+  color: #636363;
+}
+@media screen and (max-width: 560px) {
+  .first-panel {
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media screen and (max-width: 790px) {
   .search-btn {
@@ -191,7 +239,7 @@ input[type="checkbox"]:checked + label {
     min-width: 90%;
   }
 }
-@media screen and (max-width: 480px){
+@media screen and (max-width: 480px) {
   .rent-or-sell {
     width: 100%;
   }

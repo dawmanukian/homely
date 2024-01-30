@@ -54,6 +54,32 @@ const HomeFilters = () => {
                 }}
               ></div>
             )}
+            <div className="fill-div" onClick={() => setOpenPanelNum(3)}>
+              <div className="fill-name">
+                <FaBuilding className="fill-icon" />
+                Գույքի տիպը
+              </div>
+              <div className={`filter-panel ${openPanelNum === 3 && "active"}`}>
+                <div>
+                  <input type="checkbox" id="flat" value={"flat"} />
+                  <label className="filter-check" htmlFor="flat">
+                    <span>Բնակարան</span>
+                  </label>
+                  <input type="checkbox" id="hause" value={"hause"} />
+                  <label className="filter-check" htmlFor="hause">
+                    <span>Առանձնատուն</span>
+                  </label>
+                  <input type="checkbox" id="commercion" value={"commercion"} />
+                  <label className="filter-check" htmlFor="commercion">
+                    <span>Կոմերցիոն</span>
+                  </label>
+                  <input type="checkbox" id="land_plot" value={"landPlot"} />
+                  <label className="filter-check" htmlFor="land_plot">
+                    <span>Հողատարածք</span>
+                  </label>
+                </div>
+              </div>
+            </div>
             <div className="fill-div" onClick={() => setOpenPanelNum(1)}>
               <div className="fill-name">
                 <FaLocationDot className="fill-icon" />
@@ -244,34 +270,8 @@ const HomeFilters = () => {
                 </div>
               </div>
             </div>
-            <div className="fill-div" onClick={() => setOpenPanelNum(3)}>
-              <div className="fill-name">
-                <FaBuilding className="fill-icon" />
-                Գույքի տիպը
-              </div>
-              <div className={`filter-panel ${openPanelNum === 3 && "active"}`}>
-                <div>
-                  <input type="checkbox" id="flat" value={"flat"} />
-                  <label className="filter-check" htmlFor="flat">
-                    <span>Բնակարան</span>
-                  </label>
-                  <input type="checkbox" id="hause" value={"hause"} />
-                  <label className="filter-check" htmlFor="hause">
-                    <span>Առանձնատուն</span>
-                  </label>
-                  <input type="checkbox" id="commercion" value={"commercion"} />
-                  <label className="filter-check" htmlFor="commercion">
-                    <span>Կոմերցիոն</span>
-                  </label>
-                  <input type="checkbox" id="land_plot" value={"landPlot"} />
-                  <label className="filter-check" htmlFor="land_plot">
-                    <span>Հողատարածք</span>
-                  </label>
-                </div>
-              </div>
-            </div>
             <div
-              className={`fill-div ${showMorePanel && 'opened'}`}
+              className={`fill-div ${showMorePanel && "opened"}`}
               onClick={() => setShowMorePanel(!showMorePanel)}
             >
               Տեսնել ավելին{" "}
@@ -285,7 +285,50 @@ const HomeFilters = () => {
               Որոնել
             </button>
           </div>
-          {showMorePanel && <div className="more-panel"></div>}
+          {showMorePanel && (
+            <div className="more-panel">
+              <div className="first-panel">
+                <input
+                  type="number"
+                  placeholder="Որոնել ID"
+                  className="search-id"
+                />
+                <input type="text" placeholder="Հասցե" className="search-id" />
+                <div className="floor-data">
+                  <input
+                    type="number"
+                    placeholder="Հարկ մին․"
+                    className="search-floor"
+                  />
+                  <input
+                    type="number"
+                    placeholder="Հարկ մակս․"
+                    className="search-floor"
+                  />
+                </div>
+              </div>
+              <div className="first-panel">
+                <div className="floor-data">
+                  <input
+                    type="number"
+                    placeholder="Գին սկսած"
+                    className="search-floor"
+                  />
+                  <input
+                    type="number"
+                    placeholder="Գին մինչև"
+                    className="search-floor"
+                  />
+                </div>
+                <div className="fill-div">
+                  <b>Շենքի տիպը</b>
+                </div>
+                <div className="fill-div">
+                  <b>Կարգավիճակ</b>
+                </div>
+              </div>
+            </div>
+          )}
         </form>
       </div>
     </>
