@@ -26,15 +26,15 @@ const ElementCard = ({ img, title, address, price, id, like, status }) => {
               <span>3</span>
             </div>
             <div className="icon-div">
+              <FaBed />
+              <span>2</span>
+            </div>
+            <div className="icon-div">
               <TbDimensions />
               <span>70 ք․մ</span>
             </div>
             <div className="icon-div">
               <FaShower />
-              <span>2</span>
-            </div>
-            <div className="icon-div">
-              <FaBed />
               <span>2</span>
             </div>
           </div>

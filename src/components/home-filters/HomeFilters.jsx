@@ -5,6 +5,9 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaBed } from "react-icons/fa6";
 import { FaBuilding } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
+import { FaMoneyBillWave } from "react-icons/fa6";
+import { FaCheck } from "react-icons/fa6";
+
 const HomeFilters = () => {
   const {
     register,
@@ -16,6 +19,7 @@ const HomeFilters = () => {
   const [rentOrSell, setRentOrSell] = useState("rent");
   const [openPanelNum, setOpenPanelNum] = useState(null);
   const [showMorePanel, setShowMorePanel] = useState(false);
+  const [selectAddress, setSelectAddress] = useState("");
   const onSubmit = (data) => {
     console.log(data);
   };
@@ -288,43 +292,126 @@ const HomeFilters = () => {
           {showMorePanel && (
             <div className="more-panel">
               <div className="first-panel">
-                <input
-                  type="number"
-                  placeholder="Որոնել ID"
-                  className="search-id"
-                />
-                <input type="text" placeholder="Հասցե" className="search-id" />
+                <div className="panel-box">
+                  <div className="id-panel">
+                    <b>ID</b>
+                  </div>
+                  <input
+                    type="number"
+                    placeholder="Որոնել"
+                    className="search-id"
+                  />
+                </div>
+                <div className="address-panel-div">
+                  <input
+                    type="text"
+                    placeholder="Հասցե"
+                    className="search-id"
+                    onChange={(evn) => setSelectAddress(evn.target.value)}
+                    value={selectAddress}
+                  />
+                </div>
                 <div className="floor-data">
                   <input
                     type="number"
                     placeholder="Հարկ մին․"
                     className="search-floor"
+                    min={1}
                   />
                   <input
                     type="number"
                     placeholder="Հարկ մակս․"
                     className="search-floor"
+                    min={1}
                   />
                 </div>
               </div>
-              <div className="first-panel">
-                <div className="floor-data">
+              <div className="first-panel two">
+                <div className="floor-data prc">
                   <input
                     type="number"
                     placeholder="Գին սկսած"
                     className="search-floor"
+                    min={0}
                   />
                   <input
                     type="number"
                     placeholder="Գին մինչև"
                     className="search-floor"
+                    min={0}
                   />
                 </div>
-                <div className="fill-div">
-                  <b>Շենքի տիպը</b>
-                </div>
-                <div className="fill-div">
-                  <b>Կարգավիճակ</b>
+                <div className="checks-panels">
+                  <div className="checks-div">
+                    <b>Շենքի տիպը</b>
+                    <div className="checks-div-panel">
+                      <input type="checkbox" id="panel" value={"panel"} />
+                      <label className="custom-check" htmlFor="panel">
+                        <div>
+                          <FaCheck className="check-icons" />
+                        </div>
+                        <span>Պանելային</span>
+                      </label>
+                      <input type="checkbox" id="stone" value={"stone"} />
+                      <label className="custom-check" htmlFor="stone">
+                        <div>
+                          <FaCheck className="check-icons" />
+                        </div>
+                        <span>Քարե</span>
+                      </label>
+                      <input type="checkbox" id="monolith" value={"monolith"} />
+                      <label className="custom-check" htmlFor="monolith">
+                        <div>
+                          <FaCheck className="check-icons" />
+                        </div>
+                        <span>Մոնոլիտ</span>
+                      </label>
+                      <input type="checkbox" id="other" value={"other"} />
+                      <label className="custom-check" htmlFor="other">
+                        <div>
+                          <FaCheck className="check-icons" />
+                        </div>
+                        <span>Այլ</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div className="checks-div">
+                    <b>Կարգավիճակ</b>
+                    <div className="checks-div-panel">
+                      <input
+                        type="checkbox"
+                        id="renovated"
+                        value={"renovated"}
+                      />
+                      <label className="custom-check" htmlFor="renovated">
+                        <div>
+                          <FaCheck className="check-icons" />
+                        </div>
+                        <span>Վերանորոգված</span>
+                      </label>
+                      <input type="checkbox" id="good" value={"good"} />
+                      <label className="custom-check" htmlFor="good">
+                        <div>
+                          <FaCheck className="check-icons" />
+                        </div>
+                        <span>Լավ</span>
+                      </label>
+                      <input type="checkbox" id="null" value={"null"} />
+                      <label className="custom-check" htmlFor="null">
+                        <div>
+                          <FaCheck className="check-icons" />
+                        </div>
+                        <span>Զրոյական</span>
+                      </label>
+                      <input type="checkbox" id="new" value={"new"} />
+                      <label className="custom-check" htmlFor="new">
+                        <div>
+                          <FaCheck className="check-icons" />
+                        </div>
+                        <span>Նորակառույց</span>
+                      </label>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
