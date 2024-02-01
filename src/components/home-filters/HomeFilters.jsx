@@ -371,7 +371,7 @@ const HomeFilters = () => {
                         <div>
                           <FaCheck className="check-icons" />
                         </div>
-                        <span>Այլ</span>
+                        <span>Նորակառույց</span>
                       </label>
                     </div>
                   </div>
@@ -408,7 +408,7 @@ const HomeFilters = () => {
                         <div>
                           <FaCheck className="check-icons" />
                         </div>
-                        <span>Նորակառույց</span>
+                        <span>Դիզայներական ոճ</span>
                       </label>
                     </div>
                   </div>

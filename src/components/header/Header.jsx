@@ -113,13 +113,41 @@ const Header = () => {
                     Մուտք
                   </button>
                 </Link>
-                <div className="droped-header-select">
+                <div
+                  className="droped-header-select"
+                  onClick={() => setOpenSelectPanel(3)}
+                >
                   <b>ARM</b>
                   <FaChevronDown />
+                  {openSelectPanel === 3 && (
+                    <div className="selects">
+                      <div className="select-p">
+                        <b>ARM</b>
+                      </div>
+                      <div className="select-p">
+                        <b>ENG</b>
+                      </div>
+                      <div className="select-p">
+                        <b>RUS</b>
+                      </div>
+                    </div>
+                  )}
                 </div>
-                <div className="droped-header-select">
+                <div className="droped-header-select" onClick={() => setOpenSelectPanel(4)}>
                   <b>USD</b>
                   <FaChevronDown />
+                  {openSelectPanel === 4 && (
+                    <>
+                      <div className="selects">
+                        <div className="select-p">
+                          <b>USD</b>
+                        </div>
+                        <div className="select-p">
+                          <b>AMD</b>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             )}

@@ -294,7 +294,7 @@ input[type="checkbox"]:checked + .custom-check > div > .check-icons {
 }
 .checks-panels {
   display: flex;
-  gap: 50px;
+  gap: 30px;
 }
 .prc {
   flex-direction: column;
@@ -302,6 +302,12 @@ input[type="checkbox"]:checked + .custom-check > div > .check-icons {
 }
 .two {
   gap: 40px;
+}
+.droped-header-select > .selects {
+  left: 0px;
+  width: 100%;
+  top: 105px;
+  box-shadow: none;
 }
 @media screen and (max-width: 991px) {
   .first-panel {
