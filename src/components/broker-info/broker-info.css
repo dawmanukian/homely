@@ -1,44 +1,44 @@
 .broker-info-panel {
-    padding: 17px;
-    min-width: 360px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: 20px;
+  padding: 17px;
+  min-width: 360px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 20px;
 }
 .broker-info-panel img {
-    border: 3px solid #0F5BEDFF;
-    padding: 3px;
-    border-radius: 50%;
-    object-fit: cover;
+  border: 3px solid #1c1e2bff;
+  padding: 3px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .broker-data {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
-.broker-data-info p{
-    color: gray;
+.broker-data-info p {
+  color: gray;
 }
 .broker-contact-icon {
-    font-size: 21px;
-    color: #0F5BEDFF;
+  font-size: 21px;
+  color: #1c1e2bff;
 }
-.broker-contact p{
-    display: flex;
-    gap: 10px;
-    margin: 15px 0px 15px 0px;
+.broker-contact p {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0px 15px 0px;
 }
-.contact-link{
-    text-decoration: none;
-    color: #333;
+.contact-link {
+  text-decoration: none;
+  color: #333;
 }
 .item_information {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
-@media screen and (max-width: 991px){
-    .broker-info-panel {
-        min-width: auto;
-    }
-    .item_information {
-        flex-direction: column;
-    }
+@media screen and (max-width: 991px) {
+  .broker-info-panel {
+    min-width: auto;
+  }
+  .item_information {
+    flex-direction: column;
+  }
 }

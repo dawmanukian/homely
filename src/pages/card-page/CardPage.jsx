@@ -17,9 +17,11 @@ import { FaFacebook, FaTelegram, FaSquareXTwitter } from "react-icons/fa6";
 import SendRequest from "../../components/send-request/SendRequest";
 import BrokerInfo from "../../components/broker-info/BrokerInfo";
 import { FaImage } from "react-icons/fa6";
-// import { YMaps } from "react-yandex-maps";
 import { AiOutlineClose } from "react-icons/ai";
-import YaMap from "../../components/ya-map/YaMap";
+import { TbStairsUp } from "react-icons/tb";
+import { TbDimensions } from "react-icons/tb";
+import { FaShower } from "react-icons/fa";
+import { FaBed } from "react-icons/fa6";
 
 const CardPage = () => {
   const [showSwiper, setShowSwiper] = useState(false);
@@ -106,16 +108,7 @@ const CardPage = () => {
           {cardData.map((el) => {
             return (
               <div className="card-page-data" key={el.id}>
-                {/* <ImagesSwiper images={el.img} /> */}
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    gap: "13px",
-                    width: "100%",
-                    position: "relative",
-                  }}
-                >
+                <div className="card-images-all">
                   <img
                     src="https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2015/5/0/Julie-Dodson_Dephino_Living-Room_Beauty.jpg.rend.hgtvcom.616.462.suffix/1420492278316.jpeg"
                     height={"413px"}
@@ -151,9 +144,6 @@ const CardPage = () => {
                     <div className="card-title-panel">
                       <div className="card-header">
                         <p className="card-title-pg">{el.title}</p>
-                        <p className="card-address">
-                          <FaLocationDot /> {el.address}
-                        </p>
                       </div>
                       <div className="card-like">
                         <FaHeart
@@ -176,6 +166,26 @@ const CardPage = () => {
                       <b className="card-price">$ {el.price}</b>
                       <div className="card-type dis">
                         <PiFireBold /> Իջեցված գին
+                      </div>
+                    </div>
+                    <div
+                      style={{ display: "flex", gap: "15px", flexWrap: "wrap" }}
+                    >
+                      <div className="icon-div">
+                        <TbStairsUp />
+                        <span>3</span>
+                      </div>
+                      <div className="icon-div">
+                        <FaBed />
+                        <span>2</span>
+                      </div>
+                      <div className="icon-div">
+                        <TbDimensions />
+                        <span>70 ք․մ</span>
+                      </div>
+                      <div className="icon-div">
+                        <FaShower />
+                        <span>2</span>
                       </div>
                     </div>
                     <div className="card-id">

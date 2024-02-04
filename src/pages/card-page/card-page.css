@@ -6,9 +6,6 @@
 .container {
   width: 70%;
 }
-/* .card-title {
-  font-size: 27px;
-} */
 .card-page-data {
   display: flex;
   flex-direction: column;
@@ -61,11 +58,11 @@
   gap: 20px;
 }
 .send-req-btn {
-  border-radius: 10px;
+  border-radius: 12px;
   height: 40px;
   width: 200px;
   border: none;
-  background: #0957cbff;
+  background: #1c1e2bff;
   color: #fff;
   cursor: pointer;
   display: flex;
@@ -119,6 +116,14 @@
   border-radius: 15px;
   object-fit: cover;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.card-images-all {
+  display: flex;
+  justify-content: space-between;
+  gap: 13px;
+  margin-top: 13px;
+  width: 100%;
+  position: relative;
 }
 @keyframes share-link {
   from {
@@ -174,7 +179,7 @@
   margin: 30px;
   height: 50px;
   width: 50px;
-  background: #45488BFF;
+  background: #45488bff;
   color: #fff;
   border: none;
   border-radius: 10px;

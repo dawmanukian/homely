@@ -34,10 +34,9 @@
 }
 .card-id {
   background: #f4f4f4;
-  border-radius: 7px;
+  border-radius: 12px;
   padding: 5px;
   height: 37px;
-  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +66,7 @@
   border-radius: 12px;
 }
 .ex {
-  background: #1C1E2BFF;
+  background: #1c1e2bff;
 }
 .dis {
   background: rgb(69, 72, 139);
@@ -81,7 +80,7 @@
   padding: 6px;
   border-radius: 7px;
   font-size: 18px;
-  background: #F0F2F5FF;
+  background: #f0f2f5ff;
   color: gray;
 }
 .icon-div span {
