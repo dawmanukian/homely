@@ -8,7 +8,7 @@ import ElementCard from "../element-card/ElementCard";
 import "./cards-swiper.css";
 import { useState } from "react";
 
-const CardsSwiper = ({ status }) => {
+const CardsSwiper = ({ status, data }) => {
   const [likedCards, setLikedCards] = useState(localStorage.getItem("liked"));
 
   if (likedCards === "" || likedCards == null) {
@@ -70,7 +70,7 @@ const CardsSwiper = ({ status }) => {
         navigation
         breakpoints={{
           650: {
-            slidesPerView: 2
+            slidesPerView: 2,
           },
           1080: {
             slidesPerView: 3,
