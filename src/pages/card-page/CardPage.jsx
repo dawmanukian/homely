@@ -322,12 +322,17 @@ const CardPage = () => {
               </div>
             );
           })}
-          <div className="maps">{/* <YaMap /> */}</div>
+          <iframe
+            className="youtube_video"
+            width="600"
+            height="315"
+            src="https://youtube.com/embed/y9j-BL5ocW8"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         </div>
-        {/* <div style={{ width: "100%" }}>
-        <h2 className="card-page-title">Նման հայտարարություններ</h2>
-        <CardsSwiper />
-      </div> */}
         <Footer />
       </div>
     </>

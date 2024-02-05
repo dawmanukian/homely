@@ -192,12 +192,23 @@
   display: flex;
   justify-content: flex-end;
 }
+.youtube_video {
+  margin-top: 20px;
+  border-radius: 12px;
+  height: 315px;
+  width: 600px;
+}
 @media screen and (max-width: 520px) {
   .itm-img {
     width: 100%;
   }
   .an-images {
     display: none;
+  }
+}
+@media screen and (max-width: 650px) {
+  .youtube_video {
+    width: 100%;
   }
 }
 @media screen and (max-width: 991px) {
