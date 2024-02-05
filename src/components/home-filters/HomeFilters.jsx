@@ -52,6 +52,7 @@ const HomeFilters = () => {
   ]);
   const onSubmit = (data) => {
     console.log(data);
+    window.location = "/search";
   };
 
   return (

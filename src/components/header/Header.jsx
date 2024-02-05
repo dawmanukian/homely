@@ -40,7 +40,9 @@ const Header = () => {
       )}
       <header>
         <div className="header-menu">
-          <img src={logo} height={"80px"} className="header-logo" />
+          <Link to={"/"}>
+            <img src={logo} height={"80px"} className="header-logo" />
+          </Link>
           <div className="header-contact">
             <div
               className="liked-num"

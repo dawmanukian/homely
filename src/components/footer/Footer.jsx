@@ -1,6 +1,6 @@
 import React from "react";
 import "./footer.css";
-import { FaPhone, FaFacebook, FaTelegram, FaInstagram } from "react-icons/fa6";
+import { FaPhone, FaFacebook, FaTelegram, FaInstagram,FaWhatsapp } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import logo from "../../img/logo.jpg";
 
@@ -28,6 +28,7 @@ const Footer = () => {
             <a target="_blank" href="https://www.facebook.com/profile.php?id=61551599789842" className="footer-icon"><FaFacebook className="footer-icon" /></a>
             <a target="_blank" href="https://www.instagram.com/homely.am/" className="footer-icon"><FaInstagram className="footer-icon" /></a>
             <a target="_blank" href="https://t.me/realestateagencyhomely" className="footer-icon"><FaTelegram className="footer-icon" /></a>
+            <a target="_blank" href="https://t.me/realestateagencyhomely" className="footer-icon"><FaWhatsapp className="footer-icon" /></a>
           </div>
         </div>
         <div className="footer-social">
