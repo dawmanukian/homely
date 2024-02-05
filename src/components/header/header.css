@@ -17,7 +17,7 @@ header {
 .header-phone {
   color: #fff;
   text-decoration: none;
-  background: #1C1E2BFF;
+  background: #1c1e2bff;
   padding: 12px;
   border-radius: 12px;
   display: flex;
@@ -35,7 +35,7 @@ header {
   display: flex;
   align-items: center;
   gap: 5px;
-  background: #1C1E2BFF;
+  background: #1c1e2bff;
   transition: all ease 0.5s;
 }
 .header-select {
@@ -46,7 +46,7 @@ header {
   gap: 5px;
   border-radius: 12px;
   cursor: pointer;
-  background: #F0F2F5FF;
+  background: #f0f2f5ff;
   transition: all ease 0.5s;
   color: #333;
   outline: none;
@@ -61,7 +61,7 @@ header {
   transform: scale(1.07);
 }
 .drop-menu {
-  background: #F0F2F5FF;
+  background: #f0f2f5ff;
   height: 44px;
   width: 100%;
   padding: 12px;
@@ -98,7 +98,7 @@ header {
   height: 44px;
   padding: 12px;
   border: none;
-  background: #1C1E2BFF;
+  background: #1c1e2bff;
   color: #fff;
   display: flex;
   align-items: center;
@@ -110,7 +110,7 @@ header {
   height: 44px;
   border-radius: 12px;
   border: none;
-  background: #F0F2F5FF;
+  background: #f0f2f5ff;
   padding: 12px;
   color: #333;
   margin-top: 5px;
@@ -131,7 +131,8 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0px 0px 0px 60px;
-  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px,
+    rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
 }
 .header-logo {
   color: #fff;
@@ -142,7 +143,7 @@ header {
   text-decoration: none;
 }
 .liked-num {
-  background: #F0F2F5FF;
+  background: #f0f2f5ff;
   padding: 12px;
   border-radius: 12px;
   display: flex;
@@ -191,7 +192,7 @@ header {
   gap: 5px;
   flex-direction: column;
   position: absolute;
-  background: #FFF;
+  background: #fff;
   color: #333;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 0px 0px 13px 13px;
@@ -203,12 +204,16 @@ header {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background: #F0F2F5FF;
+  background: #f0f2f5ff;
   border-radius: 12px;
+}
+.droped-menu > .liked-num {
+  margin-top: 5px;
 }
 @media screen and (max-width: 721px) {
   .header-contact > .header-btn-link,
-  .header-select {
+  .header-select,
+  .header-contact > .liked-num {
     display: none;
   }
   .drop-menu {
@@ -222,7 +227,7 @@ header {
 }
 @media screen and (max-width: 991px) {
   .header-menu {
-    justify-content:space-between;
+    justify-content: space-between;
     padding: 0px;
   }
 }

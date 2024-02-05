@@ -28,7 +28,7 @@ const Header = () => {
             width: "100%",
             height: "100vh",
             position: "fixed",
-            zIndex: "10 ",
+            zIndex: "10",
           }}
           onClick={() => setOpenSelectPanel(null)}
         ></div>
@@ -114,6 +114,13 @@ const Header = () => {
                   </button>
                 </Link>
                 <div
+                  className="liked-num"
+                  onClick={() => setShowLikedCards(!showLikedCards)}
+                >
+                  <FaHeart className="like-icon" />
+                  <span>{likedNumber}</span>
+                </div>
+                <div
                   className="droped-header-select"
                   onClick={() => setOpenSelectPanel(3)}
                 >
@@ -133,7 +140,10 @@ const Header = () => {
                     </div>
                   )}
                 </div>
-                <div className="droped-header-select" onClick={() => setOpenSelectPanel(4)}>
+                <div
+                  className="droped-header-select"
+                  onClick={() => setOpenSelectPanel(4)}
+                >
                   <b>USD</b>
                   <FaChevronDown />
                   {openSelectPanel === 4 && (
