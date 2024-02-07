@@ -1,4 +1,4 @@
-import React, { useContext, createContext } from "react";
+import React, { useContext, createContext, useState } from "react";
 import "./home-page.css";
 import CardsSwiper from "../../components/cards-swiper/CardsSwiper";
 import Header from "../../components/header/Header";
@@ -7,9 +7,12 @@ import SearchResults from "../../components/search-results/SearchResults";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const HomePage = () => {
+
+  const [filters,setFilters] = useState([])
+
   return (
     <>
-      <Header />
+      <Header onFilter={(data) => setFilters(data)}/>
       <Routes>
         <Route
           path={"/*"}
@@ -21,7 +24,7 @@ const HomePage = () => {
             </>
           }
         />
-        <Route path={"/search"} element={<SearchResults />} />
+        <Route path={"/search"} element={<SearchResults filters={filters}/>} />
       </Routes>
       <Footer />
     </>

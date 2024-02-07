@@ -11,6 +11,14 @@
   color: #333;
   padding: 25px 0px 0px 25px;
 }
+.nothing_text {
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  background: #f0f2f5ff;
+  color: #333;
+  padding: 50px;
+}
 @media screen and (max-width: 1625px) {
   .search-results {
     grid-template-columns: repeat(3, 1fr);

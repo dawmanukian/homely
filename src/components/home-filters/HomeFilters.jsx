@@ -7,8 +7,11 @@ import { FaBuilding } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
 import { FaMoneyBillWave } from "react-icons/fa6";
 import { FaCheck } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
-const HomeFilters = () => {
+const HomeFilters = ({ onFilter }) => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -51,8 +54,9 @@ const HomeFilters = () => {
     },
   ]);
   const onSubmit = (data) => {
-    console.log(data);
-    window.location = "/search";
+    onFilter(data);
+    setShowMorePanel(false);
+    navigate("/search");
   };
 
   return (
@@ -380,28 +384,48 @@ const HomeFilters = () => {
                   <div className="checks-div">
                     <b>Շենքի տիպը</b>
                     <div className="checks-div-panel">
-                      <input type="checkbox" id="panel" value={"panel"} />
+                      <input
+                        type="checkbox"
+                        id="panel"
+                        value={"panel"}
+                        {...register("building_type")}
+                      />
                       <label className="custom-check" htmlFor="panel">
                         <div>
                           <FaCheck className="check-icons" />
                         </div>
                         <span>Պանելային</span>
                       </label>
-                      <input type="checkbox" id="stone" value={"stone"} />
+                      <input
+                        type="checkbox"
+                        id="stone"
+                        value={"stone"}
+                        {...register("building_type")}
+                      />
                       <label className="custom-check" htmlFor="stone">
                         <div>
                           <FaCheck className="check-icons" />
                         </div>
                         <span>Քարե</span>
                       </label>
-                      <input type="checkbox" id="monolith" value={"monolith"} />
+                      <input
+                        type="checkbox"
+                        id="monolith"
+                        value={"monolith"}
+                        {...register("building_type")}
+                      />
                       <label className="custom-check" htmlFor="monolith">
                         <div>
                           <FaCheck className="check-icons" />
                         </div>
                         <span>Մոնոլիտ</span>
                       </label>
-                      <input type="checkbox" id="other" value={"other"} />
+                      <input
+                        type="checkbox"
+                        id="other"
+                        value={"other"}
+                        {...register("building_type")}
+                      />
                       <label className="custom-check" htmlFor="other">
                         <div>
                           <FaCheck className="check-icons" />
@@ -417,6 +441,7 @@ const HomeFilters = () => {
                         type="checkbox"
                         id="renovated"
                         value={"renovated"}
+                        {...register("status")}
                       />
                       <label className="custom-check" htmlFor="renovated">
                         <div>
@@ -424,21 +449,36 @@ const HomeFilters = () => {
                         </div>
                         <span>Վերանորոգված</span>
                       </label>
-                      <input type="checkbox" id="good" value={"good"} />
+                      <input
+                        type="checkbox"
+                        id="good"
+                        value={"good"}
+                        {...register("status")}
+                      />
                       <label className="custom-check" htmlFor="good">
                         <div>
                           <FaCheck className="check-icons" />
                         </div>
                         <span>Լավ</span>
                       </label>
-                      <input type="checkbox" id="null" value={"null"} />
+                      <input
+                        type="checkbox"
+                        id="null"
+                        value={"null"}
+                        {...register("status")}
+                      />
                       <label className="custom-check" htmlFor="null">
                         <div>
                           <FaCheck className="check-icons" />
                         </div>
                         <span>Զրոյական</span>
                       </label>
-                      <input type="checkbox" id="new" value={"new"} />
+                      <input
+                        type="checkbox"
+                        id="new"
+                        value={"new"}
+                        {...register("status")}
+                      />
                       <label className="custom-check" htmlFor="new">
                         <div>
                           <FaCheck className="check-icons" />
