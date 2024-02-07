@@ -5,45 +5,30 @@ import "./search-results.css";
 
 const SearchResults = ({ filters }) => {
   function filtracion(fi) {
-    if (fi.id) {
-      setViewData(data.filter((el) => fi.id === el.id));
-    } else {
-      setViewData(
-        data.filter((el) => {
-          if (fi.address) {
-            if (!el.address.startsWith(fi.address)) {
-              return false;
-            }
-          }
-          if (fi.regions) {
-            if (!fi.regions.includes(el.region)) {
-              return false;
-            }
-          }
-          if (fi.rentOrSell) {
-            if (!el.type === fi.rentOrSell) {
-              return false;
-            }
-          }
-          if (fi.roomsNumber) {
-            if (!fi.roomsNumber.includes(el.rooms)) {
-              return false;
-            }
-          }
-          if (fi.status) {
-            if (!fi.status.includes(el.status)) {
-              return false;
-            }
-          }
-          if (fi.building_type) {
-            if (!fi.building_type.includes(el.building_type)) {
-              return false;
-            }
-          }
-          return el;
-        })
-      );
-    }
+    setViewData(
+      data.filter((el) => {
+        if (fi.id && fi.id !== el.id) return false;
+        if (fi.address && !el.address.startsWith(fi.address)) return false;
+        if (fi.regions && !fi.regions.includes(el.region)) return false;
+        if (fi.rentOrSell && el.type !== fi.rentOrSell) return false;
+        if (fi.roomsNumber && !fi.roomsNumber.includes(el.rooms)) return false;
+        if (fi.status && !fi.status.includes(el.status)) return false;
+        if (fi.building_type && !fi.building_type.includes(el.building_type))
+          return false;
+        if (
+          fi.floor_min &&
+          fi.floor_max &&
+          (Number(el.floor) < Number(fi.floor_min) ||
+            Number(el.floor) > Number(fi.floor_max))
+        )
+          return false;
+        if (fi.price_from && Number(el.price) < Number(fi.price_from))
+          return false;
+        if (fi.price_to && Number(el.price) > Number(fi.price_to)) return false;
+
+        return true;
+      })
+    );
   }
 
   const [data, setData] = useState([
@@ -58,6 +43,7 @@ const SearchResults = ({ filters }) => {
       type: "rent",
       status: "good",
       building_type: "stone",
+      floor: "3",
     },
     {
       id: "11655",
@@ -70,6 +56,7 @@ const SearchResults = ({ filters }) => {
       type: "rent",
       status: "good",
       building_type: "stone",
+      floor: "5",
     },
     {
       id: "11656",
@@ -82,6 +69,7 @@ const SearchResults = ({ filters }) => {
       type: "rent",
       status: "new",
       building_type: "stone",
+      floor: "1",
     },
     {
       id: "11657",
@@ -94,6 +82,7 @@ const SearchResults = ({ filters }) => {
       type: "sell",
       status: "new",
       building_type: "monolith",
+      floor: "1",
     },
   ]);
   const [viewData, setViewData] = useState([]);
