@@ -9,7 +9,16 @@ import { TbDimensions } from "react-icons/tb";
 import { FaShower } from "react-icons/fa";
 import { FaBed } from "react-icons/fa6";
 
-const ElementCard = ({ img, title, address, price, id, like, status }) => {
+const ElementCard = ({
+  img,
+  title,
+  address,
+  price,
+  id,
+  like,
+  status,
+  rooms,
+}) => {
   const liked = localStorage.getItem("liked");
 
   return (
@@ -27,7 +36,7 @@ const ElementCard = ({ img, title, address, price, id, like, status }) => {
             </div>
             <div className="icon-div">
               <FaBed />
-              <span>2</span>
+              <span>{rooms}</span>
             </div>
             <div className="icon-div">
               <TbDimensions />

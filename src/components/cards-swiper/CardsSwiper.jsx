@@ -17,32 +17,52 @@ const CardsSwiper = ({ status, data }) => {
 
   const [cards, setCards] = useState([
     {
-      id: 11654,
+      id: "11654",
       img: "https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2015/5/0/Julie-Dodson_Dephino_Living-Room_Beauty.jpg.rend.hgtvcom.616.462.suffix/1420492278316.jpeg",
       title: "Քանաքեռ-Զեյթուն, Կ. Ուլնեցու փող.",
       address: "Կ. Ուլնեցու փող., Քանաքեռ-Զեյթուն, Երևան",
-      price: "195,000",
+      price: "195000",
+      region: "arabkir",
+      rooms: "3",
+      type: "rent",
+      status: "good",
+      building_type: "stone",
     },
     {
-      id: 11655,
+      id: "11655",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMhpq-Wp0JhwFHrDxsYCBZP0D_rO8wwe5KEOZSYwICmnRGrs5_rR9s-qz5EP1BGXe9Tec&usqp=CAU",
       title: "Կենտրոն, Զավարյան փող",
       address: "Զավարյան փող, Կենտրոն, Երևան",
-      price: "89,000",
+      price: "89000",
+      region: "arabkir",
+      rooms: "4",
+      type: "rent",
+      status: "good",
+      building_type: "stone",
     },
     {
-      id: 11656,
+      id: "11656",
       img: "https://img.staticmb.com/mbcontent/images/uploads/2023/2/home-interior-colour-combination.jpg",
       title: "Նոր Նորք, Գյուրջյան փող",
       address: "Գյուրջյան փող, Նոր Նորք, Երևան",
-      price: "130,000",
+      price: "130000",
+      region: "arabkir",
+      rooms: "1",
+      type: "rent",
+      status: "new",
+      building_type: "stone",
     },
     {
-      id: 11657,
+      id: "11657",
       img: "https://media.designcafe.com/wp-content/uploads/2023/01/31151510/contemporary-interior-design-ideas-for-your-home.jpg",
       title: 'Բնակարան "Նկարիչների շենքում"',
       address: "Հր.Քոչար փող, Արաբկիր, Երևան",
-      price: "180,000",
+      price: "180000",
+      region: "arabkir",
+      rooms: "6",
+      type: "sell",
+      status: "new",
+      building_type: "monolith",
     },
   ]);
 
@@ -92,6 +112,7 @@ const CardsSwiper = ({ status, data }) => {
                 address={el.address}
                 title={el.title}
                 status={status}
+                rooms={el.rooms}
               />
             </SwiperSlide>
           );
