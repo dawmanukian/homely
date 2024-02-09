@@ -7,9 +7,8 @@ import logo from "../../img/logo.jpg";
 import LikedCards from "../liked-cards/LikedCards";
 import { Link } from "react-router-dom";
 import { FaChevronDown } from "react-icons/fa6";
-import Selects from "../selects/Selects";
 
-const Header = ({onFilter}) => {
+const Header = ({ onFilter }) => {
   useEffect(() => {
     setLikedNumber(JSON.parse(localStorage.getItem("liked")).length);
   }, [localStorage.getItem("liked")]);
@@ -166,7 +165,7 @@ const Header = ({onFilter}) => {
           </div>
         </div>
         <div className="filters-panel">
-          <HomeFilters onFilter={(data) => onFilter(data)}/>
+          <HomeFilters onFilter={(data) => onFilter(data)} />
         </div>
       </header>
     </div>

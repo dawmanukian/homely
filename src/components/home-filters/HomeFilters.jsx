@@ -7,10 +7,10 @@ import { FaBuilding } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
 import { FaMoneyBillWave } from "react-icons/fa6";
 import { FaCheck } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-const HomeFilters = ({ onFilter }) => {
-  const navigate = useNavigate();
+const HomeFilters = () => {
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -54,9 +54,11 @@ const HomeFilters = ({ onFilter }) => {
     },
   ]);
   const onSubmit = (data) => {
-    onFilter(data);
+    dispatch({
+      type: "add-filters",
+      payload: { data },
+    });
     setShowMorePanel(false);
-    navigate("/search");
   };
 
   return (

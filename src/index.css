@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 @font-face {
   font-family: homely_arm;
-  src: url(./FreeSans.ttf);
+  src: url(./fonts/FreeSans.ttf);
 }
 * {
   padding: 0;

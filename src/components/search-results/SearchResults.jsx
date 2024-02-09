@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import CardsSwiper from "../cards-swiper/CardsSwiper";
 import ElementCard from "../element-card/ElementCard";
 import "./search-results.css";
+import { useDispatch } from "react-redux";
 
 const SearchResults = ({ filters }) => {
+  const dispatch = useDispatch();
+
   function filtracion(fi) {
     setViewData(
       data.filter((el) => {
@@ -91,12 +94,30 @@ const SearchResults = ({ filters }) => {
   console.log(filters);
   return (
     <>
-      <h2 className="search-res-header">Որոնման արդյունքներ `</h2>
+      <div
+        style={{
+          display: "flex",
+        }}
+      >
+        <h2 className="search-res-header">Որոնման արդյունքներ `</h2>
+        <button
+          className="clear-filters-btn"
+          onClick={() => {
+            dispatch({
+              type: "add-filters",
+              payload: { data: null },
+            });
+          }}
+        >
+          Տեսնել բոլորը
+        </button>
+      </div>
       {viewData.length ? (
         <div className="search-results">
           {viewData.map((el) => {
             return (
               <ElementCard
+                key={el.id}
                 like={false}
                 price={el.price}
                 id={el.id}

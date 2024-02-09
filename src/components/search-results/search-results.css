@@ -19,6 +19,13 @@
   color: #333;
   padding: 50px;
 }
+.clear-filters-btn {
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
 @media screen and (max-width: 1625px) {
   .search-results {
     grid-template-columns: repeat(3, 1fr);

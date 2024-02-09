@@ -5,27 +5,34 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import SearchResults from "../../components/search-results/SearchResults";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const HomePage = () => {
 
-  const [filters,setFilters] = useState([])
+  const filters = useSelector(function (state) {
+    return state.currentFilters.data;
+  });
 
   return (
     <>
-      <Header onFilter={(data) => setFilters(data)}/>
-      <Routes>
-        <Route
-          path={"/*"}
-          element={
-            <>
-              <CardsSwiper status={1} />
-              <CardsSwiper status={0} />
-              <CardsSwiper status={null} />
-            </>
-          }
-        />
-        <Route path={"/search"} element={<SearchResults filters={filters}/>} />
-      </Routes>
+      {console.log(filters)}
+      <Header />
+      {filters ? (
+        <SearchResults filters={filters}/>
+      ) : (
+        <Routes>
+          <Route
+            path={"/*"}
+            element={
+              <>
+                <CardsSwiper status={1} />
+                <CardsSwiper status={0} />
+                <CardsSwiper status={null} />
+              </>
+            }
+          />
+        </Routes>
+      )}
       <Footer />
     </>
   );

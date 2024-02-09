@@ -6,7 +6,7 @@ const Loading = () => {
   return (
     <div className="loader_page">
       <img src={logo} className="logo" />
-      <div class="loader"></div>
+      <div className="loader"></div>
       <div style={{ height: "150px", display: "flex", alignItems: "center" }}>
         <b style={{ color: "#C1C1C1FF" }}>Real estate agency you can trust.</b>
       </div>

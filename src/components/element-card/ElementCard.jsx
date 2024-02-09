@@ -1,7 +1,7 @@
 import React from "react";
 import "./element-card.css";
-import { FaThumbsUp, FaStar } from "react-icons/fa";
-import { FaHeart, FaLocationDot } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { PiFireBold } from "react-icons/pi";
 import { TbStairsUp } from "react-icons/tb";
