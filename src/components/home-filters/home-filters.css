@@ -44,10 +44,11 @@
   transition: all ease 0.5s;
 }
 .rent-or-sell {
-  padding: 10px;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  gap: 10px;
 }
 .rent-or-sell label {
   background: #f0f2f5ff;
@@ -57,6 +58,7 @@
   padding: 15px;
   border-radius: 12px;
   height: 40px;
+  width: 160px;
   cursor: pointer;
 }
 .search-btn {
@@ -359,5 +361,14 @@ input[type="checkbox"]:checked + .custom-check > div > .check-icons {
 @media screen and (max-width: 480px) {
   .rent-or-sell {
     width: 100%;
+  }
+}
+@media screen and (max-width: 390px) {
+  .rent-or-sell label {
+    width: 100%;
+  }
+  .rent-or-sell {
+    flex-direction: column;
+    height: auto;
   }
 }

@@ -142,7 +142,7 @@ const HomeFilters = () => {
                     {...register("regions")}
                   />
                   <label className="filter-check" htmlFor="arabkir">
-                    <span>Արաբկիր</span>
+                    <span>{t("arabkir")}</span>
                   </label>
                   <input
                     type="checkbox"
@@ -151,7 +151,7 @@ const HomeFilters = () => {
                     {...register("regions")}
                   />
                   <label className="filter-check" htmlFor="avan">
-                    <span>Ավան</span>
+                    <span>{t("avan")}</span>
                   </label>
                   <input
                     type="checkbox"
@@ -160,7 +160,7 @@ const HomeFilters = () => {
                     {...register("regions")}
                   />
                   <label className="filter-check" htmlFor="davtashen">
-                    <span>Դավթաշեն</span>
+                    <span>{t("davtashen")}</span>
                   </label>
                   <input
                     type="checkbox"
@@ -169,7 +169,7 @@ const HomeFilters = () => {
                     {...register("regions")}
                   />
                   <label className="filter-check" htmlFor="zeytun">
-                    <span>Քանաքեռ-Զեյթուն</span>
+                    <span>{t("kanaker-zeytun")}</span>
                   </label>
                   <input
                     type="checkbox"
@@ -178,7 +178,7 @@ const HomeFilters = () => {
                     {...register("regions")}
                   />
                   <label className="filter-check" htmlFor="kentron">
-                    <span>Կենտրոն</span>
+                    <span>{t("kentron")}</span>
                   </label>
                   <input
                     type="checkbox"
@@ -187,7 +187,7 @@ const HomeFilters = () => {
                     {...register("regions")}
                   />
                   <label className="filter-check" htmlFor="shengavit">
-                    <span>Շենգավիթ</span>
+                    <span>{t("shengavit")}</span>
                   </label>
                   <input
                     type="checkbox"
@@ -196,7 +196,7 @@ const HomeFilters = () => {
                     {...register("regions")}
                   />
                   <label className="filter-check" htmlFor="nork-marash">
-                    <span>Նորք-Մարաշ</span>
+                    <span>{t("nork-marash")}</span>
                   </label>
                   <input
                     type="checkbox"
@@ -205,7 +205,7 @@ const HomeFilters = () => {
                     {...register("regions")}
                   />
                   <label className="filter-check" htmlFor="nor-nork">
-                    <span>Նոր-Նորք</span>
+                    <span>{t("nor-nork")}</span>
                   </label>
                   <input
                     type="checkbox"
@@ -214,7 +214,7 @@ const HomeFilters = () => {
                     {...register("regions")}
                   />
                   <label className="filter-check" htmlFor="nubarashen">
-                    <span>Նուբարաշեն</span>
+                    <span>{t("nubarashen")}</span>
                   </label>
                   <input
                     type="checkbox"
@@ -223,7 +223,7 @@ const HomeFilters = () => {
                     {...register("regions")}
                   />
                   <label className="filter-check" htmlFor="erebuni">
-                    <span>Էրեբունի</span>
+                    <span>{t("erebuni")}</span>
                   </label>
                   <input
                     type="checkbox"
@@ -232,7 +232,7 @@ const HomeFilters = () => {
                     {...register("regions")}
                   />
                   <label className="filter-check" htmlFor="malatia-sebastia">
-                    <span>Մալաթիա-Սեբաստիա</span>
+                    <span>{t("malatia-sebastia")}</span>
                   </label>
                 </div>
               </div>
