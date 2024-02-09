@@ -8,6 +8,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
 import { FaMoneyBillWave } from "react-icons/fa6";
 import { FaCheck } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const HomeFilters = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,8 @@ const HomeFilters = () => {
     formState: { errors },
     watch,
   } = useForm();
+
+  const { t, i18n } = useTranslation();
 
   const [rentOrSell, setRentOrSell] = useState("rent");
   const [openPanelNum, setOpenPanelNum] = useState(null);
@@ -73,14 +76,14 @@ const HomeFilters = () => {
                 id="radio-sell"
                 {...register("rentOrSell")}
               />
-              <label htmlFor="radio-sell">Վաճառք</label>
+              <label htmlFor="radio-sell">{t("sell")}</label>
               <input
                 type="radio"
                 value="rent"
                 id="radio-rent"
                 {...register("rentOrSell")}
               />
-              <label htmlFor="radio-rent">Վարձակալություն</label>
+              <label htmlFor="radio-rent">{t("rent")}</label>
             </div>
           </div>
           <div className="all-filters">
@@ -98,25 +101,25 @@ const HomeFilters = () => {
             <div className="fill-div" onClick={() => setOpenPanelNum(3)}>
               <div className="fill-name">
                 <FaBuilding className="fill-icon" />
-                Գույքի տիպը
+                {t("item_type")}
               </div>
               <div className={`filter-panel ${openPanelNum === 3 && "active"}`}>
                 <div>
                   <input type="checkbox" id="flat" value={"flat"} />
                   <label className="filter-check" htmlFor="flat">
-                    <span>Բնակարան</span>
+                    <span>{t("flat")}</span>
                   </label>
                   <input type="checkbox" id="hause" value={"hause"} />
                   <label className="filter-check" htmlFor="hause">
-                    <span>Առանձնատուն</span>
+                    <span>{t("mansion")}</span>
                   </label>
                   <input type="checkbox" id="commercion" value={"commercion"} />
                   <label className="filter-check" htmlFor="commercion">
-                    <span>Կոմերցիոն</span>
+                    <span>{t("commercial")}</span>
                   </label>
                   <input type="checkbox" id="land_plot" value={"landPlot"} />
                   <label className="filter-check" htmlFor="land_plot">
-                    <span>Հողատարածք</span>
+                    <span>{t("land_plot")}</span>
                   </label>
                 </div>
               </div>
@@ -124,7 +127,7 @@ const HomeFilters = () => {
             <div className="fill-div" onClick={() => setOpenPanelNum(1)}>
               <div className="fill-name">
                 <FaLocationDot className="fill-icon" />
-                Համայնք
+                {t("region")}
               </div>
               <div
                 className={`filter-panel regions ${
@@ -237,7 +240,7 @@ const HomeFilters = () => {
             <div className="fill-div" onClick={() => setOpenPanelNum(2)}>
               <div className="fill-name">
                 <FaBed className="fill-icon" />
-                Սենյակներ
+                {t("rooms")}
               </div>
               <div
                 className={`filter-panel regions ${
@@ -315,7 +318,7 @@ const HomeFilters = () => {
               className={`fill-div ${showMorePanel && "opened"}`}
               onClick={() => setShowMorePanel(!showMorePanel)}
             >
-              Տեսնել ավելին{" "}
+              {t("more")}{" "}
               {showMorePanel ? (
                 <FaChevronUp style={{ marginLeft: "10px" }} />
               ) : (
@@ -323,7 +326,7 @@ const HomeFilters = () => {
               )}
             </div>
             <button className="search-btn" type="submit">
-              Որոնել
+              {t("search")}
             </button>
           </div>
           {showMorePanel && (
@@ -335,7 +338,7 @@ const HomeFilters = () => {
                   </div>
                   <input
                     type="number"
-                    placeholder="Որոնել"
+                    placeholder={t("search")}
                     className="search-id"
                     {...register("id")}
                   />
@@ -343,7 +346,7 @@ const HomeFilters = () => {
                 <div className="address-panel-div">
                   <input
                     type="text"
-                    placeholder="Հասցե"
+                    placeholder={t("address")}
                     className="search-id"
                     {...register("address")}
                   />
@@ -351,14 +354,14 @@ const HomeFilters = () => {
                 <div className="floor-data">
                   <input
                     type="number"
-                    placeholder="Հարկ մին․"
+                    placeholder={t("floor_min")}
                     className="search-floor"
                     min={1}
                     {...register("floor_min")}
                   />
                   <input
                     type="number"
-                    placeholder="Հարկ մակս․"
+                    placeholder={t("floor_max")}
                     className="search-floor"
                     min={1}
                     {...register("floor_max")}
@@ -369,14 +372,14 @@ const HomeFilters = () => {
                 <div className="floor-data prc">
                   <input
                     type="number"
-                    placeholder="Գին սկսած"
+                    placeholder={t("price_from")}
                     className="search-floor"
                     min={0}
                     {...register("price_from")}
                   />
                   <input
                     type="number"
-                    placeholder="Գին մինչև"
+                    placeholder={t("price_to")}
                     className="search-floor"
                     min={0}
                     {...register("price_to")}
@@ -384,7 +387,7 @@ const HomeFilters = () => {
                 </div>
                 <div className="checks-panels">
                   <div className="checks-div">
-                    <b>Շենքի տիպը</b>
+                    <b>{t("building_type")}</b>
                     <div className="checks-div-panel">
                       <input
                         type="checkbox"
@@ -396,7 +399,7 @@ const HomeFilters = () => {
                         <div>
                           <FaCheck className="check-icons" />
                         </div>
-                        <span>Պանելային</span>
+                        <span>{t("panel")}</span>
                       </label>
                       <input
                         type="checkbox"
@@ -408,7 +411,7 @@ const HomeFilters = () => {
                         <div>
                           <FaCheck className="check-icons" />
                         </div>
-                        <span>Քարե</span>
+                        <span>{t("stone")}</span>
                       </label>
                       <input
                         type="checkbox"
@@ -420,7 +423,7 @@ const HomeFilters = () => {
                         <div>
                           <FaCheck className="check-icons" />
                         </div>
-                        <span>Մոնոլիտ</span>
+                        <span>{t("monolith")}</span>
                       </label>
                       <input
                         type="checkbox"
@@ -432,12 +435,12 @@ const HomeFilters = () => {
                         <div>
                           <FaCheck className="check-icons" />
                         </div>
-                        <span>Նորակառույց</span>
+                        <span>{t("new")}</span>
                       </label>
                     </div>
                   </div>
                   <div className="checks-div">
-                    <b>Կարգավիճակ</b>
+                    <b>{t("status")}</b>
                     <div className="checks-div-panel">
                       <input
                         type="checkbox"
@@ -449,7 +452,7 @@ const HomeFilters = () => {
                         <div>
                           <FaCheck className="check-icons" />
                         </div>
-                        <span>Վերանորոգված</span>
+                        <span>{t("renovated")}</span>
                       </label>
                       <input
                         type="checkbox"
@@ -461,7 +464,7 @@ const HomeFilters = () => {
                         <div>
                           <FaCheck className="check-icons" />
                         </div>
-                        <span>Լավ</span>
+                        <span>{t("good")}</span>
                       </label>
                       <input
                         type="checkbox"
@@ -473,7 +476,7 @@ const HomeFilters = () => {
                         <div>
                           <FaCheck className="check-icons" />
                         </div>
-                        <span>Զրոյական</span>
+                        <span>{t("null")}</span>
                       </label>
                       <input
                         type="checkbox"
@@ -485,7 +488,7 @@ const HomeFilters = () => {
                         <div>
                           <FaCheck className="check-icons" />
                         </div>
-                        <span>Դիզայներական ոճ</span>
+                        <span>{t("designer_style")}</span>
                       </label>
                     </div>
                   </div>

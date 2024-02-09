@@ -7,6 +7,7 @@ import logo from "../../img/logo.jpg";
 import LikedCards from "../liked-cards/LikedCards";
 import { Link } from "react-router-dom";
 import { FaChevronDown } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 const Header = ({ onFilter }) => {
   useEffect(() => {
@@ -19,6 +20,9 @@ const Header = ({ onFilter }) => {
   const [showLikedCards, setShowLikedCards] = useState(false);
   const [showLangPanel, setShowLangPanel] = useState(false);
   const [openSelectPanel, setOpenSelectPanel] = useState(null);
+
+  const { t, i18n } = useTranslation();
+
   return (
     <div>
       {openSelectPanel != null && (
@@ -64,13 +68,22 @@ const Header = ({ onFilter }) => {
               </div>
               {openSelectPanel === 1 && (
                 <div className="selects">
-                  <div className="select-p">
+                  <div
+                    className="select-p"
+                    onClick={() => i18n.changeLanguage("arm")}
+                  >
                     <b>ARM</b>
                   </div>
-                  <div className="select-p">
+                  <div
+                    className="select-p"
+                    onClick={() => i18n.changeLanguage("en")}
+                  >
                     <b>ENG</b>
                   </div>
-                  <div className="select-p">
+                  <div
+                    className="select-p"
+                    onClick={() => i18n.changeLanguage("ru")}
+                  >
                     <b>RUS</b>
                   </div>
                 </div>
@@ -100,7 +113,7 @@ const Header = ({ onFilter }) => {
             <Link to={"/auth"} className="header-btn-link">
               <button className="header-btn">
                 <FaUser />
-                Մուտք
+                {t("sign_in")}
               </button>
             </Link>
             <button className="drop-menu" onClick={() => setDrop(!drop)}>
@@ -111,7 +124,7 @@ const Header = ({ onFilter }) => {
                 <Link to={"/auth"} className="header-btn-link">
                   <button className="droped-header-btn">
                     <FaUser />
-                    Մուտք
+                    {t("sign_in")}
                   </button>
                 </Link>
                 <div
@@ -129,13 +142,13 @@ const Header = ({ onFilter }) => {
                   <FaChevronDown />
                   {openSelectPanel === 3 && (
                     <div className="selects">
-                      <div className="select-p">
+                      <div className="select-p" onClick={() => i18n.changeLanguage("arm")}>
                         <b>ARM</b>
                       </div>
-                      <div className="select-p">
+                      <div className="select-p" onClick={() => i18n.changeLanguage("en")}>
                         <b>ENG</b>
                       </div>
-                      <div className="select-p">
+                      <div className="select-p" onClick={() => i18n.changeLanguage("ru")}>
                         <b>RUS</b>
                       </div>
                     </div>

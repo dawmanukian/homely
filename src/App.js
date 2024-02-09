@@ -10,13 +10,13 @@ import { useState } from "react";
 function App() {
   const [showLoading, setShowLoading] = useState(true);
 
-  setTimeout(() => setShowLoading(false), "3000");
+  // setTimeout(() => setShowLoading(false), "3000");
 
   return (
     <>
-      {showLoading ? (
+      {/* {showLoading ? (
         <Loading />
-      ) : (
+      ) : ( */}
         <Router>
           <Routes>
             <Route path={"/*"} element={<HomePage />} />
@@ -25,7 +25,7 @@ function App() {
             <Route path={"/item/:itemId"} element={<CardPage />} />
           </Routes>
         </Router>
-      )}
+      {/* )} */}
     </>
   );
 }
