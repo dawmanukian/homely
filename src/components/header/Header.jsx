@@ -63,26 +63,35 @@ const Header = ({ onFilter }) => {
                 className="header-select"
                 onClick={() => setOpenSelectPanel(1)}
               >
-                <b>ARM</b>
+                <b>{t("lang")}</b>
                 <FaChevronDown />
               </div>
               {openSelectPanel === 1 && (
                 <div className="selects">
                   <div
                     className="select-p"
-                    onClick={() => i18n.changeLanguage("arm")}
+                    onClick={() => {
+                      i18n.changeLanguage("arm");
+                      localStorage.setItem("lang", "arm");
+                    }}
                   >
                     <b>ARM</b>
                   </div>
                   <div
                     className="select-p"
-                    onClick={() => i18n.changeLanguage("en")}
+                    onClick={() => {
+                      i18n.changeLanguage("en");
+                      localStorage.setItem("lang", "en");
+                    }}
                   >
                     <b>ENG</b>
                   </div>
                   <div
                     className="select-p"
-                    onClick={() => i18n.changeLanguage("ru")}
+                    onClick={() => {
+                      i18n.changeLanguage("ru");
+                      localStorage.setItem("lang", "ru");
+                    }}
                   >
                     <b>RUS</b>
                   </div>
@@ -138,17 +147,35 @@ const Header = ({ onFilter }) => {
                   className="droped-header-select"
                   onClick={() => setOpenSelectPanel(3)}
                 >
-                  <b>ARM</b>
+                  <b>{t("lang")}</b>
                   <FaChevronDown />
                   {openSelectPanel === 3 && (
                     <div className="selects">
-                      <div className="select-p" onClick={() => i18n.changeLanguage("arm")}>
+                      <div
+                        className="select-p"
+                        onClick={() => {
+                          i18n.changeLanguage("arm");
+                          localStorage.setItem("lang", "arm");
+                        }}
+                      >
                         <b>ARM</b>
                       </div>
-                      <div className="select-p" onClick={() => i18n.changeLanguage("en")}>
+                      <div
+                        className="select-p"
+                        onClick={() => {
+                          i18n.changeLanguage("en");
+                          localStorage.setItem("lang", "en");
+                        }}
+                      >
                         <b>ENG</b>
                       </div>
-                      <div className="select-p" onClick={() => i18n.changeLanguage("ru")}>
+                      <div
+                        className="select-p"
+                        onClick={() => {
+                          i18n.changeLanguage("ru");
+                          localStorage.setItem("lang", "ru");
+                        }}
+                      >
                         <b>RUS</b>
                       </div>
                     </div>

@@ -10,11 +10,22 @@ const store = createStore(
         },
       };
     }
+    if (action.type === "select-language") {
+      return {
+        ...state,
+        currentLanguage: {
+          lang: action.payload.lang,
+        },
+      };
+    }
     return state;
   },
   {
     currentFilters: {
       data: null,
+    },
+    currentLanguage: {
+      lang: localStorage.getItem("lang") || "arm",
     },
   }
 );

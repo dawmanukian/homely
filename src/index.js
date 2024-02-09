@@ -9,6 +9,7 @@ import { initReactI18next } from "react-i18next";
 import enTranslations from "./i18n/en.json";
 import ruTranslations from "./i18n/ru.json";
 import armTranslations from "./i18n/arm.json";
+import { useCookies } from "react-cookie";
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -16,7 +17,7 @@ i18n.use(initReactI18next).init({
     ru: { translation: ruTranslations },
     arm: { translation: armTranslations },
   },
-  lng: "arm",
+  lng: localStorage.getItem("lang") || "arm",
   interpolation: {
     escapeValue: false,
   },
