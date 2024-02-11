@@ -25,10 +25,12 @@ const Footer = () => {
             </a>
           </div>
           <div className="footer-contact">
+            <div className="all-contact-icons">
             <a target="_blank" href="https://www.facebook.com/profile.php?id=61551599789842" className="footer-icon"><FaFacebook className="footer-icon" /></a>
             <a target="_blank" href="https://www.instagram.com/homely.am/" className="footer-icon"><FaInstagram className="footer-icon" /></a>
             <a target="_blank" href="https://t.me/realestateagencyhomely" className="footer-icon"><FaTelegram className="footer-icon" /></a>
             <a target="_blank" href="https://t.me/realestateagencyhomely" className="footer-icon"><FaWhatsapp className="footer-icon" /></a>
+            </div>
           </div>
         </div>
         <div className="footer-social">

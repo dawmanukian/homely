@@ -7,9 +7,7 @@
   background: #f0f2f5ff;
 }
 .search-res-header {
-  background: #f0f2f5ff;
   color: #333;
-  padding: 25px 0px 0px 25px;
 }
 .nothing_text {
   font-size: 25px;
@@ -24,7 +22,16 @@
   border-radius: 12px;
   border: none;
   color: #333;
+  height: 45px;
+  font-size: 16px;
   cursor: pointer;
+}
+.header-search-results {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 @media screen and (max-width: 1625px) {
   .search-results {
