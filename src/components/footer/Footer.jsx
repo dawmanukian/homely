@@ -1,8 +1,15 @@
 import React from "react";
 import "./footer.css";
-import { FaPhone, FaFacebook, FaTelegram, FaInstagram,FaWhatsapp } from "react-icons/fa6";
+import {
+  FaPhone,
+  FaFacebook,
+  FaTelegram,
+  FaInstagram,
+  FaWhatsapp,
+} from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import logo from "../../img/logo.jpg";
+import { Helmet } from "react-helmet";
 
 const Footer = () => {
   return (
@@ -26,10 +33,34 @@ const Footer = () => {
           </div>
           <div className="footer-contact">
             <div className="all-contact-icons">
-            <a target="_blank" href="https://www.facebook.com/profile.php?id=61551599789842" className="footer-icon"><FaFacebook className="footer-icon" /></a>
-            <a target="_blank" href="https://www.instagram.com/homely.am/" className="footer-icon"><FaInstagram className="footer-icon" /></a>
-            <a target="_blank" href="https://t.me/realestateagencyhomely" className="footer-icon"><FaTelegram className="footer-icon" /></a>
-            <a target="_blank" href="https://t.me/realestateagencyhomely" className="footer-icon"><FaWhatsapp className="footer-icon" /></a>
+              <a
+                target="_blank"
+                href="https://www.facebook.com/profile.php?id=61551599789842"
+                className="footer-icon"
+              >
+                <FaFacebook className="footer-icon" />
+              </a>
+              <a
+                target="_blank"
+                href="https://www.instagram.com/homely.am/"
+                className="footer-icon"
+              >
+                <FaInstagram className="footer-icon" />
+              </a>
+              <a
+                target="_blank"
+                href="https://t.me/realestateagencyhomely"
+                className="footer-icon"
+              >
+                <FaTelegram className="footer-icon" />
+              </a>
+              <a
+                target="_blank"
+                href="https://t.me/realestateagencyhomely"
+                className="footer-icon"
+              >
+                <FaWhatsapp className="footer-icon" />
+              </a>
             </div>
           </div>
         </div>
@@ -47,6 +78,12 @@ const Footer = () => {
       />
       <p className="all-rights-reserved">© 2024 Homely. All Rights Reserved.</p>
       <p className="created-by">Created by Magical</p>
+      <a href="https://wakatime.com/badge/user/8760925d-cbf3-4b00-833c-43af03b3a644/project/018bb5b5-aa4d-405b-a02c-b01c21ed119b">
+        <img
+          src="https://wakatime.com/badge/user/8760925d-cbf3-4b00-833c-43af03b3a644/project/018bb5b5-aa4d-405b-a02c-b01c21ed119b.svg"
+          alt="wakatime"
+        />
+      </a>
     </footer>
   );
 };
