@@ -40,5 +40,16 @@
     "nubarashen": "Nubarashen",
     "shengavit": "Shengavit",
     "search-results": "Search results",
-    "view-all" : "View All Items"
+    "view-all" : "View All Items",
+    "all-images": "All images",
+    "added-date" : "Added",
+    "share-link" : "Share a link",
+    "send-request" : "Send a request",
+    "user-name" : "Name",
+    "user-phone" : "Phone",
+    "user-message" : "Type message ․․․",
+    "send" : "Send",
+    "exclusive" : "Exclusive",
+    "reduced-price" : "Reduced price",
+    "sqm" : "sq.m."
 }

@@ -210,6 +210,11 @@ header {
 .droped-menu > .liked-num {
   margin-top: 5px;
 }
+@media screen and (max-width: 390px) {
+  header {
+    height: 60vh;
+  }
+}
 @media screen and (max-width: 721px) {
   .header-contact > .header-btn-link,
   .header-select,

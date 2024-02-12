@@ -2,6 +2,8 @@ import React from "react";
 import "./send-request.css";
 import { useForm } from "react-hook-form";
 import { RiCloseFill } from "react-icons/ri";
+import { useSelector } from "react-redux";
+import { t } from "i18next";
 
 const SendRequest = ({ onClose }) => {
   const {
@@ -27,7 +29,7 @@ const SendRequest = ({ onClose }) => {
           </div>
         </div>
         <input
-          placeholder="Անուն"
+          placeholder={t("user-name")}
           {...register("userName", { required: true })}
           style={
             errors.userName && {
@@ -36,7 +38,7 @@ const SendRequest = ({ onClose }) => {
           }
         />
         <input
-          placeholder="Հեռախոսահամար"
+          placeholder={t("user-phone")}
           {...register("userPhone", { required: true })}
           style={
             errors.userPhone && {
@@ -46,9 +48,9 @@ const SendRequest = ({ onClose }) => {
         />
         <textarea
           {...register("message")}
-          placeholder="Գրել հաղորթագրություն ..."
+          placeholder={t("user-message")}
         ></textarea>
-        <button className="req-send-btn">Ուղարկել</button>
+        <button className="req-send-btn">{t("send")}</button>
       </form>
     </div>
   );

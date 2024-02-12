@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useTransition } from "react";
 import "./card-page.css";
 import { Link, useParams } from "react-router-dom";
 import ImagesSwiper from "../../components/images-swiper/ImagesSwiper";
@@ -22,57 +22,21 @@ import { TbStairsUp } from "react-icons/tb";
 import { TbDimensions } from "react-icons/tb";
 import { FaShower } from "react-icons/fa";
 import { FaBed } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const CardPage = () => {
   const [showSwiper, setShowSwiper] = useState(false);
   const [showReqPanel, setShowReqPanel] = useState(false);
   const [showShareLink, setShowShareLink] = useState(false);
   const liked = localStorage.getItem("liked");
-  const [data, setData] = useState([
-    {
-      id: 11654,
-      img: [
-        "https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2015/5/0/Julie-Dodson_Dephino_Living-Room_Beauty.jpg.rend.hgtvcom.616.462.suffix/1420492278316.jpeg",
-      ],
-      title: "Քանաքեռ-Զեյթուն, Կ. Ուլնեցու փող.",
-      address: "Կ. Ուլնեցու փող., Քանաքեռ-Զեյթուն, Երևան",
-      price: "195,000",
-    },
-    {
-      id: 11655,
-      img: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMhpq-Wp0JhwFHrDxsYCBZP0D_rO8wwe5KEOZSYwICmnRGrs5_rR9s-qz5EP1BGXe9Tec&usqp=CAU",
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=2158&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      ],
-      title: "Կենտրոն, Զավարյան փող",
-      address: "Զավարյան փող, Կենտրոն, Երևան",
-      price: "89,000",
-    },
-    {
-      id: 11656,
-      img: [
-        "https://img.staticmb.com/mbcontent/images/uploads/2023/2/home-interior-colour-combination.jpg",
-        "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=1980&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      ],
-      title: "Նոր Նորք, Գյուրջյան փող",
-      address: "Գյուրջյան փող, Նոր Նորք, Երևան",
-      price: "130,000",
-    },
-    {
-      id: 11657,
-      img: [
-        "https://media.designcafe.com/wp-content/uploads/2023/01/31151510/contemporary-interior-design-ideas-for-your-home.jpg",
-      ],
-      title: 'Բնակարան "Նկարիչների շենքում"',
-      address: "Հր.Քոչար փող, Արաբկիր, Երևան",
-      price: "180,000",
-    },
-  ]);
-
+  const [data, setData] = useState(
+    useSelector((state) => state.allItems.items)
+  );
+  const { t, i18n } = useTranslation();
   const { itemId } = useParams();
 
-  const cardData = data.filter((el) => el.id === Number(itemId));
+  const cardData = data.filter((el) => el.id === itemId);
 
   return (
     <>
@@ -133,11 +97,11 @@ const CardPage = () => {
                     className="view-all-images"
                     onClick={() => setShowSwiper(true)}
                   >
-                    <b>Բոլոր նկարները</b> <FaImage className="img-icon" />
+                    <b>{t("all-images")}</b> <FaImage className="img-icon" />
                   </button>
                 </div>
                 <span className="card-add-date">
-                  Ավելացվել է 27․01․2023 <FaCalendarAlt />
+                  {t("added-date")} 27․01․2023 <FaCalendarAlt />
                 </span>
                 <div className="item_information">
                   <div style={{ display: "grid", gap: "20px" }}>
@@ -165,7 +129,7 @@ const CardPage = () => {
                     >
                       <b className="card-price">$ {el.price}</b>
                       <div className="card-type dis">
-                        <PiFireBold /> Իջեցված գին
+                        <PiFireBold /> {t("reduced-price")}
                       </div>
                     </div>
                     <div
@@ -181,7 +145,7 @@ const CardPage = () => {
                       </div>
                       <div className="icon-div">
                         <TbDimensions />
-                        <span>70 ք․մ</span>
+                        <span>70 {t("sqm")}</span>
                       </div>
                       <div className="icon-div">
                         <FaShower />
@@ -282,13 +246,13 @@ const CardPage = () => {
                         onClick={() => setShowShareLink(!showShareLink)}
                       >
                         <PiShareNetworkBold style={{ fontSize: "20px" }} />
-                        <b>Կիսվել հղումով</b>
+                        <b>{t("share-link")}</b>
                       </button>
                       <button
                         className="send-req-btn"
                         onClick={() => setShowReqPanel(true)}
                       >
-                        <span>Ուղարկել հայտ</span>
+                        <span>{t("send-request")}</span>
                         <ImBubble className="send-icon" />
                       </button>
                       {showShareLink && (

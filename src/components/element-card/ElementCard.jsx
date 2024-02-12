@@ -8,6 +8,7 @@ import { TbStairsUp } from "react-icons/tb";
 import { TbDimensions } from "react-icons/tb";
 import { FaShower } from "react-icons/fa";
 import { FaBed } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 const ElementCard = ({
   img,
@@ -20,7 +21,7 @@ const ElementCard = ({
   rooms,
 }) => {
   const liked = localStorage.getItem("liked");
-
+  const { t, i18n } = useTranslation();
   return (
     <div className="el-card">
       <Link to={`/item/${id}`} div className="el-card-link">
@@ -40,7 +41,7 @@ const ElementCard = ({
             </div>
             <div className="icon-div">
               <TbDimensions />
-              <span>70 ք․մ</span>
+              <span>70 {t("sqm")}</span>
             </div>
             <div className="icon-div">
               <FaShower />
@@ -55,12 +56,12 @@ const ElementCard = ({
           status ? (
             <div className="card-type ex">
               <FaStar />
-              Էքսկլյուզիվ
+              {t("exclusive")}
             </div>
           ) : (
             <div className="card-type dis">
               <PiFireBold style={{ color: "#fff", fontSize: "18px" }} />
-              Իջեցված գին
+              {t("reduced-price")}
             </div>
           )
         ) : null}
