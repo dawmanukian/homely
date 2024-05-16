@@ -1,13 +1,17 @@
 .broker-info-panel {
   padding: 17px;
-  min-width: 360px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-width: 250px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 20px;
 }
 .broker-info-panel img {
   border: 3px solid #1c1e2bff;
   padding: 3px;
-  border-radius: 50%;
+  border-radius: 22px;
   object-fit: cover;
 }
 .broker-data {

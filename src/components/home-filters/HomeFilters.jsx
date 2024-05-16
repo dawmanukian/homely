@@ -1,32 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./home-filters.css";
 import { useForm } from "react-hook-form";
-import { FaLocationDot } from "react-icons/fa6";
-import { FaBed } from "react-icons/fa6";
-import { FaBuilding } from "react-icons/fa6";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
-import { FaMoneyBillWave } from "react-icons/fa6";
-import { FaCheck } from "react-icons/fa6";
+import {
+  FaLocationDot,
+  FaBuilding,
+  FaBed,
+  FaCheck,
+  FaChevronDown,
+  FaChevronUp,
+} from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
+import StreetsFilters from "../streets-filters/StreetsFilters";
 
 const HomeFilters = () => {
   const dispatch = useDispatch();
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    watch,
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  const [rentOrSell, setRentOrSell] = useState("rent");
   const [openPanelNum, setOpenPanelNum] = useState(null);
   const [showMorePanel, setShowMorePanel] = useState(false);
-  const [selectAddress, setSelectAddress] = useState("");
+
+  const [streetName, setStreetName] = useState('');
+  const [regionName, setRegionName] = useState([]);
+  const [selectedStreet, setSelectedStreet] = useState('');
+
   const onSubmit = (data) => {
+    data = {...data, regions: regionName, address: streetName}
     dispatch({
       type: "add-filters",
       payload: { data },
@@ -75,19 +77,19 @@ const HomeFilters = () => {
               </div>
               <div className={`filter-panel ${openPanelNum === 3 && "active"}`}>
                 <div>
-                  <input type="checkbox" id="flat" value={"flat"} />
+                  <input type="checkbox" id="flat" value={"flat"} {...register("itemType")}/>
                   <label className="filter-check" htmlFor="flat">
                     <span>{t("flat")}</span>
                   </label>
-                  <input type="checkbox" id="hause" value={"hause"} />
+                  <input type="checkbox" id="hause" value={"hause"} {...register("itemType")}/>
                   <label className="filter-check" htmlFor="hause">
                     <span>{t("mansion")}</span>
                   </label>
-                  <input type="checkbox" id="commercion" value={"commercion"} />
+                  <input type="checkbox" id="commercion" value={"commercion"}{...register("itemType")} />
                   <label className="filter-check" htmlFor="commercion">
                     <span>{t("commercial")}</span>
                   </label>
-                  <input type="checkbox" id="land_plot" value={"landPlot"} />
+                  <input type="checkbox" id="land_plot" value={"landPlot"} {...register("itemType")}/>
                   <label className="filter-check" htmlFor="land_plot">
                     <span>{t("land_plot")}</span>
                   </label>
@@ -108,8 +110,8 @@ const HomeFilters = () => {
                   <input
                     type="checkbox"
                     id="arabkir"
-                    value={"arabkir"}
-                    {...register("regions")}
+                    value={"Արաբկիր"}
+                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
                   />
                   <label className="filter-check" htmlFor="arabkir">
                     <span>{t("arabkir")}</span>
@@ -117,8 +119,8 @@ const HomeFilters = () => {
                   <input
                     type="checkbox"
                     id="avan"
-                    value={"avan"}
-                    {...register("regions")}
+                    value={"Ավան"}
+                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
                   />
                   <label className="filter-check" htmlFor="avan">
                     <span>{t("avan")}</span>
@@ -126,8 +128,8 @@ const HomeFilters = () => {
                   <input
                     type="checkbox"
                     id="davtashen"
-                    value={"davtashen"}
-                    {...register("regions")}
+                    value={"Դավթաշեն"}
+                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
                   />
                   <label className="filter-check" htmlFor="davtashen">
                     <span>{t("davtashen")}</span>
@@ -135,8 +137,8 @@ const HomeFilters = () => {
                   <input
                     type="checkbox"
                     id="zeytun"
-                    value={"zeytun"}
-                    {...register("regions")}
+                    value={"Զեյթուն"}
+                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
                   />
                   <label className="filter-check" htmlFor="zeytun">
                     <span>{t("kanaker-zeytun")}</span>
@@ -144,8 +146,8 @@ const HomeFilters = () => {
                   <input
                     type="checkbox"
                     id="kentron"
-                    value={"kentron"}
-                    {...register("regions")}
+                    value={"Կենտրոն"}
+                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
                   />
                   <label className="filter-check" htmlFor="kentron">
                     <span>{t("kentron")}</span>
@@ -153,8 +155,8 @@ const HomeFilters = () => {
                   <input
                     type="checkbox"
                     id="shengavit"
-                    value={"shengavit"}
-                    {...register("regions")}
+                    value={"Շենգավիթ"}
+                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
                   />
                   <label className="filter-check" htmlFor="shengavit">
                     <span>{t("shengavit")}</span>
@@ -162,8 +164,8 @@ const HomeFilters = () => {
                   <input
                     type="checkbox"
                     id="nork-marash"
-                    value={"nork-marash"}
-                    {...register("regions")}
+                    value={"Նորք-Մարաշ"}
+                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
                   />
                   <label className="filter-check" htmlFor="nork-marash">
                     <span>{t("nork-marash")}</span>
@@ -171,17 +173,17 @@ const HomeFilters = () => {
                   <input
                     type="checkbox"
                     id="nor-nork"
-                    value={"nor-nork"}
-                    {...register("regions")}
+                    value={"Նոր Նորք"}
+                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
                   />
                   <label className="filter-check" htmlFor="nor-nork">
-                    <span>{t("nor-nork")}</span>
+                    <span>{t("nor nork")}</span>
                   </label>
                   <input
                     type="checkbox"
                     id="nubarashen"
-                    value={"nubarashen"}
-                    {...register("regions")}
+                    value={"Նուբարաշեն"}
+                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
                   />
                   <label className="filter-check" htmlFor="nubarashen">
                     <span>{t("nubarashen")}</span>
@@ -189,8 +191,8 @@ const HomeFilters = () => {
                   <input
                     type="checkbox"
                     id="erebuni"
-                    value={"erebuni"}
-                    {...register("regions")}
+                    value={"Էրեբունի"}
+                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
                   />
                   <label className="filter-check" htmlFor="erebuni">
                     <span>{t("erebuni")}</span>
@@ -198,8 +200,8 @@ const HomeFilters = () => {
                   <input
                     type="checkbox"
                     id="malatia-sebastia"
-                    value={"malatia-sebastia"}
-                    {...register("regions")}
+                    value={"Մալաթիա-Սեբաստիա"}
+                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
                   />
                   <label className="filter-check" htmlFor="malatia-sebastia">
                     <span>{t("malatia-sebastia")}</span>
@@ -318,8 +320,18 @@ const HomeFilters = () => {
                     type="text"
                     placeholder={t("address")}
                     className="search-id"
-                    {...register("address")}
+                    value={streetName}
+                    onChange={(evn) => {
+                      setStreetName(evn.target.value)
+                      selectedStreet && setSelectedStreet(null)
+                    }}
                   />
+                  {(streetName && !selectedStreet) && <StreetsFilters streetName={streetName} region={regionName} onSelect={
+                    (street) => {
+                      setStreetName(street)
+                      setSelectedStreet(street)
+                    }
+                  }/>}
                 </div>
                 <div className="floor-data">
                   <input
@@ -339,22 +351,41 @@ const HomeFilters = () => {
                 </div>
               </div>
               <div className="first-panel two">
-                <div className="floor-data prc">
-                  <input
-                    type="number"
-                    placeholder={t("price_from")}
-                    className="search-floor"
-                    min={0}
-                    {...register("price_from")}
-                  />
-                  <input
-                    type="number"
-                    placeholder={t("price_to")}
-                    className="search-floor"
-                    min={0}
-                    {...register("price_to")}
-                  />
+                <div style={{ width: "100%", display: "flex", gap: "15px" }}>
+                  <div className="floor-data prc" style={{ display: "flex" }}>
+                    <input
+                      type="number"
+                      placeholder={t("price_from")}
+                      className="search-floor"
+                      min={0}
+                      {...register("price_from")}
+                    />
+                    <input
+                      type="number"
+                      placeholder={t("price_to")}
+                      className="search-floor"
+                      min={0}
+                      {...register("price_to")}
+                    />
+                  </div>
+                  <div className="floor-data prc" style={{ display: "flex" }}>
+                    <input
+                      type="number"
+                      placeholder={t("area_from")}
+                      className="search-floor"
+                      min={0}
+                      {...register("area_from")}
+                    />
+                    <input
+                      type="number"
+                      placeholder={t("area_to")}
+                      className="search-floor"
+                      min={0}
+                      {...register("area_to")}
+                    />
+                  </div>
                 </div>
+
                 <div className="checks-panels">
                   <div className="checks-div">
                     <b>{t("building_type")}</b>

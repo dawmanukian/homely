@@ -119,23 +119,23 @@ const Header = ({ onFilter }) => {
                 </>
               )}
             </div>
-            <Link to={"/auth"} className="header-btn-link">
+            <a href="https://team.homely.am" className="header-btn-link">
               <button className="header-btn">
                 <FaUser />
                 {t("sign_in")}
               </button>
-            </Link>
+            </a>
             <button className="drop-menu" onClick={() => setDrop(!drop)}>
               <BsList />
             </button>
             {drop && (
               <div className="droped-menu">
-                <Link to={"/auth"} className="header-btn-link">
+                <a href="https://team.homely.am" className="header-btn-link">
                   <button className="droped-header-btn">
                     <FaUser />
                     {t("sign_in")}
                   </button>
-                </Link>
+                </a>
                 <div
                   className="liked-num"
                   onClick={() => setShowLikedCards(!showLikedCards)}

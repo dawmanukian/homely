@@ -1,31 +1,55 @@
-import Header from "./components/header/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/home-page/HomePage";
-import LoginRegPage from "./pages/login-reg-page/LoginRegPage";
 import CardPage from "./pages/card-page/CardPage";
-import RecoverPage from "./pages/recover-page/RecoverPage";
 import Loading from "./components/loading/Loading";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useDispatch } from "react-redux";
 function App() {
+ 
+  const dispatch = useDispatch();
   const [showLoading, setShowLoading] = useState(true);
 
-  // setTimeout(() => setShowLoading(false), "3000");
+  useEffect(() => {
+    try {
+      const get_items = async () => {
+        try {
+          const res = await axios.get(
+            "https://service.homely.am/api/items/modern"
+          );
+          dispatch({
+            type: "get-images",
+            payload: { all_images: res.data.all_images },
+          });
+          dispatch({
+            type: "get-items",
+            payload: { all_items: res.data.all_items },
+          });
+          setShowLoading(false);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      get_items();
+
+    } catch (error) {
+      console.log(error);
+      setShowLoading(false);
+    }
+  }, []);
 
   return (
     <>
-      {/* {showLoading ? (
+      {showLoading ? (
         <Loading />
-      ) : ( */}
+      ) : (
         <Router>
           <Routes>
             <Route path={"/*"} element={<HomePage />} />
-            <Route path={"/auth"} element={<LoginRegPage />} />
-            <Route path={"/auth/recover"} element={<RecoverPage />} />
             <Route path={"/item/:itemId"} element={<CardPage />} />
           </Routes>
         </Router>
-      {/* )} */}
+      )}
     </>
   );
 }

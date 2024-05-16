@@ -9,3 +9,6 @@
   box-sizing: border-box;
   font-family: homely_arm;
 }
+.swiper-button-next {
+  color: blue;
+}

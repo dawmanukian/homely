@@ -6,6 +6,11 @@
   justify-content: center;
   transition: all ease 0.5s;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .home-filters form {
   position: relative;
   top: 150px;
@@ -300,7 +305,7 @@ input[type="checkbox"]:checked + .custom-check > div > .check-icons {
 }
 .prc {
   flex-direction: column;
-  width: 40%;
+  width: 50%;
 }
 .two {
   gap: 40px;

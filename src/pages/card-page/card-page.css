@@ -9,13 +9,44 @@
 .card-page-data {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 .card-description {
   color: #333;
-  background: #f4f4f4;
+  background: #f0f2f5;
   padding: 20px;
   border-radius: 20px;
+  width: 100%;
+  max-width: 740px;
+}
+.card_page_street {
+  color: gray;
+}
+.button-2 {
+  background-color: rgba(51, 51, 51, 0.05);
+  border-radius: 8px;
+  border-width: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333333;
+  cursor: pointer;
+  margin-top: 15px;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 .card-title-panel {
   display: flex;
@@ -30,8 +61,19 @@
   justify-content: center;
   background: #f4f4f4;
 }
-.card-price {
+.page_card-price {
   font-size: 22px;
+  color: #fff;
+  gap: 5px;
+  padding: 9px;
+  border-radius: 12px;
+  color: #fff;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: orange;
+  border-radius: 10px;
 }
 .card-id {
   font-weight: 900;
@@ -198,6 +240,49 @@
   border-radius: 20px;
   height: 315px;
   width: 600px;
+}
+.icon-div p {
+  font-weight: bold;
+}
+.card__page_header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 17px;
+}
+.des_about {
+  display: flex;
+  flex-direction: column;
+}
+.des_block {
+  height: 38px;
+  max-width: 370px;
+  gap: 35px;
+  width: 100%;
+  background: #f0f2f5;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.share-link-button {
+  height: 27px;
+  width: 27px;
+  border-radius: 50%;
+  border: none;
+  background: #1C1E2B;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 450px){
+  .des_about {
+    align-items: center;
+  }
 }
 @media screen and (max-width: 520px) {
   .itm-img {

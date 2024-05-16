@@ -9,7 +9,6 @@ import {
 } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import logo from "../../img/logo.jpg";
-import { Helmet } from "react-helmet";
 
 const Footer = () => {
   return (
@@ -38,28 +37,40 @@ const Footer = () => {
                 href="https://www.facebook.com/profile.php?id=61551599789842"
                 className="footer-icon"
               >
-                <FaFacebook className="footer-icon" />
+                <FaFacebook
+                  className="footer-icon"
+                  style={{ color: "#0866FF" }}
+                />
               </a>
               <a
                 target="_blank"
                 href="https://www.instagram.com/homely.am/"
                 className="footer-icon"
               >
-                <FaInstagram className="footer-icon" />
+                <FaInstagram
+                  className="footer-icon"
+                  style={{ color: "#CD2EB5" }}
+                />
               </a>
               <a
                 target="_blank"
                 href="https://t.me/realestateagencyhomely"
                 className="footer-icon"
               >
-                <FaTelegram className="footer-icon" />
+                <FaTelegram
+                  className="footer-icon"
+                  style={{ color: "#28A7E8" }}
+                />
               </a>
               <a
                 target="_blank"
                 href="https://t.me/realestateagencyhomely"
                 className="footer-icon"
               >
-                <FaWhatsapp className="footer-icon" />
+                <FaWhatsapp
+                  className="footer-icon"
+                  style={{ color: "#0CC143" }}
+                />
               </a>
             </div>
           </div>
@@ -78,12 +89,6 @@ const Footer = () => {
       />
       <p className="all-rights-reserved">© 2024 Homely. All Rights Reserved.</p>
       <p className="created-by">Created by Magical</p>
-      <a href="https://wakatime.com/badge/user/8760925d-cbf3-4b00-833c-43af03b3a644/project/018bb5b5-aa4d-405b-a02c-b01c21ed119b">
-        <img
-          src="https://wakatime.com/badge/user/8760925d-cbf3-4b00-833c-43af03b3a644/project/018bb5b5-aa4d-405b-a02c-b01c21ed119b.svg"
-          alt="wakatime"
-        />
-      </a>
     </footer>
   );
 };

@@ -29,13 +29,37 @@
   font-weight: 700;
   font-size: 25px;
 }
+.head-images-swiper {
+  display: grid;
+  position: relative;
+  transition: all ease 0.2s;
+}
 .card-head {
   position: relative;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+}
+.crd_arrow {
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  margin: 6px;
+  background: #333333b1;
+  color: #fff;
+  z-index: 2;
 }
 .card-id {
   background: #f4f4f4;
   border-radius: 12px;
-  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
   height: 37px;
   display: flex;
   align-items: center;
@@ -86,6 +110,35 @@
 .icon-div span {
   font-size: 16px;
   font-weight: bold;
+}
+.logo-symbol {
+  position: absolute;
+  opacity: 70%;
+  border-radius: 20px;
+}
+.special {
+  background: #45488B;
+  border-radius: 12px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 37px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.exclusive {
+  background: #1C1E2B;
+  border-radius: 12px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 37px;
+  color: #fff;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 @media screen and (max-width: 1356px) {
   .el-card {

@@ -2,6 +2,7 @@
     "sign_in": "Sign In",
     "rent": "Rent",
     "sell": "Sell",
+    "rent_and_sell" : "Rent and Sell",
     "item_type": "Item Type",
     "region": "Region",
     "rooms": "Rooms",
@@ -51,5 +52,8 @@
     "send" : "Send",
     "exclusive" : "Exclusive",
     "reduced-price" : "Reduced price",
-    "sqm" : "sq.m."
+    "sqm" : "sq.m.",
+    "area_from" : "Min sq.m.",
+    "area_to" : "Max sq.m.",
+    "special" : "Special"
 }
