@@ -1,0 +1,23 @@
+.block_el {
+  width: 100%;
+  padding: 20px;
+  background: #f0f2f5;
+}
+.btns_sel {
+    display: flex;
+    gap: 5px;
+}
+.btns_sel button {
+    height: 40px;
+    width: 40px;
+    color: #333;
+    border: none;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.rows-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 25px;
+}

@@ -23,7 +23,7 @@ function App() {
           });
           dispatch({
             type: "get-items",
-            payload: { all_items: res.data.all_items },
+            payload: { all_items: res.data.all_items.reverse() },
           });
           setShowLoading(false);
         } catch (error) {

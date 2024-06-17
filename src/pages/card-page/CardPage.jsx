@@ -238,7 +238,7 @@ const CardPage = () => {
                     </div>
                     <div>
                       <div className="send-req">
-                        <CopyToClipboard text={window.location.href}>
+                        <CopyToClipboard text={`https://homely.am/item/${itemId}`}>
                           <button className="share-link-btn" onClick={showSwal}>
                             <PiShareNetworkBold style={{ fontSize: "20px" }} />
                             <b>{t("share-link")}</b>

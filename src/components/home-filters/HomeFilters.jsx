@@ -12,9 +12,39 @@ import {
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import StreetsFilters from "../streets-filters/StreetsFilters";
+import { AiOutlineClose } from "react-icons/ai";
 
 const HomeFilters = () => {
   const dispatch = useDispatch();
+  const regions = [
+    "Աբովյան",
+    "Աղվերան",
+    "Ակունք",
+    "Ալափարս",
+    "Արագյուղ",
+    "Արամուս",
+    "Արգել",
+    "Առինջ",
+    "Արզական",
+    "Արզնի",
+    "Բալահովիտ",
+    "Բջնի",
+    "Բյուրեղավան",
+    "Չարենցավան",
+    "Ձորաղբյուր",
+    "Գառնի",
+    "Հրազդան",
+    "Պտղնի",
+    "Սոլակ",
+    "Ծաղկաձոր",
+    "Վերին Պտղնի",
+    "Եղվարդ",
+    "Զորավան",
+    "Զովք",
+    "Զովունի",
+    "Ֆանտան",
+    "Զովաշեն",
+  ];
 
   const { register, handleSubmit } = useForm();
 
@@ -23,12 +53,12 @@ const HomeFilters = () => {
   const [openPanelNum, setOpenPanelNum] = useState(null);
   const [showMorePanel, setShowMorePanel] = useState(false);
 
-  const [streetName, setStreetName] = useState('');
+  const [streetName, setStreetName] = useState("");
   const [regionName, setRegionName] = useState([]);
-  const [selectedStreet, setSelectedStreet] = useState('');
+  const [selectedStreet, setSelectedStreet] = useState("");
 
   const onSubmit = (data) => {
-    data = {...data, regions: regionName, address: streetName}
+    data = { ...data, regions: regionName, address: streetName };
     dispatch({
       type: "add-filters",
       payload: { data },
@@ -77,19 +107,39 @@ const HomeFilters = () => {
               </div>
               <div className={`filter-panel ${openPanelNum === 3 && "active"}`}>
                 <div>
-                  <input type="checkbox" id="flat" value={"flat"} {...register("itemType")}/>
+                  <input
+                    type="checkbox"
+                    id="flat"
+                    value={"flat"}
+                    {...register("itemType")}
+                  />
                   <label className="filter-check" htmlFor="flat">
                     <span>{t("flat")}</span>
                   </label>
-                  <input type="checkbox" id="hause" value={"hause"} {...register("itemType")}/>
+                  <input
+                    type="checkbox"
+                    id="hause"
+                    value={"hause"}
+                    {...register("itemType")}
+                  />
                   <label className="filter-check" htmlFor="hause">
                     <span>{t("mansion")}</span>
                   </label>
-                  <input type="checkbox" id="commercion" value={"commercion"}{...register("itemType")} />
+                  <input
+                    type="checkbox"
+                    id="commercion"
+                    value={"commercion"}
+                    {...register("itemType")}
+                  />
                   <label className="filter-check" htmlFor="commercion">
                     <span>{t("commercial")}</span>
                   </label>
-                  <input type="checkbox" id="land_plot" value={"landPlot"} {...register("itemType")}/>
+                  <input
+                    type="checkbox"
+                    id="land_plot"
+                    value={"landPlot"}
+                    {...register("itemType")}
+                  />
                   <label className="filter-check" htmlFor="land_plot">
                     <span>{t("land_plot")}</span>
                   </label>
@@ -107,11 +157,18 @@ const HomeFilters = () => {
                 }`}
               >
                 <div>
+                  <p style={{ marginBottom: "15px" }}>Երևան</p>
                   <input
                     type="checkbox"
                     id="arabkir"
                     value={"Արաբկիր"}
-                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
+                    onChange={(evn) => {
+                      return regionName.includes(evn.target.value)
+                        ? setRegionName(
+                            regionName.filter((x) => x !== evn.target.value)
+                          )
+                        : setRegionName([...regionName, evn.target.value]);
+                    }}
                   />
                   <label className="filter-check" htmlFor="arabkir">
                     <span>{t("arabkir")}</span>
@@ -120,7 +177,13 @@ const HomeFilters = () => {
                     type="checkbox"
                     id="avan"
                     value={"Ավան"}
-                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
+                    onChange={(evn) => {
+                      return regionName.includes(evn.target.value)
+                        ? setRegionName(
+                            regionName.filter((x) => x !== evn.target.value)
+                          )
+                        : setRegionName([...regionName, evn.target.value]);
+                    }}
                   />
                   <label className="filter-check" htmlFor="avan">
                     <span>{t("avan")}</span>
@@ -129,7 +192,13 @@ const HomeFilters = () => {
                     type="checkbox"
                     id="davtashen"
                     value={"Դավթաշեն"}
-                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
+                    onChange={(evn) => {
+                      return regionName.includes(evn.target.value)
+                        ? setRegionName(
+                            regionName.filter((x) => x !== evn.target.value)
+                          )
+                        : setRegionName([...regionName, evn.target.value]);
+                    }}
                   />
                   <label className="filter-check" htmlFor="davtashen">
                     <span>{t("davtashen")}</span>
@@ -138,7 +207,13 @@ const HomeFilters = () => {
                     type="checkbox"
                     id="zeytun"
                     value={"Զեյթուն"}
-                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
+                    onChange={(evn) => {
+                      return regionName.includes(evn.target.value)
+                        ? setRegionName(
+                            regionName.filter((x) => x !== evn.target.value)
+                          )
+                        : setRegionName([...regionName, evn.target.value]);
+                    }}
                   />
                   <label className="filter-check" htmlFor="zeytun">
                     <span>{t("kanaker-zeytun")}</span>
@@ -147,7 +222,13 @@ const HomeFilters = () => {
                     type="checkbox"
                     id="kentron"
                     value={"Կենտրոն"}
-                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
+                    onChange={(evn) => {
+                      return regionName.includes(evn.target.value)
+                        ? setRegionName(
+                            regionName.filter((x) => x !== evn.target.value)
+                          )
+                        : setRegionName([...regionName, evn.target.value]);
+                    }}
                   />
                   <label className="filter-check" htmlFor="kentron">
                     <span>{t("kentron")}</span>
@@ -156,7 +237,13 @@ const HomeFilters = () => {
                     type="checkbox"
                     id="shengavit"
                     value={"Շենգավիթ"}
-                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
+                    onChange={(evn) => {
+                      return regionName.includes(evn.target.value)
+                        ? setRegionName(
+                            regionName.filter((x) => x !== evn.target.value)
+                          )
+                        : setRegionName([...regionName, evn.target.value]);
+                    }}
                   />
                   <label className="filter-check" htmlFor="shengavit">
                     <span>{t("shengavit")}</span>
@@ -165,7 +252,13 @@ const HomeFilters = () => {
                     type="checkbox"
                     id="nork-marash"
                     value={"Նորք-Մարաշ"}
-                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
+                    onChange={(evn) => {
+                      return regionName.includes(evn.target.value)
+                        ? setRegionName(
+                            regionName.filter((x) => x !== evn.target.value)
+                          )
+                        : setRegionName([...regionName, evn.target.value]);
+                    }}
                   />
                   <label className="filter-check" htmlFor="nork-marash">
                     <span>{t("nork-marash")}</span>
@@ -174,7 +267,13 @@ const HomeFilters = () => {
                     type="checkbox"
                     id="nor-nork"
                     value={"Նոր Նորք"}
-                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
+                    onChange={(evn) => {
+                      return regionName.includes(evn.target.value)
+                        ? setRegionName(
+                            regionName.filter((x) => x !== evn.target.value)
+                          )
+                        : setRegionName([...regionName, evn.target.value]);
+                    }}
                   />
                   <label className="filter-check" htmlFor="nor-nork">
                     <span>{t("nor nork")}</span>
@@ -183,7 +282,13 @@ const HomeFilters = () => {
                     type="checkbox"
                     id="nubarashen"
                     value={"Նուբարաշեն"}
-                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
+                    onChange={(evn) => {
+                      return regionName.includes(evn.target.value)
+                        ? setRegionName(
+                            regionName.filter((x) => x !== evn.target.value)
+                          )
+                        : setRegionName([...regionName, evn.target.value]);
+                    }}
                   />
                   <label className="filter-check" htmlFor="nubarashen">
                     <span>{t("nubarashen")}</span>
@@ -192,7 +297,13 @@ const HomeFilters = () => {
                     type="checkbox"
                     id="erebuni"
                     value={"Էրեբունի"}
-                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
+                    onChange={(evn) => {
+                      return regionName.includes(evn.target.value)
+                        ? setRegionName(
+                            regionName.filter((x) => x !== evn.target.value)
+                          )
+                        : setRegionName([...regionName, evn.target.value]);
+                    }}
                   />
                   <label className="filter-check" htmlFor="erebuni">
                     <span>{t("erebuni")}</span>
@@ -201,11 +312,40 @@ const HomeFilters = () => {
                     type="checkbox"
                     id="malatia-sebastia"
                     value={"Մալաթիա-Սեբաստիա"}
-                    onChange={(evn) => setRegionName([...regionName, evn.target.value])}
+                    onChange={(evn) => {
+                      return regionName.includes(evn.target.value)
+                        ? setRegionName(
+                            regionName.filter((x) => x !== evn.target.value)
+                          )
+                        : setRegionName([...regionName, evn.target.value]);
+                    }}
                   />
                   <label className="filter-check" htmlFor="malatia-sebastia">
                     <span>{t("malatia-sebastia")}</span>
                   </label>
+                  <p style={{ marginBottom: "15px", marginTop: "15px" }}>
+                    Կոտայք
+                  </p>
+                  {regions.map((region) => (
+                    <>
+                      <input
+                        key={region}
+                        type="checkbox"
+                        id={region}
+                        value={region}
+                        onChange={(evn) => {
+                          return regionName.includes(evn.target.value)
+                            ? setRegionName(
+                                regionName.filter((x) => x !== evn.target.value)
+                              )
+                            : setRegionName([...regionName, evn.target.value]);
+                        }}
+                      />
+                      <label className="filter-check" htmlFor={region}>
+                        <span>{region}</span>
+                      </label>
+                    </>
+                  ))}
                 </div>
               </div>
             </div>
@@ -303,6 +443,14 @@ const HomeFilters = () => {
           </div>
           {showMorePanel && (
             <div className="more-panel">
+              <div className="close_btn_menu">
+                <button onClick={(evn) => {
+                  evn.preventDefault();
+                  setShowMorePanel(false);
+                }}>
+                  <AiOutlineClose />
+                </button>
+              </div>
               <div className="first-panel">
                 <div className="panel-box">
                   <div className="id-panel">
@@ -322,16 +470,20 @@ const HomeFilters = () => {
                     className="search-id"
                     value={streetName}
                     onChange={(evn) => {
-                      setStreetName(evn.target.value)
-                      selectedStreet && setSelectedStreet(null)
+                      setStreetName(evn.target.value);
+                      selectedStreet && setSelectedStreet(null);
                     }}
                   />
-                  {(streetName && !selectedStreet) && <StreetsFilters streetName={streetName} region={regionName} onSelect={
-                    (street) => {
-                      setStreetName(street)
-                      setSelectedStreet(street)
-                    }
-                  }/>}
+                  {streetName && !selectedStreet && (
+                    <StreetsFilters
+                      streetName={streetName}
+                      region={regionName}
+                      onSelect={(street) => {
+                        setStreetName(street);
+                        setSelectedStreet(street);
+                      }}
+                    />
+                  )}
                 </div>
                 <div className="floor-data">
                   <input

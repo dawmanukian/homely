@@ -310,6 +310,9 @@ input[type="checkbox"]:checked + .custom-check > div > .check-icons {
 .two {
   gap: 40px;
 }
+.close_btn_menu button {
+  display: none;
+}
 .droped-header-select > .selects {
   left: 0px;
   width: 100%;
@@ -345,6 +348,45 @@ input[type="checkbox"]:checked + .custom-check > div > .check-icons {
   }
 }
 @media screen and (max-width: 790px) {
+  .close_btn_menu {
+    display: flex;
+    justify-content: end;
+  }
+  .close_btn_menu button {
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 7px;
+    background: #1C1E2B;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    align-items: center;
+    color: #fff;
+  }
+  .more-panel {
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 99;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: pn_anim 0.5s;
+  }
+  @keyframes pn_anim {
+    from {
+      bottom: -250px;
+    }
+    to {
+      bottom: 0px;
+    }
+  }
   .search-btn {
     width: auto;
   }

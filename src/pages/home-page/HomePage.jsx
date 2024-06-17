@@ -6,6 +6,7 @@ import Footer from "../../components/footer/Footer";
 import SearchResults from "../../components/search-results/SearchResults";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
+import CardsBlock from "../../components/cards-block/CardsBlock";
 
 const HomePage = () => {
   const filters = useSelector(function (state) {
@@ -23,9 +24,15 @@ const HomePage = () => {
             path={"/*"}
             element={
               <>
-                <CardsSwiper status={"special"} />
-                <CardsSwiper status={"exclusive"} />
-                <CardsSwiper status={"null"} />
+                <CardsSwiper status={'special'}/>
+                <CardsSwiper status={'exclusive'}/>
+                <CardsSwiper status={'null'}/>
+                {/* <h2>Վաճառքի գույք</h2>
+                <CardsBlock />
+                <h2>Վարձակալության գույք</h2>
+                <CardsBlock />
+                <h2>Վաճառքի գույք</h2>
+                <CardsBlock /> */}
               </>
             }
           />

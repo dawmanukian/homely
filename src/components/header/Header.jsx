@@ -43,9 +43,9 @@ const Header = ({ onFilter }) => {
       )}
       <header>
         <div className="header-menu">
-          <Link to={"/"}>
+          <a href={"/"}>
             <img src={logo} height={"80px"} className="header-logo" />
-          </Link>
+          </a>
           <div className="header-contact">
             <div
               className="liked-num"

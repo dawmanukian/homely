@@ -23,8 +23,10 @@ const CardsSwiper = ({ status }) => {
   }
 
   const [cards, setCards] = useState(
-    useSelector((state) => state.allItems.items)
+    useSelector((state) => state.allItems.items).reverse()
   );
+  console.log(cards)
+  console.log(cards.reverse())
   const [cardsImages, setCardsImages] = useState(
     useSelector((state) => state.allImages.images)
   );

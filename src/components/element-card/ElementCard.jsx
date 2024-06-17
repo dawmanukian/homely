@@ -33,7 +33,7 @@ const ElementCard = ({ el, images, onLike }) => {
         <button onClick={swipRight} className="crd_arrow" style={{right: '0px'}}>
           <FaArrowRightLong />
         </button>
-        <a href={`http://homely.am/item/${el.id}`}>
+        <a href={`https://homely.am/item/${el.id}`}>
           <div
             className="head-images-swiper"
             style={{
@@ -54,7 +54,7 @@ const ElementCard = ({ el, images, onLike }) => {
         </a>
       </div>
       <a
-        href={`http://homely.am/item/${el.id}`}
+        href={`https://homely.am/item/${el.id}`}
         className="el-card-link"
         target="_blank"
       >
