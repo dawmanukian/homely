@@ -16,10 +16,15 @@ const Footer = () => {
       <div className="footer-data">
         <div className="footer-contact-data">
           <div className="footer-contact">
-            <a href="tel:+37455600096" className="footer-contact">
-              <FaPhone className="footer-icon" />
+          <a href="tel:+37455600096" className="footer-contact">
+          <FaPhone className="footer-icon" />
               <span>+37455600096</span>
             </a>
+            <a href="tel:+37495060690" className="footer-contact">
+              
+              <span>+37495060690</span>
+            </a>
+
           </div>
           <div className="footer-contact">
             <a
@@ -76,7 +81,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-social">
-          <img src={logo} height={"110px"} style={{ borderRadius: "22px" }} />
+          <img src={logo} height={"110px"} style={{ borderRadius: "22px" }} loading="lazy"/>
         </div>
       </div>
       <hr

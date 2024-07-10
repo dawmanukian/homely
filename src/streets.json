@@ -2666,6 +2666,21 @@
       "districtEn": "Arabkir",
       "districtPe": "آوان",
       "removed": false
+    },
+    {
+      "id": 1157,
+      "titleHy": "Վերին անտառային",
+      "titleEn": "Verin antarayin",
+      "titleRu": "Верин антарайин",
+      "titlePe": "خیابان عشق آباد",
+      "latitude": 40.2236,
+      "longitude": 44.575491,
+      "districtId": 58,
+      "districtHy": "Կենտրոն",
+      "districtRu": "Кентрон",
+      "districtEn": "Kentron",
+      "districtPe": "آوان",
+      "removed": false
     }
   ],
   "pageable": {

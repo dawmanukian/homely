@@ -28,7 +28,7 @@ const BrokerInfo = ({ brokerId }) => {
     return (
       <div className="broker-info-panel">
         <div className="broker-data">
-          <img src={el.image} height={"90px"} width={"90px"} />
+          <img src={el.image} height={"90px"} width={"90px"} loading="lazy"/>
         </div>
         <div className="broker-contact">
           <div className="broker-data-info">

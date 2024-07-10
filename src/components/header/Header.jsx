@@ -10,13 +10,7 @@ import { FaChevronDown } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 
 const Header = ({ onFilter }) => {
-  useEffect(() => {
-    setLikedNumber(JSON.parse(localStorage.getItem("liked")).length);
-  }, [localStorage.getItem("liked")]);
   const [drop, setDrop] = useState(false);
-  const [likedNumber, setLikedNumber] = useState(
-    JSON.parse(localStorage.getItem("liked")).length
-  );
   const [showLikedCards, setShowLikedCards] = useState(false);
   const [showLangPanel, setShowLangPanel] = useState(false);
   const [openSelectPanel, setOpenSelectPanel] = useState(null);
@@ -36,24 +30,24 @@ const Header = ({ onFilter }) => {
           onClick={() => setOpenSelectPanel(null)}
         ></div>
       )}
-      {showLikedCards && (
+      {/* {showLikedCards && (
         <div className="liked-panel">
           <LikedCards onClose={() => setShowLikedCards(false)} />
         </div>
-      )}
+      )} */}
       <header>
         <div className="header-menu">
           <a href={"/"}>
-            <img src={logo} height={"80px"} className="header-logo" />
+            <img src={logo} height={"80px"} className="header-logo" loading="lazy"/>
           </a>
           <div className="header-contact">
-            <div
+            {/* <div
               className="liked-num"
-              onClick={() => setShowLikedCards(!showLikedCards)}
+              // onClick={() => setShowLikedCards(!showLikedCards)}
             >
               <FaHeart className="like-icon" />
               <span>{likedNumber}</span>
-            </div>
+            </div> */}
             <a className="header-phone" href="tel:+37455600096">
               <FaPhone />
               +37455600096
@@ -136,13 +130,13 @@ const Header = ({ onFilter }) => {
                     {t("sign_in")}
                   </button>
                 </a>
-                <div
+                {/* <div
                   className="liked-num"
                   onClick={() => setShowLikedCards(!showLikedCards)}
                 >
                   <FaHeart className="like-icon" />
                   <span>{likedNumber}</span>
-                </div>
+                </div> */}
                 <div
                   className="droped-header-select"
                   onClick={() => setOpenSelectPanel(3)}

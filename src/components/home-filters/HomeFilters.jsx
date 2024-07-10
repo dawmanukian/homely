@@ -58,6 +58,7 @@ const HomeFilters = () => {
   const [selectedStreet, setSelectedStreet] = useState("");
 
   const onSubmit = (data) => {
+    console.log(streetName)
     data = { ...data, regions: regionName, address: streetName };
     dispatch({
       type: "add-filters",
@@ -110,7 +111,7 @@ const HomeFilters = () => {
                   <input
                     type="checkbox"
                     id="flat"
-                    value={"flat"}
+                    value={"Բնակարան"}
                     {...register("itemType")}
                   />
                   <label className="filter-check" htmlFor="flat">
@@ -119,7 +120,7 @@ const HomeFilters = () => {
                   <input
                     type="checkbox"
                     id="hause"
-                    value={"hause"}
+                    value={"Առանձնատուն"}
                     {...register("itemType")}
                   />
                   <label className="filter-check" htmlFor="hause">
@@ -128,7 +129,7 @@ const HomeFilters = () => {
                   <input
                     type="checkbox"
                     id="commercion"
-                    value={"commercion"}
+                    value={"Կոմերցիոն"}
                     {...register("itemType")}
                   />
                   <label className="filter-check" htmlFor="commercion">
@@ -137,7 +138,7 @@ const HomeFilters = () => {
                   <input
                     type="checkbox"
                     id="land_plot"
-                    value={"landPlot"}
+                    value={"Հողատարածք"}
                     {...register("itemType")}
                   />
                   <label className="filter-check" htmlFor="land_plot">
@@ -232,6 +233,21 @@ const HomeFilters = () => {
                   />
                   <label className="filter-check" htmlFor="kentron">
                     <span>{t("kentron")}</span>
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="poqr-kentron"
+                    value={"Փոքր կենտրոն"}
+                    onChange={(evn) => {
+                      return regionName.includes(evn.target.value)
+                        ? setRegionName(
+                            regionName.filter((x) => x !== evn.target.value)
+                          )
+                        : setRegionName([...regionName, evn.target.value]);
+                    }}
+                  />
+                  <label className="filter-check" htmlFor="poqr-kentron">
+                    <span>Փոքր Կենտրոն</span>
                   </label>
                   <input
                     type="checkbox"
@@ -349,7 +365,7 @@ const HomeFilters = () => {
                 </div>
               </div>
             </div>
-            <div className="fill-div" onClick={() => setOpenPanelNum(2)}>
+            <div className="fill-div rm" onClick={() => setOpenPanelNum(2)}>
               <div className="fill-name">
                 <FaBed className="fill-icon" />
                 {t("rooms")}
@@ -443,7 +459,10 @@ const HomeFilters = () => {
           </div>
           {showMorePanel && (
             <div className="more-panel">
-              <div className="close_btn_menu">
+              <div className="close_btn_menu" style={{gap:"10px"}}>
+                <button style={{width: "200px", background: "green"}} >
+                  Որոնել
+                </button>
                 <button onClick={(evn) => {
                   evn.preventDefault();
                   setShowMorePanel(false);

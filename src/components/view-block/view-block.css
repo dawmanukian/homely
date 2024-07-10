@@ -1,0 +1,24 @@
+.num_btn {
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #333;
+    background: #F0F0F0;
+    transition: all ease .3s;
+}
+.num_btn:hover {
+    transform: scale(0.9);
+}
+.num_btns {
+    margin-top: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+.num_btns > .active {
+    color: #fff;
+    background: #1C1E2B;
+}

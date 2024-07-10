@@ -54,6 +54,7 @@ const ImagesSwiper = ({ images }) => {
                 }}
               >
                 <img
+                  loading="lazy"
                   src={`https://service.homely.am/storage/images/${el}`}
                   className="card-swiper-img"
                 />

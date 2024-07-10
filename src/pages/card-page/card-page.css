@@ -279,6 +279,16 @@
   justify-content: center;
   align-items: center;
 }
+.pg_h {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 900;
+}
 @media screen and (max-width: 450px){
   .des_about {
     align-items: center;

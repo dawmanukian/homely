@@ -14,8 +14,6 @@ const ElementCard = ({ el, images, onLike }) => {
 
   const itemImages = images.map((el) => el.image);
 
-  const liked = localStorage.getItem("liked");
-
   const { t } = useTranslation();
 
   const swipRight = () =>
@@ -44,6 +42,7 @@ const ElementCard = ({ el, images, onLike }) => {
             {itemImages.map((img) => {
               return (
                 <img
+                  loading="lazy"
                   src={`https://service.homely.am/storage/images/${img}`}
                   className="card-img"
                   width={"100%"}
@@ -100,11 +99,11 @@ const ElementCard = ({ el, images, onLike }) => {
             {el.proposal !== "null" && t(el.proposal)}
           </div>
         </div>
-        <FaHeart
+        {/* <FaHeart
           className="card-like-icon"
           style={{ color: liked.includes(el.id) ? "rgb(245, 81, 81)" : "gray" }}
           onClick={() => onLike(el.id)}
-        />
+        /> */}
       </div>
     </div>
   );

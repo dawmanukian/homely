@@ -15,7 +15,7 @@ const SearchResults = ({ filters }) => {
     setViewData(
       data.filter((el) => {
         if (fi.id && Number(fi.id) !== el.id) return false;
-        if (fi.address.length && !el.street.startsWith(fi.address)) return false;
+        if (fi.address.length && (el.street == null || !el.street.toLowerCase().startsWith(fi.address.toLowerCase()))) return false;
         if (fi.regions.length && !fi.regions.includes(el.region)) return false;
         if (fi.rentOrSell && el.type !== fi.rentOrSell) return false;
         if (fi.roomsNumber.length && !fi.roomsNumber.includes(el.number_of_rooms)) return false;
@@ -25,7 +25,7 @@ const SearchResults = ({ filters }) => {
         if (fi.floor_max &&  (Number(el.floor) > Number(fi.floor_max))) return false;
         if (fi.price_from && Number(el.price) < Number(fi.price_from)) return false;
         if (fi.price_to && Number(el.price) > Number(fi.price_to)) return false;
-
+        if (fi.itemType.length && !fi.itemType.includes(el.item_type)) return false;
         return true;
       })
     );

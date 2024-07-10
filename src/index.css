@@ -12,3 +12,26 @@
 .swiper-button-next {
   color: blue;
 }
+.search-results {
+  width: 100%;
+  display: grid;
+  gap: 15px;
+  padding: 25px;
+  grid-template-columns: repeat(4, 1fr);
+  background: #f0f2f5ff;
+}
+@media screen and (max-width: 1625px) {
+  .search-results {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 1080px) {
+  .search-results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 650px) {
+  .search-results {
+    grid-template-columns: 1fr;
+  }
+}

@@ -356,7 +356,7 @@ input[type="checkbox"]:checked + .custom-check > div > .check-icons {
     height: 40px;
     width: 40px;
     border: none;
-    border-radius: 7px;
+    border-radius: 10px;
     background: #1C1E2B;
     display: flex;
     justify-content: center;
@@ -408,6 +408,9 @@ input[type="checkbox"]:checked + .custom-check > div > .check-icons {
 @media screen and (max-width: 480px) {
   .rent-or-sell {
     width: 100%;
+  }
+  .rm {
+    display: none;
   }
 }
 @media screen and (max-width: 390px) {

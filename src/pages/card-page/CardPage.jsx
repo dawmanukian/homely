@@ -1,5 +1,5 @@
 import "./card-page.css";
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import ImagesSwiper from "../../components/images-swiper/ImagesSwiper";
 import { FaArrowLeftLong, FaHeart, FaLocationDot } from "react-icons/fa6";
@@ -20,9 +20,38 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { FaCircleCheck } from "react-icons/fa6";
+import axios from "axios"
 
 const CardPage = () => {
-  const { itemId } = useParams();
+  const itemId = useParams();
+  const [showLoading, setShowLoading] = useState(true) 
+  const [showSwiper, setShowSwiper] = useState(false);
+  const [showReqPanel, setShowReqPanel] = useState(false);
+  // const [showShareLink, setShowShareLink] = useState(false);
+  // const liked = localStorage.getItem("liked");
+  const [itemData, setItemData] = useState([]);
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    const get_item_data = async () => {
+      try {
+        const { data } = await axios.get(
+          "https://service.homely.am/api/item/get",
+          {
+            params: itemId,
+          }
+        );
+        console.log(data)
+        setItemData(() => data.data);
+        setImages(data.item_images.map(el => el.image));
+        console.log(data.item_images)
+        setShowLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    get_item_data();
+  }, []);
 
   const showSwal = () => {
     withReactContent(Swal).fire({
@@ -31,27 +60,16 @@ const CardPage = () => {
     });
   };
 
-  const [showSwiper, setShowSwiper] = useState(false);
-  const [showReqPanel, setShowReqPanel] = useState(false);
-  const [showShareLink, setShowShareLink] = useState(false);
-  const liked = localStorage.getItem("liked");
-  const [data, setData] = useState(
-    useSelector((state) => state.allItems.items)
-  );
-  const [images, setImages] = useState(
-    useSelector((state) => state.allImages.images)
-  );
-
+  console.log(itemData[0])
   const { t } = useTranslation();
 
-  const cardData = data.filter((el) => el.id === Number(itemId));
-  const allImages = images
-    .filter((el) => el.item_id === itemId)
-    .map((el) => el.image);
+  // const cardData = data.filter((el) => el.id === Number(itemId));
 
-  console.log(cardData);
   return (
     <>
+      {
+        showLoading ? <div className="pg_h">Գույքը բեռնվում է ․․․</div> : (
+          <>
       {showSwiper && (
         <div className="img-swiper-panel">
           <div className="btn-div">
@@ -63,7 +81,7 @@ const CardPage = () => {
             </button>
           </div>
           <div style={{ zIndex: "10", width: "100%" }}>
-            <ImagesSwiper images={allImages} />
+            <ImagesSwiper images={images} />
           </div>
         </div>
       )}
@@ -75,29 +93,32 @@ const CardPage = () => {
               <FaArrowLeftLong />
             </button>
           </Link>
-          {cardData.map((el) => {
+          {itemData.map((el) => {
             return (
               <>
                 <div className="card-page-data" key={el.id}>
                   <div className="card-images-all">
                     <img
-                      src={`https://service.homely.am/storage/images/${allImages[0]}`}
+                    loading="lazy"
+                      src={`https://service.homely.am/storage/images/${images[0]}`}
                       height={"413px"}
                       width={"60%"}
                       className="itm-img"
                     />
                     <div className="an-images">
-                      {allImages[1] && (
+                      {images[1] && (
                         <img
-                          src={`https://service.homely.am/storage/images/${allImages[1]}`}
+                        loading="lazy"
+                          src={`https://service.homely.am/storage/images/${images[1]}`}
                           height={"200px"}
                           width={"100%"}
                           className="itm-img"
                         />
                       )}
-                      {allImages[2] && (
+                      {images[2] && (
                         <img
-                          src={`https://service.homely.am/storage/images/${allImages[2]}`}
+                        loading="lazy"
+                          src={`https://service.homely.am/storage/images/${images[2]}`}
                           height={"200px"}
                           width={"100%"}
                           className="itm-img"
@@ -131,7 +152,7 @@ const CardPage = () => {
                         >
                           {t(el.type)}
                         </div>
-                        <div className="card-like" style={{ margin: "0px" }}>
+                        {/* <div className="card-like" style={{ margin: "0px" }}>
                           <FaHeart
                             className="card-like-icon"
                             style={{
@@ -140,7 +161,7 @@ const CardPage = () => {
                                 : "gray",
                             }}
                           />
-                        </div>
+                        </div> */}
                       </div>
                       <div
                         style={{
@@ -238,7 +259,7 @@ const CardPage = () => {
                     </div>
                     <div>
                       <div className="send-req">
-                        <CopyToClipboard text={`https://homely.am/item/${itemId}`}>
+                        <CopyToClipboard text={`https://homely.am/item/${itemId.itemId}`}>
                           <button className="share-link-btn" onClick={showSwal}>
                             <PiShareNetworkBold style={{ fontSize: "20px" }} />
                             <b>{t("share-link")}</b>
@@ -253,7 +274,7 @@ const CardPage = () => {
                   </div>
                 </div>
                 {/* {el.video_url && (
-                  <iframe
+                  <iframe 
                     className="youtube_video"
                     width="600"
                     height="315"
@@ -270,6 +291,10 @@ const CardPage = () => {
         <Footer />
       </div>
     </>
+        )
+      }
+    </>
+
   );
 };
 

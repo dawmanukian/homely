@@ -5,10 +5,10 @@ import logo from "../../img/logo.jpg";
 const Loading = () => {
   return (
     <div className="loader_page">
-      <img src={logo} className="logo" />
+      <img src={logo} className="logo" loading="lazy"/>
       <div className="loader"></div>
       <div style={{ height: "150px", display: "flex", alignItems: "center" }}>
-        <b style={{ color: "#C1C1C1FF" }}>Real estate agency you can trust.</b>
+        <p style={{ color: "#C1C1C1FF" }}>Real estate agency you can trust.</p>
       </div>
     </div>
   );

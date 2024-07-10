@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 function App() {
- 
   const dispatch = useDispatch();
   const [showLoading, setShowLoading] = useState(true);
 
@@ -17,39 +16,38 @@ function App() {
           const res = await axios.get(
             "https://service.homely.am/api/items/modern"
           );
-          dispatch({
-            type: "get-images",
-            payload: { all_images: res.data.all_images },
-          });
-          dispatch({
-            type: "get-items",
-            payload: { all_items: res.data.all_items.reverse() },
-          });
-          setShowLoading(false);
+          if (res.data.all_items) {
+            dispatch({
+              type: "get-images",
+              payload: { all_images: res.data.all_images },
+            });
+            dispatch({
+              type: "get-items",
+              payload: { all_items: res.data.all_items.reverse() },
+            });
+            // setShowLoading(false);
+          }
         } catch (error) {
           console.log(error);
+          alert(false);
         }
       };
       get_items();
-
     } catch (error) {
       console.log(error);
-      setShowLoading(false);
+      // setShowLoading(false);
     }
   }, []);
 
   return (
     <>
-      {showLoading ? (
-        <Loading />
-      ) : (
         <Router>
           <Routes>
             <Route path={"/*"} element={<HomePage />} />
             <Route path={"/item/:itemId"} element={<CardPage />} />
           </Routes>
         </Router>
-      )}
+     
     </>
   );
 }
