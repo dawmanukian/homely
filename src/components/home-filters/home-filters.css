@@ -319,6 +319,14 @@ input[type="checkbox"]:checked + .custom-check > div > .check-icons {
   top: 105px;
   box-shadow: none;
 }
+#mob_rooms {
+  display: none;
+  grid-template-columns: 40px 50px 50px 50px;
+  margin-bottom: 15px;
+}
+#mob_rooms_n {
+  display: none;
+}
 @media screen and (max-width: 991px) {
   .first-panel {
     display: flex;
@@ -411,6 +419,12 @@ input[type="checkbox"]:checked + .custom-check > div > .check-icons {
   }
   .rm {
     display: none;
+  }
+  #mob_rooms {
+    display: grid;
+  }
+  #mob_rooms_n {
+    display: block;
   }
 }
 @media screen and (max-width: 390px) {

@@ -483,6 +483,61 @@ const HomeFilters = () => {
                   />
                 </div>
                 <div className="address-panel-div">
+                  <div>
+                  <div className="checks-div">
+                    <b id="mob_rooms_n">{t("rooms")}</b>
+                    <div className="checks-div-panel" id="mob_rooms">
+                      <input
+                        type="checkbox"
+                        id="panel1"
+                        value={"1"}
+                        {...register("roomsNumber")}
+                      />
+                      <label className="custom-check" htmlFor="panel1">
+                        <div>
+                          <FaCheck className="check-icons" />
+                        </div>
+                        <span>1</span>
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="stone1"
+                        value={"2"}
+                        {...register("roomsNumber")}
+                      />
+                      <label className="custom-check" htmlFor="stone1">
+                        <div>
+                          <FaCheck className="check-icons" />
+                        </div>
+                        <span>2</span>
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="monolith1"
+                        value={"3"}
+                        {...register("roomsNumber")}
+                      />
+                      <label className="custom-check" htmlFor="monolith1">
+                        <div>
+                          <FaCheck className="check-icons" />
+                        </div>
+                        <span>3</span>
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="other1"
+                        value={"4"}
+                        {...register("roomsNumber")}
+                      />
+                      <label className="custom-check" htmlFor="other1">
+                        <div>
+                          <FaCheck className="check-icons" />
+                        </div>
+                        <span>4+</span>
+                      </label>
+                    </div>
+                  </div>
+                  </div>
                   <input
                     type="text"
                     placeholder={t("address")}

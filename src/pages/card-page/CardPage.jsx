@@ -21,16 +21,13 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { FaCircleCheck } from "react-icons/fa6";
 import axios from "axios"
+import {FaArrowRightLong } from "react-icons/fa6";
 
 const CardPage = () => {
-  const itemId = useParams();
-  const [showLoading, setShowLoading] = useState(true) 
-  const [showSwiper, setShowSwiper] = useState(false);
-  const [showReqPanel, setShowReqPanel] = useState(false);
-  // const [showShareLink, setShowShareLink] = useState(false);
-  // const liked = localStorage.getItem("liked");
+
   const [itemData, setItemData] = useState([]);
   const [images, setImages] = useState([]);
+
 
   useEffect(() => {
     const get_item_data = async () => {
@@ -53,12 +50,30 @@ const CardPage = () => {
     get_item_data();
   }, []);
 
+  console.log(images)
+
   const showSwal = () => {
     withReactContent(Swal).fire({
       title: "Գույքի հղումը պատճենված է",
       icon: "success",
     });
   };
+  const [imagePosition, setImagePosition] = useState(0);
+
+  const itemImages = images;
+
+  const swipRight = () =>
+    imagePosition !== (itemImages.length - 1) * 100 &&
+    setImagePosition(imagePosition + 100);
+  const swipLeft = () =>
+    imagePosition !== 0 && setImagePosition(imagePosition - 100);
+
+  const itemId = useParams();
+  const [showLoading, setShowLoading] = useState(true) 
+  const [showSwiper, setShowSwiper] = useState(false);
+  const [showReqPanel, setShowReqPanel] = useState(false);
+  // const [showShareLink, setShowShareLink] = useState(false);
+  // const liked = localStorage.getItem("liked");
 
   console.log(itemData[0])
   const { t } = useTranslation();
@@ -97,41 +112,34 @@ const CardPage = () => {
             return (
               <>
                 <div className="card-page-data" key={el.id}>
-                  <div className="card-images-all">
-                    <img
-                    loading="lazy"
-                      src={`https://service.homely.am/storage/images/${images[0]}`}
-                      height={"413px"}
-                      width={"60%"}
-                      className="itm-img"
-                    />
-                    <div className="an-images">
-                      {images[1] && (
-                        <img
-                        loading="lazy"
-                          src={`https://service.homely.am/storage/images/${images[1]}`}
-                          height={"200px"}
-                          width={"100%"}
-                          className="itm-img"
-                        />
-                      )}
-                      {images[2] && (
-                        <img
-                        loading="lazy"
-                          src={`https://service.homely.am/storage/images/${images[2]}`}
-                          height={"200px"}
-                          width={"100%"}
-                          className="itm-img"
-                        />
-                      )}
-                    </div>
-                    <button
-                      className="view-all-images"
-                      onClick={() => setShowSwiper(true)}
-                    >
-                      <b>{t("all-images")}</b> <FaImage className="img-icon" />
-                    </button>
-                  </div>
+                <div className="card-head">
+        <button onClick={swipLeft} className="crd_arrow">
+          <FaArrowLeftLong />
+        </button>
+        <button onClick={swipRight} className="crd_arrow" style={{right: '0px'}}>
+          <FaArrowRightLong />
+        </button>
+        <a href={`https://homely.am/item/${el.id}`}>
+          <div
+            className="head-images-swiper"
+            style={{
+              left: `-${imagePosition}%`,
+              gridTemplateColumns: `repeat(${itemImages.length}, 100%)`,
+            }}
+          >
+            {itemImages.map((img) => {
+              return (
+                <img
+                  loading="lazy"
+                  src={`https://service.homely.am/storage/images/${img}`}
+                  className="card-img"
+                  width={"100%"}
+                />
+              );
+            })}
+          </div>
+        </a>
+      </div>
                   <span className="card-add-date">
                   </span>
                   <div className="item_information">
