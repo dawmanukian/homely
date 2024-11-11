@@ -7,8 +7,6 @@ import Footer from "../../components/footer/Footer";
 import { PiShareNetworkBold } from "react-icons/pi";
 import { ImBubble } from "react-icons/im";
 import SendRequest from "../../components/send-request/SendRequest";
-import BrokerInfo from "../../components/broker-info/BrokerInfo";
-import { FaImage } from "react-icons/fa6";
 import { AiOutlineClose } from "react-icons/ai";
 import { TbStairsUp } from "react-icons/tb";
 import { TbDimensions } from "react-icons/tb";
@@ -28,7 +26,6 @@ const CardPage = () => {
   const [itemData, setItemData] = useState([]);
   const [images, setImages] = useState([]);
 
-
   useEffect(() => {
     const get_item_data = async () => {
       try {
@@ -38,10 +35,7 @@ const CardPage = () => {
             params: itemId,
           }
         );
-        console.log(data)
         setItemData(() => data.data);
-        setImages(data.item_images.map(el => el.image));
-        console.log(data.item_images)
         setShowLoading(false);
       } catch (error) {
         console.log(error);
@@ -72,13 +66,8 @@ const CardPage = () => {
   const [showLoading, setShowLoading] = useState(true) 
   const [showSwiper, setShowSwiper] = useState(false);
   const [showReqPanel, setShowReqPanel] = useState(false);
-  // const [showShareLink, setShowShareLink] = useState(false);
-  // const liked = localStorage.getItem("liked");
 
-  console.log(itemData[0])
   const { t } = useTranslation();
-
-  // const cardData = data.filter((el) => el.id === Number(itemId));
 
   return (
     <>
@@ -95,8 +84,8 @@ const CardPage = () => {
               <AiOutlineClose />
             </button>
           </div>
-          <div style={{ zIndex: "10", width: "100%" }}>
-            <ImagesSwiper images={images} />
+          <div style={{ zIndex: "10", width: "100%", height: "100%", display: 'flex'}}>
+            <ImagesSwiper images={JSON.parse(itemData[0].all_images)} />
           </div>
         </div>
       )}
@@ -113,32 +102,24 @@ const CardPage = () => {
               <>
                 <div className="card-page-data" key={el.id}>
                 <div className="card-head">
-        <button onClick={swipLeft} className="crd_arrow">
-          <FaArrowLeftLong />
-        </button>
-        <button onClick={swipRight} className="crd_arrow" style={{right: '0px'}}>
-          <FaArrowRightLong />
-        </button>
-        <a href={`https://homely.am/item/${el.id}`}>
           <div
-            className="head-images-swiper"
-            style={{
-              left: `-${imagePosition}%`,
-              gridTemplateColumns: `repeat(${itemImages.length}, 100%)`,
-            }}
+            className="head-images-swiper-pg"
+            onClick={() => setShowSwiper(true)}
           >
-            {itemImages.map((img) => {
+            {JSON.parse(el.all_images).slice(0, 4).map((img) => {
               return (
-                <img
-                  loading="lazy"
-                  src={`https://service.homely.am/storage/images/${img}`}
-                  className="card-img"
-                  width={"100%"}
-                />
+                <picture>
+                  <source srcSet={`https://service.homely.am/storage/images/${img}`} type=""/>
+                  <img
+                    loading="lazy"
+                    src={`https://service.homely.am/storage/images/${img}`}
+                    className="card-img-pg"
+                    width={"100%"}
+                  />
+                </picture>
               );
             })}
           </div>
-        </a>
       </div>
                   <span className="card-add-date">
                   </span>
@@ -160,16 +141,6 @@ const CardPage = () => {
                         >
                           {t(el.type)}
                         </div>
-                        {/* <div className="card-like" style={{ margin: "0px" }}>
-                          <FaHeart
-                            className="card-like-icon"
-                            style={{
-                              color: liked.includes(el.id)
-                                ? "rgb(245, 81, 81)"
-                                : "gray",
-                            }}
-                          />
-                        </div> */}
                       </div>
                       <div
                         style={{

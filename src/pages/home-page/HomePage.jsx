@@ -30,8 +30,8 @@ const HomePage = () => {
           <ViewBlock tp={"sell"} itm={"Առանձնատուն"}/>
           <h2 className="home-header">Վարձով բնակարաններ</h2>
           <ViewBlock tp={"rent"} itm={"Բնակարան"}/>
-          {/* <h2 className="home-header">Վարձով առանձնատներ</h2>
-          <ViewBlock tp={"rent"} itm={"Առանձնատուն"}/> */}
+          <h2 className="home-header">Վարձով առանձնատներ</h2>
+          <ViewBlock tp={"rent"} itm={"Առանձնատուն"}/>
         </>
       )}
       <Footer />

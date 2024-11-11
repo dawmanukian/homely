@@ -18,18 +18,12 @@ function App() {
           );
           if (res.data.all_items) {
             dispatch({
-              type: "get-images",
-              payload: { all_images: res.data.all_images },
-            });
-            dispatch({
               type: "get-items",
               payload: { all_items: res.data.all_items.reverse() },
             });
-            // setShowLoading(false);
           }
         } catch (error) {
           console.log(error);
-          alert(false);
         }
       };
       get_items();

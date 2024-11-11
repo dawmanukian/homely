@@ -1,26 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./element-card.css";
-import { FaHeart, FaBed } from "react-icons/fa6";
+import { FaBed } from "react-icons/fa6";
 import { FaShower } from "react-icons/fa";
 import { TbStairsUp, TbDimensions } from "react-icons/tb";
 import { useTranslation } from "react-i18next";
-import logo from "../../img/logo.jpg";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import { FaFire } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
 
 const ElementCard = ({ el, images, onLike }) => {
   const [imagePosition, setImagePosition] = useState(0);
+  const [imageOpacity, setImageOpacity] = useState(100)
 
-  const itemImages = images.map((el) => el.image);
+  const itemImages = images
 
   const { t } = useTranslation();
 
-  const swipRight = () =>
-    imagePosition !== (itemImages.length - 1) * 100 &&
-    setImagePosition(imagePosition + 100);
-  const swipLeft = () =>
-    imagePosition !== 0 && setImagePosition(imagePosition - 100);
+
+  const swipRight = () => {
+    imagePosition !== (itemImages.length - 1) && setImagePosition(imagePosition + 1);
+    setImageOpacity(0)
+    setTimeout(() => setImageOpacity(100), 300)
+  }
+
+  const swipLeft = () => {
+    imagePosition !== 0 && setImagePosition(imagePosition - 1);
+    setImageOpacity(0)
+    setTimeout(() => setImageOpacity(100), 300)
+  }
 
   return (
     <div className="el-card">
@@ -31,24 +38,21 @@ const ElementCard = ({ el, images, onLike }) => {
         <button onClick={swipRight} className="crd_arrow" style={{right: '0px'}}>
           <FaArrowRightLong />
         </button>
-        <a href={`https://homely.am/item/${el.id}`}>
+        <a href={`https://homely.am/item/${el.id}`} style={{width: "100%"}}>
           <div
             className="head-images-swiper"
-            style={{
-              left: `-${imagePosition}%`,
-              gridTemplateColumns: `repeat(${itemImages.length}, 100%)`,
-            }}
           >
-            {itemImages.map((img) => {
-              return (
+              <picture >
+                <source srcSet={`https://service.homely.am/storage/images/${images[imagePosition]}`} type="image/webp" />
                 <img
+                  style={{transition: 'all ease .5s', opacity: imageOpacity}}
                   loading="lazy"
-                  src={`https://service.homely.am/storage/images/${img}`}
+                  src={`https://service.homely.am/storage/images/${images[imagePosition]}`}
                   className="card-img"
                   width={"100%"}
                 />
-              );
-            })}
+              </picture>
+
           </div>
         </a>
       </div>
@@ -99,11 +103,6 @@ const ElementCard = ({ el, images, onLike }) => {
             {el.proposal !== "null" && t(el.proposal)}
           </div>
         </div>
-        {/* <FaHeart
-          className="card-like-icon"
-          style={{ color: liked.includes(el.id) ? "rgb(245, 81, 81)" : "gray" }}
-          onClick={() => onLike(el.id)}
-        /> */}
       </div>
     </div>
   );

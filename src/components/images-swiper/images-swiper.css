@@ -1,6 +1,36 @@
 .card-swiper-img {
-  width: 85%;
-  height: 500px;
-  border-radius: 22px;
-  object-fit: contain;
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures the image covers the slide area without distorting */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%; /* Ensures it doesn't go beyond the modal width */
+}
+.custom-prev-button,
+.custom-next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.custom-prev-button {
+  left: 10%;
+}
+
+.custom-next-button {
+  right: 10%;
+}
+@media screen and (max-width: 991px){
+  .custom-prev-button {
+    left: 4%;
+  }
+  
+  .custom-next-button {
+    right: 4%;
+  }
 }

@@ -2,58 +2,54 @@ import React from "react";
 import "./view-block.css";
 import { useState } from "react";
 import ElementCard from "../../components/element-card/ElementCard";
-import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
 import LoadingCard from "../loading-card/LoadingCard";
+import { useMemo } from "react";
 
 const ViewBlock = ({ tp, itm }) => {
   const [cards, setCards] = useState([]);
   const [ld, setLd] = useState(true);
-  const [cardsImages, setCardsImages] = useState([]);
+  const [totalPages, setTotalPages] = useState(1)
+  const [page, setPage] = useState(1)
 
   useEffect(() => {
-    try {
       const get_items = async () => {
         try {
           const res = await axios.get(
-            "https://service.homely.am/api/items/modern"
+            `https://service.homely.am/api/items/modern/${itm}/${tp}/${page}/${12}`
           );
           if (res.data.all_items) {
-            setCards(res.data.all_items.reverse());
-            setCardsImages(res.data.all_images);
+            setCards(res.data.all_items);
+            setTotalPages(res.data.total_pages)
             setLd(false);
           }
         } catch (error) {
           console.log(error);
-          alert(false);
         }
       };
       get_items();
-    } catch (error) {
-      console.log(error);
-      // setShowLoading(false);
-    }
-  }, []);
+  }, [page]);
 
-  const [maxIndex, setMaxIndex] = useState(1);
-
-  function name(params) {
+  const paginationButtons = useMemo(() => {
     const new_arr = [];
-    let n = Math.ceil(cards.filter((e) => e.type === tp && e.item_type === itm).length / 12);
-    for (let i = 1; i <= n; i++) {
+    for (let i = 1; i <= totalPages; i++) {
       new_arr.push(
         <button
-          className={`num_btn ${i === maxIndex && "active"}`}
-          onClick={() => setMaxIndex(i)}
+          key={i}
+          className={`num_btn ${i === page && "active"}`}
+          onClick={() => {
+            setPage(i);
+            setLd(true);
+          }}
         >
           {i}
         </button>
       );
-      console.log(i, itm)
     }
     return new_arr;
-  }
+  }, [totalPages, page]);
+  
 
   return (
     <>
@@ -61,42 +57,16 @@ const ViewBlock = ({ tp, itm }) => {
         {
           <>
             {ld ? (
-              <>
-                <LoadingCard />
-                <LoadingCard />
-                <LoadingCard />
-                <LoadingCard />
-                <LoadingCard />
-                <LoadingCard />
-                <LoadingCard />
-                <LoadingCard />
-                <LoadingCard />
-                <LoadingCard />
-                <LoadingCard />
-                <LoadingCard />
-              </>
+              Array.from({ length: 12 }, (_, index) => <LoadingCard key={index} />)
             ) : (
-              <>
-                {cards
-                  .filter((e) => e.type === tp && (e.item_type === itm || e.item_type == null))
-                  .map((el, index) => {
-                    if (index >= maxIndex * 11 - 11 && index <= maxIndex * 11) {
-                      return (
-                        <ElementCard
-                          el={el}
-                          images={cardsImages.filter(
-                            (img) => Number(img.item_id) === el.id
-                          )}
-                        />
-                      );
-                    }
-                  })}
-              </>
+              cards.map((el, index) => (
+                <ElementCard key={el.id} el={el} images={JSON.parse(el.all_images)} />
+              ))
             )}
           </>
         }
       </div>
-      <div className="num_btns">{name()}</div>
+      <div className="num_btns">{paginationButtons}</div>
     </>
   );
 };

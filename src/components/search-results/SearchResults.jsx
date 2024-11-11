@@ -32,9 +32,6 @@ const SearchResults = ({ filters }) => {
   } 
   const {t} = useTranslation();
   const [data, setData] = useState(useSelector((state) => state.allItems.items));
-  const [cardsImages, setCardsImages] = useState(
-    useSelector((state) => state.allImages.images)
-  );
   const [viewData, setViewData] = useState([]);
   console.log(viewData)
 
@@ -65,9 +62,7 @@ const SearchResults = ({ filters }) => {
               <ElementCard
                 // onLike={(id) => like(id)}
                 el={el}
-                images={cardsImages.filter(
-                  (img) => Number(img.item_id) === el.id
-                )}
+                images={JSON.parse(el.all_images)}
               />
             );
           })}
